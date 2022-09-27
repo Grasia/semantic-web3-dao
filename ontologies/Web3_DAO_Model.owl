@@ -18,14 +18,28 @@
     <Declaration>
         <Class IRI="#DAO"/>
     </Declaration>
+    <Declaration>
+        <Class IRI="#Dapp"/>
+    </Declaration>
     <SubClassOf>
         <Class IRI="#DAO"/>
         <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Organization"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Dapp"/>
+        <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Agent"/>
     </SubClassOf>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#DAO</IRI>
         <Literal xml:lang="en">Decentralized autonomous organization.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Dapp</IRI>
+        <Literal xml:lang="en">Decentralized application.
+
+A program implemented on the blockchain that executes the rules of a particular business application. Usually the term Dapp encompasses both the program’s backend as well as (various) web user interfaces (frontends).</Literal>
     </AnnotationAssertion>
 </Ontology>
 

@@ -7,6 +7,7 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      ontologyIRI="http://www.fdi.ucm.es/disia/ont/FOAF"
      versionIRI="http://www.fdi.ucm.es/disia/ont/FOAF/v1.0.0">
+    <Prefix name="" IRI="http://www.fdi.ucm.es/disia/ont/FOAF"/>
     <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
     <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
@@ -22,14 +23,31 @@
     <Declaration>
         <Class IRI="#Organization"/>
     </Declaration>
-    <SubClassOf>
-        <Class IRI="#Group"/>
-        <Class IRI="#Agent"/>
-    </SubClassOf>
+    <Declaration>
+        <Class IRI="#Person"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#member"/>
+    </Declaration>
     <SubClassOf>
         <Class IRI="#Organization"/>
         <Class IRI="#Agent"/>
     </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Person"/>
+        <Class IRI="#Agent"/>
+    </SubClassOf>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#member"/>
+    </FunctionalObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#member"/>
+        <Class IRI="#Group"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#member"/>
+        <Class IRI="#Agent"/>
+    </ObjectPropertyRange>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Agent</IRI>
@@ -67,6 +85,11 @@ The foaf:Organization class represents a kind of foaf:Agent corresponding to soc
         <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
         <IRI>#Organization</IRI>
         <IRI>http://xmlns.com/foaf/0.1/#term_Organization</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#Person</IRI>
+        <IRI>http://xmlns.com/foaf/0.1/#term_Person</IRI>
     </AnnotationAssertion>
 </Ontology>
 
