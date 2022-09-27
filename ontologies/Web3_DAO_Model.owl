@@ -16,19 +16,161 @@
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
     <Import>http://www.fdi.ucm.es/disia/ont/FOAF/v1.0.0</Import>
     <Declaration>
+        <Class IRI="#Committee"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Compliance"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ContractAccount"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Court"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#DAO"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DAOAgreement"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Dapp"/>
     </Declaration>
+    <Declaration>
+        <Class IRI="#EOA"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EthereumWallet"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Executive"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Main"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MetaMask"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Proposal"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ProposalDocument"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SmartContract"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Tech"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Token"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Vote"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Wallet"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Web3WalletAccount"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#Committee"/>
+        <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Group"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Compliance"/>
+        <Class IRI="#Committee"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ContractAccount"/>
+        <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#OnlineAccount"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Court"/>
+        <Class IRI="#Committee"/>
+    </SubClassOf>
     <SubClassOf>
         <Class IRI="#DAO"/>
         <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Organization"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#DAOAgreement"/>
+        <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Document"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Dapp"/>
         <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Agent"/>
     </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EOA"/>
+        <Class IRI="#Web3WalletAccount"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EthereumWallet"/>
+        <Class IRI="#Wallet"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Executive"/>
+        <Class IRI="#Committee"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Main"/>
+        <Class IRI="#Committee"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MetaMask"/>
+        <Class IRI="#EthereumWallet"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Proposal"/>
+        <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Project"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProposalDocument"/>
+        <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Document"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SmartContract"/>
+        <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Agent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Tech"/>
+        <Class IRI="#Committee"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Wallet"/>
+        <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Agent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Web3WalletAccount"/>
+        <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#OnlineAccount"/>
+    </SubClassOf>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#Committee</IRI>
+        <IRI>https://andao.aragon.org/</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Compliance</IRI>
+        <Literal xml:lang="en">Elected committee that facilitates conversations on ethics, risk and sustainability, and is equipped with veto power to guard the network.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#ContractAccount</IRI>
+        <Literal xml:lang="en">A contract account has smart contract code and does not have a private key.
+
+A contract account cannot initiate transactions, but they can react to transactions by calling other contracts, building comple execution paths.
+
+For instance, when a transaction destination is a Ethereum contract account, it causes that contract to run the Ethereum Virtual Machine (EVM), using the transaction, and the transaction&apos;s data as its input. In addition to ether, transactions can contain data indicating which specific function in the contract to run and what parameters to pass to that function. In this way, transactions can call functions within contracts.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Court</IRI>
+        <Literal xml:lang="en">The dispute resolution committee.</Literal>
+    </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#DAO</IRI>
@@ -36,10 +178,99 @@
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#DAOAgreement</IRI>
+        <Literal xml:lang="en">DAO Agreements that act like constitutions and are recognized by the organization in the case of any disputes related to the governance model of the DAO.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#DAOAgreement</IRI>
+        <IRI>https://blog.aragon.org/an-dao-launch/</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Dapp</IRI>
         <Literal xml:lang="en">Decentralized application.
 
-A program implemented on the blockchain that executes the rules of a particular business application. Usually the term Dapp encompasses both the program’s backend as well as (various) web user interfaces (frontends).</Literal>
+A program implemented on the blockchain that executes the rules of a particular business application. Usually the term Dapp encompasses both the program’s backend as well as (various) web user interfaces (frontends).
+
+A Dapp is, at the very least, a smart contract and a web user interface. More broadly, a Dapp is a web application that is built on top of open, decentralized, peer-to-peer infrastructure services.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#EOA</IRI>
+        <Literal xml:lang="en">Externally Owned Account.
+
+Externally Owned Accounts are those that have a private key; having the private key means control over acccess to funds or contracts.
+
+EOAs can initiate transactions.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#EthereumWallet</IRI>
+        <Literal xml:lang="en">A software application that helps users manage their Ethereum accounts. 
+
+An Ethereum Wallet is the gateway to the Ethereum system.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Executive</IRI>
+        <Literal xml:lang="en">Elected committee that facilitates strategic alignment across the DAO and allocates funds for the DAO.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Main</IRI>
+        <Literal xml:lang="en">All the token holders are part of the corresponding DAO.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#MetaMask</IRI>
+        <Literal xml:lang="en">MetaMask is a web-based crypto wallet and gateway to blockchain apps.
+
+MetaMask provides the simplest yet most secure way to connect to blockchain-based applications. 
+
+Users are always in control when interacting on the new decentralized web.
+
+Available as a browser extension and as a mobile app, MetaMask equips users with a key vault, secure login, token wallet, and token exchange—everything users need to manage their digital assets.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#MetaMask</IRI>
+        <IRI>https://metamask.io/</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Proposal</IRI>
+        <Literal xml:lang="en">A proposal is a plan or suggestion, especially a formal or written one, put forward for consideration or discussion by others.
+
+***QUITAR***
+Habrá distintos tipos de proposals dependiendo de si la DAO permite crear propuestas solamente a miembros o gente que tenga token de la DAO o personas en general que estén avalados por un miembro de la DAO.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ProposalDocument</IRI>
+        <Literal xml:lang="en">Document accompanying a proposal.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#SmartContract</IRI>
+        <Literal xml:lang="en">A software agent representing a piece of software deployed on a blockchain and executed in a decentralized and automated way.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Tech</IRI>
+        <Literal xml:lang="en">Elected committee that checks and integrates code submissions, and organises tech audits as needed.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Wallet</IRI>
+        <Literal xml:lang="en">Software application that helps users to manage blockchain accounts. 
+
+A wallet is the gateway to a blockchain system.
+
+***QUITAR***
+Propiedades:
+- Puede transferir fondos de una wallet a otra wallet.
+- Gestiona cuentas web3wallet</Literal>
     </AnnotationAssertion>
 </Ontology>
 

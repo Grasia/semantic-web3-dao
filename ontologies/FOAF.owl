@@ -18,7 +18,13 @@
         <Class IRI="#Agent"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Document"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Group"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OnlineAccount"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Organization"/>
@@ -27,8 +33,15 @@
         <Class IRI="#Person"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Project"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#member"/>
     </Declaration>
+    <SubClassOf>
+        <Class IRI="#Group"/>
+        <Class IRI="#Agent"/>
+    </SubClassOf>
     <SubClassOf>
         <Class IRI="#Organization"/>
         <Class IRI="#Agent"/>
@@ -51,7 +64,7 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Agent</IRI>
-        <Literal xml:lang="en">An agent (eg. person, group, software or physical artifact).
+        <Literal xml:lang="en">An agent  is a person, group, software or physical artifact, for example.
 
 The foaf:Agent class is the class of agents; things that do stuff. A well known sub-class is foaf:Person, representing people. Other kinds of agents include foaf:Organization and foaf:Group.</Literal>
     </AnnotationAssertion>
@@ -62,10 +75,18 @@ The foaf:Agent class is the class of agents; things that do stuff. A well known 
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Document</IRI>
+        <Literal xml:lang="en">The foaf:Document class represents those things which are, broadly conceived, &apos;documents&apos;.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#Document</IRI>
+        <IRI>http://xmlns.com/foaf/0.1/#term_Document</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Group</IRI>
-        <Literal xml:lang="en">A class of Agents.
-
-The foaf:Group class represents a collection of individual agents (and may itself play the role of a foaf:Agent, ie. something that can perform actions).
+        <Literal xml:lang="en">The foaf:Group class represents a collection of individual agents (and may itself play the role of a foaf:Agent, ie. something that can perform actions).
 
 This concept is intentionally quite broad, covering informal and ad-hoc groups, long-lived communities, organizational groups within a workplace, etc. Some such groups may have associated characteristics which could be captured in RDF (perhaps a foaf:homepage, foaf:name, mailing list etc.).</Literal>
     </AnnotationAssertion>
@@ -76,10 +97,20 @@ This concept is intentionally quite broad, covering informal and ad-hoc groups, 
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#Organization</IRI>
-        <Literal xml:lang="en">An organization.
+        <IRI>#OnlineAccount</IRI>
+        <IRI>http://xmlns.com/foaf/0.1/#term_OnlineAccount</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#OnlineAccount</IRI>
+        <Literal xml:lang="en">A foaf:OnlineAccount represents the provision of some form of online service, by some party (indicated indirectly via a foaf:accountServiceHomepage) to some foaf:Agent. 
 
-The foaf:Organization class represents a kind of foaf:Agent corresponding to social instititutions such as companies, societies etc.</Literal>
+The foaf:holdsAccount property of the agent is used to indicate accounts that are associated with the agent.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Organization</IRI>
+        <Literal xml:lang="en">The foaf:Organization class represents a kind of foaf:Agent corresponding to social instititutions such as companies, societies, virtual entities, etc.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
@@ -87,9 +118,39 @@ The foaf:Organization class represents a kind of foaf:Agent corresponding to soc
         <IRI>http://xmlns.com/foaf/0.1/#term_Organization</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Person</IRI>
+        <Literal xml:lang="en">The foaf:Person class represents people. Something is a foaf:Person if it is a person. 
+
+We don&apos;t nitpic about whether they&apos;re alive, dead, real, or imaginary. 
+
+The foaf:Person class is a sub-class of the foaf:Agent class, since all people are considered &apos;agents&apos; in FOAF.
+
+***QUITAR***
+
+Propiedades:
+member (relaciona una persona con una organización)
+holder: relaciona una persona con un token.
+
+Quizá los creo como clases independientes en vez de modelarlo en forma de de propiedad.
+Para este contexto vamos a considerar member como alguien vinculado a una DAO, al igual que Holder.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
         <IRI>#Person</IRI>
         <IRI>http://xmlns.com/foaf/0.1/#term_Person</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Project</IRI>
+        <Literal xml:lang="en">The foaf:Project class represents the class of things that are &apos;projects&apos;. 
+
+These may be formal or informal, collective or individual. It is often useful to indicate the foaf:homepage of a foaf:Project.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#Project</IRI>
+        <IRI>http://xmlns.com/foaf/0.1/#term_Project</IRI>
     </AnnotationAssertion>
 </Ontology>
 
