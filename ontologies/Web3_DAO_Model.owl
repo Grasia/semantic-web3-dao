@@ -40,16 +40,25 @@
         <Class IRI="#EOA"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Elections"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#EthereumWallet"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Executive"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Financial"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Main"/>
     </Declaration>
     <Declaration>
         <Class IRI="#MetaMask"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Others"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Proposal"/>
@@ -108,6 +117,10 @@
         <Class IRI="#Web3WalletAccount"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Elections"/>
+        <Class IRI="#Proposal"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#EthereumWallet"/>
         <Class IRI="#Wallet"/>
     </SubClassOf>
@@ -116,12 +129,20 @@
         <Class IRI="#Committee"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Financial"/>
+        <Class IRI="#Proposal"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Main"/>
         <Class IRI="#Committee"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#MetaMask"/>
         <Class IRI="#EthereumWallet"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Others"/>
+        <Class IRI="#Proposal"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Proposal"/>
@@ -159,6 +180,11 @@
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#Compliance</IRI>
+        <IRI>https://blog.aragon.org/an-dao-launch/</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
         <IRI>#ContractAccount</IRI>
         <Literal xml:lang="en">A contract account has smart contract code and does not have a private key.
 
@@ -170,6 +196,11 @@ For instance, when a transaction destination is a Ethereum contract account, it 
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Court</IRI>
         <Literal xml:lang="en">The dispute resolution committee.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#Court</IRI>
+        <IRI>https://blog.aragon.org/an-dao-launch/</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -206,6 +237,16 @@ EOAs can initiate transactions.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Elections</IRI>
+        <Literal xml:lang="en">This type of proposal assigns or removes wallet permissions from the DAO.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#Elections</IRI>
+        <IRI>https://blog.aragon.org/an-dao-launch/</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#EthereumWallet</IRI>
         <Literal xml:lang="en">A software application that helps users manage their Ethereum accounts. 
 
@@ -217,9 +258,29 @@ An Ethereum Wallet is the gateway to the Ethereum system.</Literal>
         <Literal xml:lang="en">Elected committee that facilitates strategic alignment across the DAO and allocates funds for the DAO.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#Executive</IRI>
+        <IRI>https://blog.aragon.org/an-dao-launch/</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Financial</IRI>
+        <Literal xml:lang="en">This type of proposal involves the transfer of any asset with monetary value from the DAO.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#Financial</IRI>
+        <IRI>https://blog.aragon.org/an-dao-launch/</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Main</IRI>
         <Literal xml:lang="en">All the token holders are part of the corresponding DAO.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#Main</IRI>
+        <IRI>https://blog.aragon.org/an-dao-launch/</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -236,6 +297,16 @@ Available as a browser extension and as a mobile app, MetaMask equips users with
         <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
         <IRI>#MetaMask</IRI>
         <IRI>https://metamask.io/</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Others</IRI>
+        <Literal xml:lang="en">This type of proposal invokes changes to metagovernance, code, parameters, etc.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#Others</IRI>
+        <IRI>https://blog.aragon.org/an-dao-launch/</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -259,6 +330,11 @@ Habrá distintos tipos de proposals dependiendo de si la DAO permite crear propu
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Tech</IRI>
         <Literal xml:lang="en">Elected committee that checks and integrates code submissions, and organises tech audits as needed.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#Tech</IRI>
+        <IRI>https://blog.aragon.org/an-dao-launch/</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
