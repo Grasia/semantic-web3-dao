@@ -40,6 +40,12 @@
         <Class IRI="#EOA"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#ERC20"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ERC721"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Elections"/>
     </Declaration>
     <Declaration>
@@ -52,10 +58,16 @@
         <Class IRI="#Financial"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#FungibleToken"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Main"/>
     </Declaration>
     <Declaration>
         <Class IRI="#MetaMask"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NFT"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Others"/>
@@ -67,6 +79,12 @@
         <Class IRI="#ProposalDocument"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#RFC20"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RFC721"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#SmartContract"/>
     </Declaration>
     <Declaration>
@@ -76,10 +94,13 @@
         <Class IRI="#Token"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#TokenContract"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Vote"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Wallet"/>
+        <Class IRI="#Web3Wallet"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Web3WalletAccount"/>
@@ -117,12 +138,20 @@
         <Class IRI="#Web3WalletAccount"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#ERC20"/>
+        <Class IRI="#FungibleToken"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ERC721"/>
+        <Class IRI="#NFT"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Elections"/>
         <Class IRI="#Proposal"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#EthereumWallet"/>
-        <Class IRI="#Wallet"/>
+        <Class IRI="#Web3Wallet"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Executive"/>
@@ -133,12 +162,20 @@
         <Class IRI="#Proposal"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#FungibleToken"/>
+        <Class IRI="#Token"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Main"/>
         <Class IRI="#Committee"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#MetaMask"/>
         <Class IRI="#EthereumWallet"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NFT"/>
+        <Class IRI="#Token"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Others"/>
@@ -153,6 +190,14 @@
         <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Document"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#RFC20"/>
+        <Class IRI="#TokenContract"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RFC721"/>
+        <Class IRI="#TokenContract"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#SmartContract"/>
         <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Agent"/>
     </SubClassOf>
@@ -161,7 +206,11 @@
         <Class IRI="#Committee"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Wallet"/>
+        <Class IRI="#TokenContract"/>
+        <Class IRI="#SmartContract"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Web3Wallet"/>
         <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Agent"/>
     </SubClassOf>
     <SubClassOf>
@@ -236,6 +285,16 @@ Externally Owned Accounts are those that have a private key; having the private 
 EOAs can initiate transactions.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#ERC20</IRI>
+        <Literal xml:lang="en">Fungible tokens in the Ethereum ecosystem.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#ERC721</IRI>
+        <Literal xml:lang="en">Non-fungible token in the Ethereum ecosystem.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Elections</IRI>
         <Literal xml:lang="en">This type of proposal assigns or removes wallet permissions from the DAO.</Literal>
@@ -274,6 +333,13 @@ An Ethereum Wallet is the gateway to the Ethereum system.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#FungibleToken</IRI>
+        <Literal xml:lang="en">Fungible tokens are items that represent interchangeable assets (i.e., divisible and not unique) that can be used as money or in exchange for specific services on the internet. 
+
+Instead of running on banking infrastructure like USD or EUR, tokens are used through Blockchain technology.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Main</IRI>
         <Literal xml:lang="en">All the token holders are part of the corresponding DAO.</Literal>
     </AnnotationAssertion>
@@ -285,18 +351,34 @@ An Ethereum Wallet is the gateway to the Ethereum system.</Literal>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#MetaMask</IRI>
-        <Literal xml:lang="en">MetaMask is a web-based crypto wallet and gateway to blockchain apps.
-
-MetaMask provides the simplest yet most secure way to connect to blockchain-based applications. 
+        <Literal xml:lang="en">MetaMask provides the simplest yet most secure way to connect to blockchain-based applications. 
 
 Users are always in control when interacting on the new decentralized web.
 
-Available as a browser extension and as a mobile app, MetaMask equips users with a key vault, secure login, token wallet, and token exchange—everything users need to manage their digital assets.</Literal>
+Available as a browser extension and as a mobile app, MetaMask equips users with a key vault, secure login, token wallet, and token exchange.
+
+MetaMask provides everything users need to manage their digital assets.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
         <IRI>#MetaMask</IRI>
         <IRI>https://metamask.io/</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#NFT</IRI>
+        <Literal xml:lang="en">Non-Fungible Token (NFT)
+
+Tokens associated with Blockchain technology that each represents a uinique tangible (i.e., physical asset) or intangible item  (i.e., digital asset) and therefore are not interchangeable. For example, a token that represents ownership of a specific Van Gogh painting is not equivalent to another token that represent a Picasso, even though they might be part of the same &quot;art ownership token&quot; system.
+
+NFTs are minted through smart contracts that assign ownership and reassign it when NFTs are transferred or resold. At a basic level, smart contracts can be seen as a tool aimed at implementing a sale agreement. 
+
+Each NFT is associated with a unique identifier, such a serial number.
+
+*** QUITAR***
+
+Propiedad identififier.
+Vinculado a smart contracts que los gestionan.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -323,8 +405,33 @@ Habrá distintos tipos de proposals dependiendo de si la DAO permite crear propu
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#RFC20</IRI>
+        <Literal xml:lang="en">Ethereum Request for Comments (ERC)
+
+ERC20 is a standard for fungible tokens, meaning that different units of a n ERC20 token are interchageable and have no unique properties.
+
+An ERC20 token contract keeps track of fungible tokens: any one token is exactly equal to any other token; no tokens have special rights or behavior associated with them. This makes ERC20 tokens useful for things like a medium of exchange currency, voting rights, staking, and more.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#RFC20</IRI>
+        <IRI>https://docs.openzeppelin.com/contracts/2.x/erc20</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#RFC721</IRI>
+        <Literal xml:lang="en">Ethereum Request for Comments (RFC)
+
+ERC721 is a standard for non-fungible tokens, also known as &quot;deeds&quot; intended to reflect the &quot;ownership of a property&quot; part based on digital signatures.
+
+In this case, each token is unique.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#SmartContract</IRI>
-        <Literal xml:lang="en">A software agent representing a piece of software deployed on a blockchain and executed in a decentralized and automated way.</Literal>
+        <Literal xml:lang="en">A software agent representing a piece of software deployed on a blockchain and executed in a decentralized and automated way.
+
+Smart contracts are written in high-level languages, such as Solidity.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -338,10 +445,19 @@ Habrá distintos tipos de proposals dependiendo de si la DAO permite crear propu
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#Wallet</IRI>
-        <Literal xml:lang="en">Software application that helps users to manage blockchain accounts. 
+        <IRI>#Token</IRI>
+        <Literal xml:lang="en">Tokens are items administered on blockchains that can represent assets (tangible or intangible), currency or voting rights, among others.
 
-A wallet is the gateway to a blockchain system.
+*** QUITAR***
+Revisar el siguiente enlace para ver propiedades de los tokens:
+https://voice.aragon.org/tokens/info/#/0xa117000000f279d81a1d3cc75430faa017fa5a2e</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Web3Wallet</IRI>
+        <Literal xml:lang="en">Software application that helps users to manage blockchain accounts and store digital assets such as cryptocurrency and Non-Fungible Tokens (NFTs). 
+
+A web3 wallet is the gateway to a blockchain system.
 
 ***QUITAR***
 Propiedades:
