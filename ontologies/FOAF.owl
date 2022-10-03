@@ -36,7 +36,22 @@
         <Class IRI="#Project"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#holdsAccount"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#member"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#accountName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#firstName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#name"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#surname"/>
     </Declaration>
     <SubClassOf>
         <Class IRI="#Group"/>
@@ -50,17 +65,76 @@
         <Class IRI="#Person"/>
         <Class IRI="#Agent"/>
     </SubClassOf>
-    <FunctionalObjectProperty>
-        <ObjectProperty IRI="#member"/>
-    </FunctionalObjectProperty>
+    <DisjointClasses>
+        <Class IRI="#Agent"/>
+        <Class IRI="#Document"/>
+        <Class IRI="#OnlineAccount"/>
+        <Class IRI="#Project"/>
+    </DisjointClasses>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#holdsAccount"/>
+        <Class IRI="#Agent"/>
+    </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#member"/>
         <Class IRI="#Group"/>
     </ObjectPropertyDomain>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#holdsAccount"/>
+        <Class IRI="#OnlineAccount"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#member"/>
         <Class IRI="#Agent"/>
     </ObjectPropertyRange>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#accountName"/>
+        <DataProperty IRI="#name"/>
+    </SubDataPropertyOf>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#accountName"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#firstName"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#name"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#surname"/>
+    </FunctionalDataProperty>
+    <DataPropertyDomain>
+        <DataProperty IRI="#accountName"/>
+        <Class IRI="#OnlineAccount"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#firstName"/>
+        <Class IRI="#Person"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#name"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#surname"/>
+        <Class IRI="#Person"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#accountName"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#firstName"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#name"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#surname"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Agent</IRI>
@@ -124,16 +198,7 @@ The foaf:holdsAccount property of the agent is used to indicate accounts that ar
 
 We don&apos;t nitpic about whether they&apos;re alive, dead, real, or imaginary. 
 
-The foaf:Person class is a sub-class of the foaf:Agent class, since all people are considered &apos;agents&apos; in FOAF.
-
-***QUITAR***
-
-Propiedades:
-member (relaciona una persona con una organización)
-holder: relaciona una persona con un token.
-
-Quizá los creo como clases independientes en vez de modelarlo en forma de de propiedad.
-Para este contexto vamos a considerar member como alguien vinculado a una DAO, al igual que Holder.</Literal>
+The foaf:Person class is a sub-class of the foaf:Agent class, since all people are considered &apos;agents&apos; in FOAF.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
@@ -151,6 +216,66 @@ These may be formal or informal, collective or individual. It is often useful to
         <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
         <IRI>#Project</IRI>
         <IRI>http://xmlns.com/foaf/0.1/#term_Project</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#accountName</IRI>
+        <Literal xml:lang="en">Indicates the name (identifier) associated with the foaf:OnlineAccount.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#accountName</IRI>
+        <IRI>http://xmlns.com/foaf/0.1/#term_accountName</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#firstName</IRI>
+        <Literal xml:lang="en">The first name of a foaf:Person.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#firstName</IRI>
+        <IRI>http://xmlns.com/foaf/0.1/#term_firstName</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#holdsAccount</IRI>
+        <Literal xml:lang="en">Indicates an account held by a foaf:Agent.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#holdsAccount</IRI>
+        <IRI>http://xmlns.com/foaf/0.1/#term_holdsAccount</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#member</IRI>
+        <Literal xml:lang="en">Indicates a member of a foaf:Group</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#member</IRI>
+        <IRI>http://xmlns.com/foaf/0.1/#term_member</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#name</IRI>
+        <Literal xml:lang="en">A name for some thing.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#name</IRI>
+        <IRI>http://xmlns.com/foaf/0.1/#term_name</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#surname</IRI>
+        <Literal xml:lang="en">The surname of some foaf:Person.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#surname</IRI>
+        <IRI>http://xmlns.com/foaf/0.1/#term_surname</IRI>
     </AnnotationAssertion>
 </Ontology>
 

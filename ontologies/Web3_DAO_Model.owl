@@ -15,6 +15,10 @@
     <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
     <Import>http://www.fdi.ucm.es/disia/ont/FOAF/v1.0.0</Import>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <Literal xml:lang="en">An ontology that describes the Decentralized Autonomous Organization (DAO) domain which is based on Blockchain tecnology.</Literal>
+    </Annotation>
     <Declaration>
         <Class IRI="#Committee"/>
     </Declaration>
@@ -26,6 +30,9 @@
     </Declaration>
     <Declaration>
         <Class IRI="#Court"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Cryptocurrency"/>
     </Declaration>
     <Declaration>
         <Class IRI="#DAO"/>
@@ -40,10 +47,10 @@
         <Class IRI="#EOA"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#ERC20"/>
+        <Class IRI="#ERC20Token"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#ERC721"/>
+        <Class IRI="#ERC721Token"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Elections"/>
@@ -105,6 +112,36 @@
     <Declaration>
         <Class IRI="#Web3WalletAccount"/>
     </Declaration>
+    <Declaration>
+        <Class IRI="#WebUserInterface"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#controlsCrypto"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasAuxiliaryContract"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasMainSmartContract"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasOwner"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasWebUserInterface"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isControlledBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isControlledByDapp"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isPartOfDapp"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#ownsToken"/>
+    </Declaration>
     <SubClassOf>
         <Class IRI="#Committee"/>
         <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Group"/>
@@ -120,6 +157,14 @@
     <SubClassOf>
         <Class IRI="#Court"/>
         <Class IRI="#Committee"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Cryptocurrency"/>
+        <Class IRI="#FungibleToken"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DAO"/>
+        <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Group"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#DAO"/>
@@ -138,11 +183,11 @@
         <Class IRI="#Web3WalletAccount"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#ERC20"/>
+        <Class IRI="#ERC20Token"/>
         <Class IRI="#FungibleToken"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#ERC721"/>
+        <Class IRI="#ERC721Token"/>
         <Class IRI="#NFT"/>
     </SubClassOf>
     <SubClassOf>
@@ -217,6 +262,178 @@
         <Class IRI="#Web3WalletAccount"/>
         <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#OnlineAccount"/>
     </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WebUserInterface"/>
+        <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Agent"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Agent"/>
+        <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Document"/>
+        <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#OnlineAccount"/>
+        <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Project"/>
+        <Class IRI="#Token"/>
+        <Class IRI="#Vote"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Group"/>
+        <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Organization"/>
+        <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Person"/>
+        <Class IRI="#Dapp"/>
+        <Class IRI="#SmartContract"/>
+        <Class IRI="#Web3Wallet"/>
+        <Class IRI="#WebUserInterface"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Group"/>
+        <Class IRI="#WebUserInterface"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Compliance"/>
+        <Class IRI="#Court"/>
+        <Class IRI="#Executive"/>
+        <Class IRI="#Main"/>
+        <Class IRI="#Tech"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#ContractAccount"/>
+        <Class IRI="#Web3WalletAccount"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#DAOAgreement"/>
+        <Class IRI="#ProposalDocument"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Dapp"/>
+        <Class IRI="#WebUserInterface"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Elections"/>
+        <Class IRI="#Financial"/>
+        <Class IRI="#Others"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#FungibleToken"/>
+        <Class IRI="#NFT"/>
+    </DisjointClasses>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#controlsCrypto"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#controlsCrypto"/>
+        <ObjectProperty IRI="#isControlledBy"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasMainSmartContract"/>
+        <ObjectProperty IRI="#isControlledByDapp"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasOwner"/>
+        <ObjectProperty IRI="#ownsToken"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasWebUserInterface"/>
+        <ObjectProperty IRI="#isPartOfDapp"/>
+    </InverseObjectProperties>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasMainSmartContract"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasOwner"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasWebUserInterface"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#isPartOfDapp"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#ownsToken"/>
+    </FunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#hasWebUserInterface"/>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#ownsToken"/>
+    </InverseFunctionalObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#hasAuxiliaryContract"/>
+    </AsymmetricObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#hasAuxiliaryContract"/>
+    </IrreflexiveObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#controlsCrypto"/>
+        <Class IRI="#DAO"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasAuxiliaryContract"/>
+        <Class IRI="#SmartContract"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasMainSmartContract"/>
+        <Class IRI="#Dapp"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasOwner"/>
+        <Class IRI="#FungibleToken"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasWebUserInterface"/>
+        <Class IRI="#Dapp"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isControlledBy"/>
+        <Class IRI="#Cryptocurrency"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isControlledByDapp"/>
+        <Class IRI="#SmartContract"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isPartOfDapp"/>
+        <Class IRI="#WebUserInterface"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#ownsToken"/>
+        <Class IRI="#DAO"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#controlsCrypto"/>
+        <Class IRI="#Cryptocurrency"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasAuxiliaryContract"/>
+        <Class IRI="#SmartContract"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasMainSmartContract"/>
+        <Class IRI="#SmartContract"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasOwner"/>
+        <Class IRI="#DAO"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasWebUserInterface"/>
+        <Class IRI="#WebUserInterface"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isControlledBy"/>
+        <Class IRI="#DAO"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isControlledByDapp"/>
+        <Class IRI="#Dapp"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isPartOfDapp"/>
+        <Class IRI="#Dapp"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#ownsToken"/>
+        <Class IRI="#FungibleToken"/>
+    </ObjectPropertyRange>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
         <IRI>#Committee</IRI>
@@ -253,6 +470,13 @@ For instance, when a transaction destination is a Ethereum contract account, it 
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Cryptocurrency</IRI>
+        <Literal xml:lang="en">Cryptocurrency represents native tokens, such bitcoin (BTC) on the Bitcoin blockchain or Ether  (ETH) on the Ethereum blockchain.
+
+The word “cryptocurrency” refers to a group of digital assets where transactions are secured and verified using cryptography – a scientific practice of encoding and decoding data. Those transactions are often stored on computers distributed all over the world via a distributed ledger technology called blockchain (Ref. https://www.coindesk.com/learn/what-is-bitcoin/).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#DAO</IRI>
         <Literal xml:lang="en">Decentralized autonomous organization.</Literal>
     </AnnotationAssertion>
@@ -285,14 +509,14 @@ Externally Owned Accounts are those that have a private key; having the private 
 EOAs can initiate transactions.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
-        <IRI>#ERC20</IRI>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ERC20Token</IRI>
         <Literal xml:lang="en">Fungible tokens in the Ethereum ecosystem.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
-        <IRI>#ERC721</IRI>
-        <Literal xml:lang="en">Non-fungible token in the Ethereum ecosystem.</Literal>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ERC721Token</IRI>
+        <Literal xml:lang="en">Non-fungible tokens in the Ethereum ecosystem.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -455,7 +679,7 @@ https://voice.aragon.org/tokens/info/#/0xa117000000f279d81a1d3cc75430faa017fa5a2
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Web3Wallet</IRI>
-        <Literal xml:lang="en">Software application that helps users to manage blockchain accounts and store digital assets such as cryptocurrency and Non-Fungible Tokens (NFTs). 
+        <Literal xml:lang="en">Cryptocurrency wallet that helps users to manage blockchain accounts and store digital assets such as cryptocurrency and Non-Fungible Tokens (NFTs). 
 
 A web3 wallet is the gateway to a blockchain system.
 
