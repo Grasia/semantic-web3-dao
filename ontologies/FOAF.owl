@@ -39,6 +39,9 @@
         <ObjectProperty IRI="#holdsAccount"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#homepage"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#member"/>
     </Declaration>
     <Declaration>
@@ -71,8 +74,15 @@
         <Class IRI="#OnlineAccount"/>
         <Class IRI="#Project"/>
     </DisjointClasses>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#homepage"/>
+    </FunctionalObjectProperty>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#holdsAccount"/>
+        <Class IRI="#Agent"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#homepage"/>
         <Class IRI="#Agent"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
@@ -82,6 +92,10 @@
     <ObjectPropertyRange>
         <ObjectProperty IRI="#holdsAccount"/>
         <Class IRI="#OnlineAccount"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#homepage"/>
+        <Class IRI="#Document"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#member"/>
@@ -249,6 +263,22 @@ These may be formal or informal, collective or individual. It is often useful to
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#homepage</IRI>
+        <Literal xml:lang="en">A homepage for some thing.
+
+Many kinds of things have homepages. 
+
+FOAF allows a thing to have multiple homepages, but constrains foaf:homepage so that there can be only one thing that has any particular homepage.
+
+A foaf:homepage in this sense is a public Web document, typically but not necessarily available in HTML format.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#homepage</IRI>
+        <IRI>http://xmlns.com/foaf/0.1/#term_homepage</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#member</IRI>
         <Literal xml:lang="en">Indicates a member of a foaf:Group</Literal>
     </AnnotationAssertion>
@@ -256,16 +286,6 @@ These may be formal or informal, collective or individual. It is often useful to
         <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
         <IRI>#member</IRI>
         <IRI>http://xmlns.com/foaf/0.1/#term_member</IRI>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#name</IRI>
-        <Literal xml:lang="en">A name for some thing.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
-        <IRI>#name</IRI>
-        <IRI>http://xmlns.com/foaf/0.1/#term_name</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
