@@ -32,9 +32,6 @@
         <Class IRI="#Court"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Cryptocurrency"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#DAO"/>
     </Declaration>
     <Declaration>
@@ -59,7 +56,13 @@
         <Class IRI="#Financial"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#FundAllocationContract"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Main"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MembershipContract"/>
     </Declaration>
     <Declaration>
         <Class IRI="#MetaMask"/>
@@ -77,12 +80,6 @@
         <Class IRI="#ProposalDocument"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#RFC20"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#RFC721"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#SmartContract"/>
     </Declaration>
     <Declaration>
@@ -98,10 +95,10 @@
         <Class IRI="#Vote"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Web3Wallet"/>
+        <Class IRI="#VotingContract"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Web3WalletAccount"/>
+        <Class IRI="#Web3Wallet"/>
     </Declaration>
     <Declaration>
         <Class IRI="#WebUserInterface"/>
@@ -116,7 +113,19 @@
         <ObjectProperty IRI="#hasWebUserInterface"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#interacts"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isMainContract"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#isPartOfDapp"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#managedByCryptoWallet"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#managesToken"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#ownsToken"/>
@@ -162,10 +171,6 @@
         <Class IRI="#Committee"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Cryptocurrency"/>
-        <Class IRI="#Token"/>
-    </SubClassOf>
-    <SubClassOf>
         <Class IRI="#DAO"/>
         <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Organization"/>
     </SubClassOf>
@@ -187,7 +192,7 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#EOA"/>
-        <Class IRI="#Web3WalletAccount"/>
+        <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#OnlineAccount"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Elections"/>
@@ -206,8 +211,16 @@
         <Class IRI="#Proposal"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#FundAllocationContract"/>
+        <Class IRI="#SmartContract"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Main"/>
         <Class IRI="#Committee"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MembershipContract"/>
+        <Class IRI="#SmartContract"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#MetaMask"/>
@@ -230,14 +243,6 @@
         <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Document"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#RFC20"/>
-        <Class IRI="#TokenContract"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#RFC721"/>
-        <Class IRI="#TokenContract"/>
-    </SubClassOf>
-    <SubClassOf>
         <Class IRI="#SmartContract"/>
         <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Agent"/>
     </SubClassOf>
@@ -250,12 +255,12 @@
         <Class IRI="#SmartContract"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Web3Wallet"/>
-        <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Agent"/>
+        <Class IRI="#VotingContract"/>
+        <Class IRI="#SmartContract"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Web3WalletAccount"/>
-        <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#OnlineAccount"/>
+        <Class IRI="#Web3Wallet"/>
+        <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Agent"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#WebUserInterface"/>
@@ -289,10 +294,6 @@
         <Class IRI="#Tech"/>
     </DisjointClasses>
     <DisjointClasses>
-        <Class IRI="#ContractAccount"/>
-        <Class IRI="#Web3WalletAccount"/>
-    </DisjointClasses>
-    <DisjointClasses>
         <Class IRI="#DAOAgreement"/>
         <Class IRI="#ProposalDocument"/>
     </DisjointClasses>
@@ -310,12 +311,20 @@
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <InverseObjectProperties>
+        <ObjectProperty IRI="#builtOn"/>
+        <ObjectProperty IRI="#isMainContract"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
         <ObjectProperty IRI="#hasTokenOwner"/>
         <ObjectProperty IRI="#ownsToken"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="#hasWebUserInterface"/>
         <ObjectProperty IRI="#isPartOfDapp"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#managedByCryptoWallet"/>
+        <ObjectProperty IRI="#managesToken"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="#sharesCryptoWallet"/>
@@ -328,11 +337,23 @@
         <ObjectProperty IRI="#hasTokenOwner"/>
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
+        <ObjectProperty IRI="#isMainContract"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
         <ObjectProperty IRI="#isPartOfDapp"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#managedByCryptoWallet"/>
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
         <ObjectProperty IRI="#ownsToken"/>
     </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#sharesCryptoWallet"/>
+    </FunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#builtOn"/>
+    </InverseFunctionalObjectProperty>
     <InverseFunctionalObjectProperty>
         <ObjectProperty IRI="#hasTokenOwner"/>
     </InverseFunctionalObjectProperty>
@@ -340,14 +361,26 @@
         <ObjectProperty IRI="#hasWebUserInterface"/>
     </InverseFunctionalObjectProperty>
     <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#isMainContract"/>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
         <ObjectProperty IRI="#ownsToken"/>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#sharesCryptoWallet"/>
     </InverseFunctionalObjectProperty>
     <InverseFunctionalObjectProperty>
         <ObjectProperty IRI="#usedByDAO"/>
     </InverseFunctionalObjectProperty>
     <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#interacts"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
         <ObjectProperty IRI="#usesAuxiliaryContract"/>
     </AsymmetricObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#interacts"/>
+    </IrreflexiveObjectProperty>
     <IrreflexiveObjectProperty>
         <ObjectProperty IRI="#usesAuxiliaryContract"/>
     </IrreflexiveObjectProperty>
@@ -364,8 +397,24 @@
         <Class IRI="#Dapp"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#interacts"/>
+        <Class IRI="#DAO"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isMainContract"/>
+        <Class IRI="#SmartContract"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#isPartOfDapp"/>
         <Class IRI="#WebUserInterface"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#managedByCryptoWallet"/>
+        <Class IRI="#Token"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#managesToken"/>
+        <Class IRI="#Web3Wallet"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#ownsToken"/>
@@ -396,8 +445,24 @@
         <Class IRI="#WebUserInterface"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#interacts"/>
+        <Class IRI="#DAO"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isMainContract"/>
+        <Class IRI="#Dapp"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#isPartOfDapp"/>
         <Class IRI="#Dapp"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#managedByCryptoWallet"/>
+        <Class IRI="#Web3Wallet"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#managesToken"/>
+        <Class IRI="#Token"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#ownsToken"/>
@@ -501,13 +566,6 @@ For instance, when a transaction destination is a Ethereum contract account, it 
         <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
         <IRI>#Court</IRI>
         <IRI>https://blog.aragon.org/an-dao-launch/</IRI>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#Cryptocurrency</IRI>
-        <Literal xml:lang="en">Cryptocurrency represents native tokens, such bitcoin (BTC) on the Bitcoin blockchain or Ether  (ETH) on the Ethereum blockchain.
-
-The word “cryptocurrency” refers to a group of digital assets where transactions are secured and verified using cryptography – a scientific practice of encoding and decoding data. Those transactions are often stored on computers distributed all over the world via a distributed ledger technology called blockchain (Ref. https://www.coindesk.com/learn/what-is-bitcoin/).</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -661,29 +719,6 @@ Habrá distintos tipos de proposals dependiendo de si la DAO permite crear propu
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#ProposalDocument</IRI>
         <Literal xml:lang="en">Document accompanying a proposal.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#RFC20</IRI>
-        <Literal xml:lang="en">Ethereum Request for Comments (ERC)
-
-ERC20 is a standard for fungible tokens, meaning that different units of a n ERC20 token are interchageable and have no unique properties.
-
-An ERC20 token contract keeps track of fungible tokens: any one token is exactly equal to any other token; no tokens have special rights or behavior associated with them. This makes ERC20 tokens useful for things like a medium of exchange currency, voting rights, staking, and more.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
-        <IRI>#RFC20</IRI>
-        <IRI>https://docs.openzeppelin.com/contracts/2.x/erc20</IRI>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
-        <IRI>#RFC721</IRI>
-        <Literal xml:lang="en">Ethereum Request for Comments (RFC)
-
-ERC721 is a standard for non-fungible tokens, also known as &quot;deeds&quot; intended to reflect the &quot;ownership of a property&quot; part based on digital signatures.
-
-In this case, each token is unique.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>

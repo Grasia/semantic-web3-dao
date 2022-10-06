@@ -45,6 +45,9 @@
         <ObjectProperty IRI="#member"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#topic"/>
+    </Declaration>
+    <Declaration>
         <DataProperty IRI="#accountName"/>
     </Declaration>
     <Declaration>
@@ -68,14 +71,11 @@
         <Class IRI="#Person"/>
         <Class IRI="#Agent"/>
     </SubClassOf>
-    <DisjointClasses>
-        <Class IRI="#Agent"/>
-        <Class IRI="#Document"/>
-        <Class IRI="#OnlineAccount"/>
-        <Class IRI="#Project"/>
-    </DisjointClasses>
     <FunctionalObjectProperty>
         <ObjectProperty IRI="#homepage"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#topic"/>
     </FunctionalObjectProperty>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#holdsAccount"/>
@@ -89,6 +89,10 @@
         <ObjectProperty IRI="#member"/>
         <Class IRI="#Group"/>
     </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#topic"/>
+        <Class IRI="#Document"/>
+    </ObjectPropertyDomain>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#holdsAccount"/>
         <Class IRI="#OnlineAccount"/>
@@ -100,6 +104,10 @@
     <ObjectPropertyRange>
         <ObjectProperty IRI="#member"/>
         <Class IRI="#Agent"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#topic"/>
+        <Class abbreviatedIRI="owl:Thing"/>
     </ObjectPropertyRange>
     <SubDataPropertyOf>
         <DataProperty IRI="#accountName"/>
@@ -296,6 +304,18 @@ A foaf:homepage in this sense is a public Web document, typically but not necess
         <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
         <IRI>#surname</IRI>
         <IRI>http://xmlns.com/foaf/0.1/#term_surname</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#topic</IRI>
+        <Literal xml:lang="en">A topic of some page or document.
+
+The foaf:topic property relates a document to a thing that the document is about.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#topic</IRI>
+        <IRI>http://xmlns.com/foaf/0.1/#term_topic</IRI>
     </AnnotationAssertion>
 </Ontology>
 
