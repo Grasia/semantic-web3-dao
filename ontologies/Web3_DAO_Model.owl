@@ -59,6 +59,9 @@
         <Class IRI="#FundAllocationContract"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Holds"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Main"/>
     </Declaration>
     <Declaration>
@@ -78,6 +81,9 @@
     </Declaration>
     <Declaration>
         <Class IRI="#ProposalDocument"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Restriction"/>
     </Declaration>
     <Declaration>
         <Class IRI="#SmartContract"/>
@@ -107,10 +113,31 @@
         <ObjectProperty IRI="#builtOn"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#daoMember"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#eoaOfHolds"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasEOA"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasSmartContract"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#hasTokenOwner"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasWebUserInterface"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#holdsOfEOA"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#holdsOfToken"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#implementedByContract"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#interacts"/>
@@ -128,10 +155,22 @@
         <ObjectProperty IRI="#managesToken"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#operates"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#ownsToken"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#sharesCryptoWallet"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#supportsToken"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#tokenOfHolds"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#transacts"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#usedByDAO"/>
@@ -149,10 +188,19 @@
         <DataProperty IRI="#dappURL"/>
     </Declaration>
     <Declaration>
+        <DataProperty IRI="#holderBalance"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#tokenBalance"/>
+    </Declaration>
+    <Declaration>
         <DataProperty IRI="#tokenName"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#tokenSymbol"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#tokenUSDValue"/>
     </Declaration>
     <SubClassOf>
         <Class IRI="#Committee"/>
@@ -215,6 +263,10 @@
         <Class IRI="#SmartContract"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Holds"/>
+        <Class IRI="#Restriction"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Main"/>
         <Class IRI="#Committee"/>
     </SubClassOf>
@@ -303,9 +355,19 @@
         <Class IRI="#Others"/>
     </DisjointClasses>
     <DisjointClasses>
+        <Class IRI="#FundAllocationContract"/>
+        <Class IRI="#MembershipContract"/>
+        <Class IRI="#TokenContract"/>
+        <Class IRI="#VotingContract"/>
+    </DisjointClasses>
+    <DisjointClasses>
         <Class IRI="#OpenSourceSoftware"/>
         <Class IRI="#Web3Wallet"/>
     </DisjointClasses>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#daoMember"/>
+        <ObjectProperty IRI="http://www.fdi.ucm.es/disia/ont/FOAF#member"/>
+    </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#sharesCryptoWallet"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
@@ -315,6 +377,10 @@
         <ObjectProperty IRI="#isMainContract"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
+        <ObjectProperty IRI="#eoaOfHolds"/>
+        <ObjectProperty IRI="#holdsOfEOA"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
         <ObjectProperty IRI="#hasTokenOwner"/>
         <ObjectProperty IRI="#ownsToken"/>
     </InverseObjectProperties>
@@ -323,8 +389,16 @@
         <ObjectProperty IRI="#isPartOfDapp"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
+        <ObjectProperty IRI="#holdsOfToken"/>
+        <ObjectProperty IRI="#tokenOfHolds"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
         <ObjectProperty IRI="#managedByCryptoWallet"/>
         <ObjectProperty IRI="#managesToken"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#operates"/>
+        <ObjectProperty IRI="#transacts"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="#sharesCryptoWallet"/>
@@ -334,7 +408,19 @@
         <ObjectProperty IRI="#builtOn"/>
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasSmartContract"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
         <ObjectProperty IRI="#hasTokenOwner"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#holdsOfEOA"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#holdsOfToken"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#implementedByContract"/>
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
         <ObjectProperty IRI="#isMainContract"/>
@@ -362,6 +448,9 @@
     </InverseFunctionalObjectProperty>
     <InverseFunctionalObjectProperty>
         <ObjectProperty IRI="#isMainContract"/>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#managesToken"/>
     </InverseFunctionalObjectProperty>
     <InverseFunctionalObjectProperty>
         <ObjectProperty IRI="#ownsToken"/>
@@ -389,12 +478,40 @@
         <Class IRI="#Dapp"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasTokenOwner"/>
+        <ObjectProperty IRI="#daoMember"/>
         <Class IRI="#DAO"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#eoaOfHolds"/>
+        <Class IRI="#EOA"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasEOA"/>
+        <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Person"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasSmartContract"/>
+        <Class IRI="#ContractAccount"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasTokenOwner"/>
+        <Class IRI="#Token"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasWebUserInterface"/>
         <Class IRI="#Dapp"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#holdsOfEOA"/>
+        <Class IRI="#Holds"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#holdsOfToken"/>
+        <Class IRI="#Holds"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#implementedByContract"/>
+        <Class IRI="#Token"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#interacts"/>
@@ -417,12 +534,28 @@
         <Class IRI="#Web3Wallet"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#operates"/>
+        <Class IRI="#DAO"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#ownsToken"/>
         <Class IRI="#DAO"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#sharesCryptoWallet"/>
         <Class IRI="#DAO"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#supportsToken"/>
+        <Class IRI="#DAO"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#tokenOfHolds"/>
+        <Class IRI="#Token"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#transacts"/>
+        <Class IRI="#EOA"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#usedByDAO"/>
@@ -437,12 +570,40 @@
         <Class IRI="#SmartContract"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#daoMember"/>
+        <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Person"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#eoaOfHolds"/>
+        <Class IRI="#Holds"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasEOA"/>
+        <Class IRI="#EOA"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasSmartContract"/>
+        <Class IRI="#SmartContract"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#hasTokenOwner"/>
-        <Class IRI="#Token"/>
+        <Class IRI="#DAO"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasWebUserInterface"/>
         <Class IRI="#WebUserInterface"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#holdsOfEOA"/>
+        <Class IRI="#EOA"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#holdsOfToken"/>
+        <Class IRI="#Token"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#implementedByContract"/>
+        <Class IRI="#TokenContract"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#interacts"/>
@@ -465,12 +626,28 @@
         <Class IRI="#Token"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#operates"/>
+        <Class IRI="#EOA"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#ownsToken"/>
         <Class IRI="#Token"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#sharesCryptoWallet"/>
         <Class IRI="#Web3Wallet"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#supportsToken"/>
+        <Class IRI="#Token"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#tokenOfHolds"/>
+        <Class IRI="#Holds"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#transacts"/>
+        <Class IRI="#DAO"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#usedByDAO"/>
@@ -484,6 +661,14 @@
         <DataProperty IRI="#dappName"/>
         <DataProperty IRI="http://www.fdi.ucm.es/disia/ont/FOAF#name"/>
     </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#tokenBalance"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#tokenName"/>
+        <DataProperty IRI="http://www.fdi.ucm.es/disia/ont/FOAF#name"/>
+    </SubDataPropertyOf>
     <FunctionalDataProperty>
         <DataProperty IRI="#dappDescription"/>
     </FunctionalDataProperty>
@@ -491,7 +676,16 @@
         <DataProperty IRI="#dappName"/>
     </FunctionalDataProperty>
     <FunctionalDataProperty>
+        <DataProperty IRI="#holderBalance"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#tokenBalance"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
         <DataProperty IRI="#tokenName"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#tokenUSDValue"/>
     </FunctionalDataProperty>
     <DataPropertyDomain>
         <DataProperty IRI="#dappDescription"/>
@@ -506,11 +700,23 @@
         <Class IRI="#Dapp"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
+        <DataProperty IRI="#holderBalance"/>
+        <Class IRI="#Holds"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#tokenBalance"/>
+        <Class IRI="#Token"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
         <DataProperty IRI="#tokenName"/>
         <Class IRI="#Token"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#tokenSymbol"/>
+        <Class IRI="#Token"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#tokenUSDValue"/>
         <Class IRI="#Token"/>
     </DataPropertyDomain>
     <DataPropertyRange>
@@ -526,12 +732,24 @@
         <Datatype abbreviatedIRI="xsd:anyURI"/>
     </DataPropertyRange>
     <DataPropertyRange>
+        <DataProperty IRI="#holderBalance"/>
+        <Datatype abbreviatedIRI="xsd:double"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#tokenBalance"/>
+        <Datatype abbreviatedIRI="xsd:double"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
         <DataProperty IRI="#tokenName"/>
         <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="#tokenSymbol"/>
         <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#tokenUSDValue"/>
+        <Datatype abbreviatedIRI="xsd:double"/>
     </DataPropertyRange>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
@@ -613,7 +831,7 @@ A Dapp is, at the very least, a smart contract and a web user interface. More br
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
         <IRI>#EOA</IRI>
-        <Literal xml:lang="en">Externally Owned Account.
+        <Literal xml:lang="en">Externally Owned Account (EOA).
 
 Externally Owned Accounts are those that have a private key; having the private key means control over acccess to funds or contracts.
 
@@ -655,6 +873,16 @@ An Ethereum Wallet is the gateway to the Ethereum system.</Literal>
         <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
         <IRI>#Financial</IRI>
         <IRI>https://blog.aragon.org/an-dao-launch/</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Holds</IRI>
+        <Literal xml:lang="en">This class represents the association-class between dao:Token and dao:EOA.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#Holds</IRI>
+        <IRI>https://www.tandfonline.com/doi/full/10.1080/24751839.2019.1686681</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -778,13 +1006,35 @@ URL (Uniform Resource Locator)</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#supportsToken</IRI>
+        <Literal xml:lang="en">The additional tokens that are part of treasury of a specific dao:DAO.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#tokenBalance</IRI>
+        <Literal xml:lang="en">The double value assigned to indicate the total tokens that are available.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#tokenName</IRI>
         <Literal xml:lang="en">The name assigned to the token that is minted when creating a DAO.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#tokenSymbol</IRI>
-        <Literal xml:lang="en">Token Symbol or ticker is a shortened name (typically in capital letters) that refers to a token or coin on a trading platform. For example: ANT or GHST.</Literal>
+        <Literal xml:lang="en">Token Symbol or ticker is a shortened name (typically in capital letters) that refers to a token or coin on a trading platform. For example: BTC (Bitcoin), ETH (Ethereum), ANT (Aragon) or UNI (Uniswap).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#tokenSymbol</IRI>
+        <IRI>https://deepdao.io/organizations</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#tokenUSDValue</IRI>
+        <Literal xml:lang="en">USD (United States Dollar).
+
+The double value assigned to indicate the USD exchange rate for a dao:Token.</Literal>
     </AnnotationAssertion>
 </Ontology>
 
