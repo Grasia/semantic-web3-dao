@@ -29,9 +29,6 @@
         <Class IRI="#ContractAccount"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Court"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#DAO"/>
     </Declaration>
     <Declaration>
@@ -39,6 +36,9 @@
     </Declaration>
     <Declaration>
         <Class IRI="#Dapp"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Decision"/>
     </Declaration>
     <Declaration>
         <Class IRI="#EOA"/>
@@ -98,7 +98,10 @@
         <Class IRI="#TokenContract"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Vote"/>
+        <Class IRI="#VoteDuration"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Votes"/>
     </Declaration>
     <Declaration>
         <Class IRI="#VotingContract"/>
@@ -113,10 +116,22 @@
         <ObjectProperty IRI="#builtOn"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#composedOfCommittee"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#daoMember"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#eoaOfHolds"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#eoaOfVotes"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasCharter"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDecision"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasEOA"/>
@@ -126,6 +141,9 @@
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasTokenOwner"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasVoteDuration"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasWebUserInterface"/>
@@ -140,13 +158,28 @@
         <ObjectProperty IRI="#implementedByContract"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#includesProposalDocument"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#interacts"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isChartOf"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#isMainContract"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#isPartOfDAO"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#isPartOfDapp"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isPartOfProposal"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isProposalOf"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#managedByCryptoWallet"/>
@@ -159,6 +192,12 @@
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#ownsToken"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#proposalOfVotes"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#receivesProposal"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#sharesCryptoWallet"/>
@@ -179,6 +218,15 @@
         <ObjectProperty IRI="#usesAuxiliaryContract"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#votesOfEOA"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#votesOfProposal"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#chartName"/>
+    </Declaration>
+    <Declaration>
         <DataProperty IRI="#dappDescription"/>
     </Declaration>
     <Declaration>
@@ -188,7 +236,22 @@
         <DataProperty IRI="#dappURL"/>
     </Declaration>
     <Declaration>
+        <DataProperty IRI="#endDate"/>
+    </Declaration>
+    <Declaration>
         <DataProperty IRI="#holderBalance"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#minimumApproval"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#proposalSummary"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#proposalSupport"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#startDate"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#tokenBalance"/>
@@ -202,6 +265,26 @@
     <Declaration>
         <DataProperty IRI="#tokenUSDValue"/>
     </Declaration>
+    <Declaration>
+        <DataProperty IRI="#totalVotes"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Abstain"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#No"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Yes"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#Decision"/>
+        <ObjectOneOf>
+            <NamedIndividual IRI="#Abstain"/>
+            <NamedIndividual IRI="#No"/>
+            <NamedIndividual IRI="#Yes"/>
+        </ObjectOneOf>
+    </EquivalentClasses>
     <SubClassOf>
         <Class IRI="#Committee"/>
         <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Group"/>
@@ -213,10 +296,6 @@
     <SubClassOf>
         <Class IRI="#ContractAccount"/>
         <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#OnlineAccount"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Court"/>
-        <Class IRI="#Committee"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#DAO"/>
@@ -307,6 +386,10 @@
         <Class IRI="#SmartContract"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Votes"/>
+        <Class IRI="#Restriction"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#VotingContract"/>
         <Class IRI="#SmartContract"/>
     </SubClassOf>
@@ -318,14 +401,6 @@
         <Class IRI="#WebUserInterface"/>
         <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Agent"/>
     </SubClassOf>
-    <DisjointClasses>
-        <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Agent"/>
-        <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Document"/>
-        <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#OnlineAccount"/>
-        <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Project"/>
-        <Class IRI="#Token"/>
-        <Class IRI="#Vote"/>
-    </DisjointClasses>
     <DisjointClasses>
         <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Group"/>
         <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Person"/>
@@ -340,7 +415,6 @@
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#Compliance"/>
-        <Class IRI="#Court"/>
         <Class IRI="#Executive"/>
         <Class IRI="#Main"/>
         <Class IRI="#Tech"/>
@@ -364,6 +438,18 @@
         <Class IRI="#OpenSourceSoftware"/>
         <Class IRI="#Web3Wallet"/>
     </DisjointClasses>
+    <ClassAssertion>
+        <Class IRI="#Decision"/>
+        <NamedIndividual IRI="#Abstain"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Decision"/>
+        <NamedIndividual IRI="#No"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Decision"/>
+        <NamedIndividual IRI="#Yes"/>
+    </ClassAssertion>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#daoMember"/>
         <ObjectProperty IRI="http://www.fdi.ucm.es/disia/ont/FOAF#member"/>
@@ -377,8 +463,20 @@
         <ObjectProperty IRI="#isMainContract"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
+        <ObjectProperty IRI="#composedOfCommittee"/>
+        <ObjectProperty IRI="#isPartOfDAO"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
         <ObjectProperty IRI="#eoaOfHolds"/>
         <ObjectProperty IRI="#holdsOfEOA"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#eoaOfVotes"/>
+        <ObjectProperty IRI="#votesOfEOA"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasCharter"/>
+        <ObjectProperty IRI="#isChartOf"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="#hasTokenOwner"/>
@@ -393,12 +491,24 @@
         <ObjectProperty IRI="#tokenOfHolds"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
+        <ObjectProperty IRI="#includesProposalDocument"/>
+        <ObjectProperty IRI="#isPartOfProposal"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#isProposalOf"/>
+        <ObjectProperty IRI="#receivesProposal"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
         <ObjectProperty IRI="#managedByCryptoWallet"/>
         <ObjectProperty IRI="#managesToken"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="#operates"/>
         <ObjectProperty IRI="#transacts"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#proposalOfVotes"/>
+        <ObjectProperty IRI="#votesOfProposal"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="#sharesCryptoWallet"/>
@@ -408,10 +518,19 @@
         <ObjectProperty IRI="#builtOn"/>
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasCharter"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasDecision"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
         <ObjectProperty IRI="#hasSmartContract"/>
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
         <ObjectProperty IRI="#hasTokenOwner"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasVoteDuration"/>
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
         <ObjectProperty IRI="#holdsOfEOA"/>
@@ -423,10 +542,25 @@
         <ObjectProperty IRI="#implementedByContract"/>
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
+        <ObjectProperty IRI="#includesProposalDocument"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#isChartOf"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
         <ObjectProperty IRI="#isMainContract"/>
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
+        <ObjectProperty IRI="#isPartOfDAO"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
         <ObjectProperty IRI="#isPartOfDapp"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#isPartOfProposal"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#isProposalOf"/>
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
         <ObjectProperty IRI="#managedByCryptoWallet"/>
@@ -437,8 +571,20 @@
     <FunctionalObjectProperty>
         <ObjectProperty IRI="#sharesCryptoWallet"/>
     </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#votesOfEOA"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#votesOfProposal"/>
+    </FunctionalObjectProperty>
     <InverseFunctionalObjectProperty>
         <ObjectProperty IRI="#builtOn"/>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#composedOfCommittee"/>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#hasCharter"/>
     </InverseFunctionalObjectProperty>
     <InverseFunctionalObjectProperty>
         <ObjectProperty IRI="#hasTokenOwner"/>
@@ -447,7 +593,16 @@
         <ObjectProperty IRI="#hasWebUserInterface"/>
     </InverseFunctionalObjectProperty>
     <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#includesProposalDocument"/>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#isChartOf"/>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
         <ObjectProperty IRI="#isMainContract"/>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#isPartOfProposal"/>
     </InverseFunctionalObjectProperty>
     <InverseFunctionalObjectProperty>
         <ObjectProperty IRI="#managesToken"/>
@@ -456,7 +611,7 @@
         <ObjectProperty IRI="#ownsToken"/>
     </InverseFunctionalObjectProperty>
     <InverseFunctionalObjectProperty>
-        <ObjectProperty IRI="#sharesCryptoWallet"/>
+        <ObjectProperty IRI="#receivesProposal"/>
     </InverseFunctionalObjectProperty>
     <InverseFunctionalObjectProperty>
         <ObjectProperty IRI="#usedByDAO"/>
@@ -478,12 +633,28 @@
         <Class IRI="#Dapp"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#composedOfCommittee"/>
+        <Class IRI="#DAO"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#daoMember"/>
         <Class IRI="#DAO"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#eoaOfHolds"/>
         <Class IRI="#EOA"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#eoaOfVotes"/>
+        <Class IRI="#EOA"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasCharter"/>
+        <Class IRI="#DAO"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasDecision"/>
+        <Class IRI="#Votes"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasEOA"/>
@@ -498,6 +669,10 @@
         <Class IRI="#Token"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasVoteDuration"/>
+        <Class IRI="#Proposal"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasWebUserInterface"/>
         <Class IRI="#Dapp"/>
     </ObjectPropertyDomain>
@@ -514,16 +689,36 @@
         <Class IRI="#Token"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#includesProposalDocument"/>
+        <Class IRI="#Proposal"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#interacts"/>
         <Class IRI="#DAO"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isChartOf"/>
+        <Class IRI="#DAOAgreement"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#isMainContract"/>
         <Class IRI="#SmartContract"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isPartOfDAO"/>
+        <Class IRI="#Committee"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#isPartOfDapp"/>
         <Class IRI="#WebUserInterface"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isPartOfProposal"/>
+        <Class IRI="#ProposalDocument"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isProposalOf"/>
+        <Class IRI="#Proposal"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#managedByCryptoWallet"/>
@@ -539,6 +734,14 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#ownsToken"/>
+        <Class IRI="#DAO"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#proposalOfVotes"/>
+        <Class IRI="#Proposal"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#receivesProposal"/>
         <Class IRI="#DAO"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
@@ -565,9 +768,21 @@
         <ObjectProperty IRI="#usesAuxiliaryContract"/>
         <Class IRI="#SmartContract"/>
     </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#votesOfEOA"/>
+        <Class IRI="#Votes"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#votesOfProposal"/>
+        <Class IRI="#Votes"/>
+    </ObjectPropertyDomain>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#builtOn"/>
         <Class IRI="#SmartContract"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#composedOfCommittee"/>
+        <Class IRI="#Committee"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#daoMember"/>
@@ -576,6 +791,18 @@
     <ObjectPropertyRange>
         <ObjectProperty IRI="#eoaOfHolds"/>
         <Class IRI="#Holds"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#eoaOfVotes"/>
+        <Class IRI="#Votes"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasCharter"/>
+        <Class IRI="#DAOAgreement"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasDecision"/>
+        <Class IRI="#Decision"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasEOA"/>
@@ -588,6 +815,10 @@
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasTokenOwner"/>
         <Class IRI="#DAO"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasVoteDuration"/>
+        <Class IRI="#VoteDuration"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasWebUserInterface"/>
@@ -606,7 +837,15 @@
         <Class IRI="#TokenContract"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#includesProposalDocument"/>
+        <Class IRI="#ProposalDocument"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#interacts"/>
+        <Class IRI="#DAO"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isChartOf"/>
         <Class IRI="#DAO"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
@@ -614,8 +853,20 @@
         <Class IRI="#Dapp"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#isPartOfDAO"/>
+        <Class IRI="#DAO"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#isPartOfDapp"/>
         <Class IRI="#Dapp"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isPartOfProposal"/>
+        <Class IRI="#Proposal"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isProposalOf"/>
+        <Class IRI="#DAO"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#managedByCryptoWallet"/>
@@ -632,6 +883,14 @@
     <ObjectPropertyRange>
         <ObjectProperty IRI="#ownsToken"/>
         <Class IRI="#Token"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#proposalOfVotes"/>
+        <Class IRI="#Votes"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#receivesProposal"/>
+        <Class IRI="#Proposal"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#sharesCryptoWallet"/>
@@ -657,6 +916,18 @@
         <ObjectProperty IRI="#usesAuxiliaryContract"/>
         <Class IRI="#SmartContract"/>
     </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#votesOfEOA"/>
+        <Class IRI="#EOA"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#votesOfProposal"/>
+        <Class IRI="#Proposal"/>
+    </ObjectPropertyRange>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#chartName"/>
+        <DataProperty IRI="http://www.fdi.ucm.es/disia/ont/FOAF#name"/>
+    </SubDataPropertyOf>
     <SubDataPropertyOf>
         <DataProperty IRI="#dappName"/>
         <DataProperty IRI="http://www.fdi.ucm.es/disia/ont/FOAF#name"/>
@@ -670,6 +941,9 @@
         <DataProperty IRI="http://www.fdi.ucm.es/disia/ont/FOAF#name"/>
     </SubDataPropertyOf>
     <FunctionalDataProperty>
+        <DataProperty IRI="#chartName"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
         <DataProperty IRI="#dappDescription"/>
     </FunctionalDataProperty>
     <FunctionalDataProperty>
@@ -677,6 +951,15 @@
     </FunctionalDataProperty>
     <FunctionalDataProperty>
         <DataProperty IRI="#holderBalance"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#minimumApproval"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#proposalSummary"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#proposalSupport"/>
     </FunctionalDataProperty>
     <FunctionalDataProperty>
         <DataProperty IRI="#tokenBalance"/>
@@ -687,6 +970,13 @@
     <FunctionalDataProperty>
         <DataProperty IRI="#tokenUSDValue"/>
     </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#totalVotes"/>
+    </FunctionalDataProperty>
+    <DataPropertyDomain>
+        <DataProperty IRI="#chartName"/>
+        <Class IRI="#DAOAgreement"/>
+    </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#dappDescription"/>
         <Class IRI="#Dapp"/>
@@ -700,8 +990,28 @@
         <Class IRI="#Dapp"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
+        <DataProperty IRI="#endDate"/>
+        <Class IRI="#VoteDuration"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
         <DataProperty IRI="#holderBalance"/>
         <Class IRI="#Holds"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#minimumApproval"/>
+        <Class IRI="#Proposal"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#proposalSummary"/>
+        <Class IRI="#Proposal"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#proposalSupport"/>
+        <Class IRI="#Proposal"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#startDate"/>
+        <Class IRI="#VoteDuration"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#tokenBalance"/>
@@ -719,6 +1029,14 @@
         <DataProperty IRI="#tokenUSDValue"/>
         <Class IRI="#Token"/>
     </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#totalVotes"/>
+        <Class IRI="#Votes"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#chartName"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="#dappDescription"/>
         <Datatype abbreviatedIRI="xsd:string"/>
@@ -732,8 +1050,28 @@
         <Datatype abbreviatedIRI="xsd:anyURI"/>
     </DataPropertyRange>
     <DataPropertyRange>
+        <DataProperty IRI="#endDate"/>
+        <Datatype abbreviatedIRI="xsd:dateTime"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
         <DataProperty IRI="#holderBalance"/>
         <Datatype abbreviatedIRI="xsd:double"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#minimumApproval"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#proposalSummary"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#proposalSupport"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#startDate"/>
+        <Datatype abbreviatedIRI="xsd:dateTime"/>
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="#tokenBalance"/>
@@ -751,10 +1089,29 @@
         <DataProperty IRI="#tokenUSDValue"/>
         <Datatype abbreviatedIRI="xsd:double"/>
     </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#totalVotes"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Abstain</IRI>
+        <Literal xml:lang="en">Abstain, the community can decide for me.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#Abstain</IRI>
+        <IRI>https://voice.aragon.org/processes/#/0x07b68415f2c74de6b52ee116d307ee3a8afa2ca74e2600b48258b1b712241e21</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Committee</IRI>
+        <Literal xml:lang="en">A committee is a group composed of members of a DAO with specific permission levels oriented to the goverment of the DAO (responsibilities: general reponsibilities, legal responsibilities and decision-making process operations).</Literal>
+    </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
         <IRI>#Committee</IRI>
-        <IRI>https://andao.aragon.org/</IRI>
+        <IRI>https://andao.aragon.org/#Structure</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -774,16 +1131,6 @@
 A contract account cannot initiate transactions, but they can react to transactions by calling other contracts, building comple execution paths.
 
 For instance, when a transaction destination is a Ethereum contract account, it causes that contract to run the Ethereum Virtual Machine (EVM), using the transaction, and the transaction&apos;s data as its input. In addition to ether, transactions can contain data indicating which specific function in the contract to run and what parameters to pass to that function. In this way, transactions can call functions within contracts.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#Court</IRI>
-        <Literal xml:lang="en">The dispute resolution committee.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
-        <IRI>#Court</IRI>
-        <IRI>https://blog.aragon.org/an-dao-launch/</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -812,7 +1159,9 @@ https://www.aavegotchi.com/</Literal>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#DAOAgreement</IRI>
-        <Literal xml:lang="en">DAO Agreements that act like constitutions and are recognized by the organization in the case of any disputes related to the governance model of the DAO.</Literal>
+        <Literal xml:lang="en">DAO Agreements that act like constitutions and are recognized by the organization in the case of any disputes related to the governance model of the DAO.
+
+It represents the Charter of a DAO.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
@@ -912,6 +1261,16 @@ MetaMask provides everything users need to manage their digital assets.</Literal
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#No</IRI>
+        <Literal xml:lang="en">No, we shouldn&apos;t not approve this proposal.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#No</IRI>
+        <IRI>https://voice.aragon.org/processes/#/0x07b68415f2c74de6b52ee116d307ee3a8afa2ca74e2600b48258b1b712241e21</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#OpenSourceSoftware</IRI>
         <Literal xml:lang="en">Open source software (OSS). 
 
@@ -977,6 +1336,21 @@ Smart contracts are written in high-level languages, such as Solidity.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#VoteDuration</IRI>
+        <Literal xml:lang="en">Vote Duration is the length of time that the vote will be open for participation.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Votes</IRI>
+        <Literal xml:lang="en">This class represents the association-class between dao:EOA and dao:Proposal.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#Votes</IRI>
+        <IRI>https://snapshot.org/#/</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Web3Wallet</IRI>
         <Literal xml:lang="en">Cryptocurrency wallet that helps users to manage blockchain accounts and store digital assets such as cryptocurrency and Non-Fungible Tokens (NFTs). 
 
@@ -986,6 +1360,16 @@ A web3 wallet is the gateway to a blockchain system.
 Propiedades:
 - Puede transferir fondos de una wallet a otra wallet.
 - Gestiona cuentas web3wallet</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Yes</IRI>
+        <Literal xml:lang="en">Yes, we should approve this proposal.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#Yes</IRI>
+        <IRI>https://voice.aragon.org/processes/#/0x07b68415f2c74de6b52ee116d307ee3a8afa2ca74e2600b48258b1b712241e21</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -1003,6 +1387,25 @@ Propiedades:
         <Literal xml:lang="en">The website URL of a specific dapp (i.e., the location of a set of related web pages located under a single domain name, typically produced by a single person or organization).
 
 URL (Uniform Resource Locator)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#minimumApproval</IRI>
+        <Literal xml:lang="en">Minimum Approval is the percentage of the total token supply that is required to vote “Yes” on a proposal before it can be approved. For example, if the “Minimum Approval” is set to 20%, then more than 20% of the outstanding token supply must vote “Yes” on a proposal for it to pass. 
+
+Default value: 15</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#proposalSummary</IRI>
+        <Literal xml:lang="en">Short description of the proposal.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#proposalSupport</IRI>
+        <Literal xml:lang="en">Support is the relative percentage of tokens that are required to vote “Yes” for a proposal to be approved. For example, if “Support” is set to 50%, then more than 50% of the tokens used to vote on a proposal must vote “Yes” for it to pass.
+
+Default value: 50</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
