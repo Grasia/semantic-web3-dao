@@ -59,6 +59,9 @@
         <Class IRI="#FundAllocationContract"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#FungibleToken"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Holds"/>
     </Declaration>
     <Declaration>
@@ -68,7 +71,7 @@
         <Class IRI="#MembershipContract"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#MetaMask"/>
+        <Class IRI="#NonFungibleToken"/>
     </Declaration>
     <Declaration>
         <Class IRI="#OpenSourceSoftware"/>
@@ -93,6 +96,9 @@
     </Declaration>
     <Declaration>
         <Class IRI="#Token"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TokenCategory"/>
     </Declaration>
     <Declaration>
         <Class IRI="#TokenContract"/>
@@ -140,6 +146,9 @@
         <ObjectProperty IRI="#hasSmartContract"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#hasTokenCategory"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#hasTokenOwner"/>
     </Declaration>
     <Declaration>
@@ -156,6 +165,9 @@
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#implementedByContract"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#implementsToken"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#includesProposalDocument"/>
@@ -180,6 +192,9 @@
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#isProposalOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isSupportedBy"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#managedByCryptoWallet"/>
@@ -242,6 +257,9 @@
         <DataProperty IRI="#holderBalance"/>
     </Declaration>
     <Declaration>
+        <DataProperty IRI="#identifier"/>
+    </Declaration>
+    <Declaration>
         <DataProperty IRI="#minimumApproval"/>
     </Declaration>
     <Declaration>
@@ -269,14 +287,64 @@
         <DataProperty IRI="#totalVotes"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#ADA"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ANTAgreement"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#Abstain"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#BTC"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#CryptoKitty"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Cryptocurrency"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ETH"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#MetaMask"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#No"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#OrganizationToken"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#USDT"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Uniswap"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#Yes"/>
     </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#DAO"/>
+        <ObjectIntersectionOf>
+            <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Organization"/>
+            <Class IRI="#Dapp"/>
+            <Class IRI="#OpenSourceSoftware"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#composedOfCommittee"/>
+                <Class IRI="#Main"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasSmartContract"/>
+                <Class IRI="#SmartContract"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#ownsToken"/>
+                <Class IRI="#FungibleToken"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
     <EquivalentClasses>
         <Class IRI="#Decision"/>
         <ObjectOneOf>
@@ -296,18 +364,6 @@
     <SubClassOf>
         <Class IRI="#ContractAccount"/>
         <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#OnlineAccount"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#DAO"/>
-        <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Organization"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#DAO"/>
-        <Class IRI="#Dapp"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#DAO"/>
-        <Class IRI="#OpenSourceSoftware"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#DAOAgreement"/>
@@ -342,6 +398,10 @@
         <Class IRI="#SmartContract"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#FungibleToken"/>
+        <Class IRI="#Token"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Holds"/>
         <Class IRI="#Restriction"/>
     </SubClassOf>
@@ -354,8 +414,8 @@
         <Class IRI="#SmartContract"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#MetaMask"/>
-        <Class IRI="#EthereumWallet"/>
+        <Class IRI="#NonFungibleToken"/>
+        <Class IRI="#Token"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#OpenSourceSoftware"/>
@@ -439,17 +499,132 @@
         <Class IRI="#Web3Wallet"/>
     </DisjointClasses>
     <ClassAssertion>
+        <Class IRI="#FungibleToken"/>
+        <NamedIndividual IRI="#ADA"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DAOAgreement"/>
+        <NamedIndividual IRI="#ANTAgreement"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#Decision"/>
         <NamedIndividual IRI="#Abstain"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FungibleToken"/>
+        <NamedIndividual IRI="#BTC"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#TokenCategory"/>
+        <NamedIndividual IRI="#CryptoKitty"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#TokenCategory"/>
+        <NamedIndividual IRI="#Cryptocurrency"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FungibleToken"/>
+        <NamedIndividual IRI="#ETH"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Web3Wallet"/>
+        <NamedIndividual IRI="#MetaMask"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Decision"/>
         <NamedIndividual IRI="#No"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="#TokenCategory"/>
+        <NamedIndividual IRI="#OrganizationToken"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FungibleToken"/>
+        <NamedIndividual IRI="#USDT"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FungibleToken"/>
+        <NamedIndividual IRI="#Uniswap"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#Decision"/>
         <NamedIndividual IRI="#Yes"/>
     </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTokenCategory"/>
+        <NamedIndividual IRI="#ADA"/>
+        <NamedIndividual IRI="#Cryptocurrency"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTokenCategory"/>
+        <NamedIndividual IRI="#BTC"/>
+        <NamedIndividual IRI="#Cryptocurrency"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTokenCategory"/>
+        <NamedIndividual IRI="#ETH"/>
+        <NamedIndividual IRI="#Cryptocurrency"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTokenCategory"/>
+        <NamedIndividual IRI="#USDT"/>
+        <NamedIndividual IRI="#Cryptocurrency"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#tokenName"/>
+        <NamedIndividual IRI="#ADA"/>
+        <Literal>Cardano</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#tokenSymbol"/>
+        <NamedIndividual IRI="#ADA"/>
+        <Literal>ADA</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#chartName"/>
+        <NamedIndividual IRI="#ANTAgreement"/>
+        <Literal>Aragon Network DAO Charter</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#tokenName"/>
+        <NamedIndividual IRI="#BTC"/>
+        <Literal>bitcoin</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#tokenSymbol"/>
+        <NamedIndividual IRI="#BTC"/>
+        <Literal>BTC</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#tokenName"/>
+        <NamedIndividual IRI="#ETH"/>
+        <Literal>ether</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#tokenSymbol"/>
+        <NamedIndividual IRI="#ETH"/>
+        <Literal>ETH</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#tokenName"/>
+        <NamedIndividual IRI="#USDT"/>
+        <Literal>Tether</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#tokenSymbol"/>
+        <NamedIndividual IRI="#USDT"/>
+        <Literal>USDT</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#tokenName"/>
+        <NamedIndividual IRI="#Uniswap"/>
+        <Literal>Uniswap</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#tokenSymbol"/>
+        <NamedIndividual IRI="#Uniswap"/>
+        <Literal>UNI</Literal>
+    </DataPropertyAssertion>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#daoMember"/>
         <ObjectProperty IRI="http://www.fdi.ucm.es/disia/ont/FOAF#member"/>
@@ -491,12 +666,20 @@
         <ObjectProperty IRI="#tokenOfHolds"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
+        <ObjectProperty IRI="#implementedByContract"/>
+        <ObjectProperty IRI="#implementsToken"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
         <ObjectProperty IRI="#includesProposalDocument"/>
         <ObjectProperty IRI="#isPartOfProposal"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="#isProposalOf"/>
         <ObjectProperty IRI="#receivesProposal"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#isSupportedBy"/>
+        <ObjectProperty IRI="#supportsToken"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="#managedByCryptoWallet"/>
@@ -527,6 +710,9 @@
         <ObjectProperty IRI="#hasSmartContract"/>
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasTokenCategory"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
         <ObjectProperty IRI="#hasTokenOwner"/>
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
@@ -540,6 +726,9 @@
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
         <ObjectProperty IRI="#implementedByContract"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#implementsToken"/>
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
         <ObjectProperty IRI="#includesProposalDocument"/>
@@ -561,9 +750,6 @@
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
         <ObjectProperty IRI="#isProposalOf"/>
-    </FunctionalObjectProperty>
-    <FunctionalObjectProperty>
-        <ObjectProperty IRI="#managedByCryptoWallet"/>
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
         <ObjectProperty IRI="#ownsToken"/>
@@ -593,6 +779,12 @@
         <ObjectProperty IRI="#hasWebUserInterface"/>
     </InverseFunctionalObjectProperty>
     <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#implementedByContract"/>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#implementsToken"/>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
         <ObjectProperty IRI="#includesProposalDocument"/>
     </InverseFunctionalObjectProperty>
     <InverseFunctionalObjectProperty>
@@ -603,9 +795,6 @@
     </InverseFunctionalObjectProperty>
     <InverseFunctionalObjectProperty>
         <ObjectProperty IRI="#isPartOfProposal"/>
-    </InverseFunctionalObjectProperty>
-    <InverseFunctionalObjectProperty>
-        <ObjectProperty IRI="#managesToken"/>
     </InverseFunctionalObjectProperty>
     <InverseFunctionalObjectProperty>
         <ObjectProperty IRI="#ownsToken"/>
@@ -665,6 +854,10 @@
         <Class IRI="#ContractAccount"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasTokenCategory"/>
+        <Class IRI="#Token"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasTokenOwner"/>
         <Class IRI="#Token"/>
     </ObjectPropertyDomain>
@@ -687,6 +880,10 @@
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#implementedByContract"/>
         <Class IRI="#Token"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#implementsToken"/>
+        <Class IRI="#TokenContract"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#includesProposalDocument"/>
@@ -719,6 +916,10 @@
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#isProposalOf"/>
         <Class IRI="#Proposal"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isSupportedBy"/>
+        <Class IRI="#Token"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#managedByCryptoWallet"/>
@@ -813,6 +1014,10 @@
         <Class IRI="#SmartContract"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasTokenCategory"/>
+        <Class IRI="#TokenCategory"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#hasTokenOwner"/>
         <Class IRI="#DAO"/>
     </ObjectPropertyRange>
@@ -835,6 +1040,10 @@
     <ObjectPropertyRange>
         <ObjectProperty IRI="#implementedByContract"/>
         <Class IRI="#TokenContract"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#implementsToken"/>
+        <Class IRI="#Token"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#includesProposalDocument"/>
@@ -866,6 +1075,10 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#isProposalOf"/>
+        <Class IRI="#DAO"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isSupportedBy"/>
         <Class IRI="#DAO"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
@@ -953,6 +1166,9 @@
         <DataProperty IRI="#holderBalance"/>
     </FunctionalDataProperty>
     <FunctionalDataProperty>
+        <DataProperty IRI="#identifier"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
         <DataProperty IRI="#minimumApproval"/>
     </FunctionalDataProperty>
     <FunctionalDataProperty>
@@ -996,6 +1212,10 @@
     <DataPropertyDomain>
         <DataProperty IRI="#holderBalance"/>
         <Class IRI="#Holds"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#identifier"/>
+        <Class IRI="#NonFungibleToken"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#minimumApproval"/>
@@ -1058,6 +1278,10 @@
         <Datatype abbreviatedIRI="xsd:double"/>
     </DataPropertyRange>
     <DataPropertyRange>
+        <DataProperty IRI="#identifier"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
         <DataProperty IRI="#minimumApproval"/>
         <Datatype abbreviatedIRI="xsd:integer"/>
     </DataPropertyRange>
@@ -1105,6 +1329,11 @@
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#BTC</IRI>
+        <Literal xml:lang="en">Bitcoin&apos;s currency unit (native token).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Committee</IRI>
         <Literal xml:lang="en">A committee is a group composed of members of a DAO with specific permission levels oriented to the goverment of the DAO (responsibilities: general reponsibilities, legal responsibilities and decision-making process operations).</Literal>
     </AnnotationAssertion>
@@ -1134,10 +1363,25 @@ For instance, when a transaction destination is a Ethereum contract account, it 
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#DAO</IRI>
-        <Literal xml:lang="en">Decentralized autonomous organization.
+        <IRI>#CryptoKitty</IRI>
+        <Literal xml:lang="en">Cryptokitty is a NFT that represents a breedable, collectible, and oh-so-adorable creature which is part of CryptoKitties, a game centered around these tokens. Each cat  (NFT) is one-of-a-kind and 100% owned by the user; it cannot be replicated, taken away, or destroyed.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#CryptoKitty</IRI>
+        <IRI>https://www.cryptokitties.co/</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Cryptocurrency</IRI>
+        <Literal xml:lang="en">Cryptocurrency represents native tokens, such bitcoin (BTC) on the Bitcoin blockchain or Ether  (ETH) on the Ethereum blockchain.
 
-Decentralized = Online, global, uncensorable.
+The word “cryptocurrency” refers to a group of digital assets where transactions are secured and verified using cryptography – a scientific practice of encoding and decoding data. Those transactions are often stored on computers distributed all over the world via a distributed ledger technology called blockchain (Ref. https://www.coindesk.com/learn/what-is-bitcoin/).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#DAO</IRI>
+        <Literal xml:lang="en">Decentralized = Online, global, uncensorable.
 Autonomous = Self-governing.
 Organization = Coordination &amp; collaboration around shared objectives.
 
@@ -1145,16 +1389,10 @@ The term was coined by Ethereum founder Vitalik Buterin in his 2014 article (htt
 
 A DAO is a dapp that represents an online community that jointly controls a cryptocurrency wallet to pursue common goals, such as running a business or charity.
 
-Examples of a DAO: 
-
+DAO examples: 
 https://andao.aragon.org/
 https://molochdao.com/ =&gt; https://app.daohaus.club/dao/0x1/0x519f9662798c2e07fbd5b30c1445602320c5cf5b
 https://www.aavegotchi.com/</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
-        <IRI>#DAO</IRI>
-        <IRI>https://blog.aragon.org/how-to-dao-answers-for-beginners/</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -1185,6 +1423,11 @@ A Dapp is, at the very least, a smart contract and a web user interface. More br
 Externally Owned Accounts are those that have a private key; having the private key means control over acccess to funds or contracts.
 
 EOAs can initiate transactions.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ETH</IRI>
+        <Literal xml:lang="en">Ethereum&apos;s currency unit (native token).</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -1225,6 +1468,13 @@ An Ethereum Wallet is the gateway to the Ethereum system.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#FungibleToken</IRI>
+        <Literal xml:lang="en">Fungible tokens are items that represent interchangeable assets (i.e., divisible and not unique) that can be used as money or in exchange for specific services on the internet. 
+
+Instead of running on banking infrastructure like USD or EUR, tokens are used through Blockchain technology.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Holds</IRI>
         <Literal xml:lang="en">This class represents the association-class between dao:Token and dao:EOA.</Literal>
     </AnnotationAssertion>
@@ -1245,22 +1495,6 @@ An Ethereum Wallet is the gateway to the Ethereum system.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#MetaMask</IRI>
-        <Literal xml:lang="en">MetaMask provides the simplest yet most secure way to connect to blockchain-based applications. 
-
-Users are always in control when interacting on the new decentralized web.
-
-Available as a browser extension and as a mobile app, MetaMask equips users with a key vault, secure login, token wallet, and token exchange.
-
-MetaMask provides everything users need to manage their digital assets.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
-        <IRI>#MetaMask</IRI>
-        <IRI>https://metamask.io/</IRI>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#No</IRI>
         <Literal xml:lang="en">No, we shouldn&apos;t not approve this proposal.</Literal>
     </AnnotationAssertion>
@@ -1268,6 +1502,15 @@ MetaMask provides everything users need to manage their digital assets.</Literal
         <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
         <IRI>#No</IRI>
         <IRI>https://voice.aragon.org/processes/#/0x07b68415f2c74de6b52ee116d307ee3a8afa2ca74e2600b48258b1b712241e21</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#NonFungibleToken</IRI>
+        <Literal xml:lang="en">Non-fungible tokens (NFTs) are cryptographically unique tokens that are linked to digital (and sometimes physical) content, providing proof of ownership.
+
+NFTs are minted through smart contracts that assign ownership and reassign it when NFTs are transferred or resold. At a basic level, smart contracts can be seen as a tool aimed at implementing a sale agreement.
+ 
+Each NFT is associated with a unique identifier, such a serial number.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -1309,6 +1552,11 @@ Habrá distintos tipos de proposals dependiendo de si la DAO permite crear propu
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#SecurityToken</IRI>
+        <Literal xml:lang="en">Token that is subjected to regulations and securities. That is, this type of tokens will always have federal regullation making it a safer choice.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#SmartContract</IRI>
         <Literal xml:lang="en">A software agent representing a piece of software deployed on a blockchain and executed in a decentralized and automated way.
 
@@ -1331,8 +1579,18 @@ Smart contracts are written in high-level languages, such as Solidity.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#TokenCategory</IRI>
+        <Literal xml:lang="en">The dao:TokenCategory  is used to specify the type of a dao:Token (e.g., Cryptocurrency, Cryptokitty NFT...)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#TokenContract</IRI>
         <Literal xml:lang="en">A token contract keeps track of fungible tokens: any one token is exactly equal to any other token; no tokens have special rights or behavior associated with them. This makes ERC20 tokens useful for things like a medium of exchange currency, voting rights, staking, and more.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Uniswap</IRI>
+        <Literal xml:lang="en">UNI is the native governance token owned by Uniswap, the largest decentralized crypto exchange (DEX) running on the Ethereum blockchain.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
