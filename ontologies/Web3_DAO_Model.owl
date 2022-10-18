@@ -113,6 +113,12 @@
         <Class IRI="#VotingContract"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Web3HWWallet"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Web3SWWallet"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Web3Wallet"/>
     </Declaration>
     <Declaration>
@@ -137,10 +143,10 @@
         <ObjectProperty IRI="#hasCharter"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasDecision"/>
+        <ObjectProperty IRI="#hasCryptoWallet"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasEOA"/>
+        <ObjectProperty IRI="#hasDecision"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasSmartContract"/>
@@ -191,6 +197,9 @@
         <ObjectProperty IRI="#isPartOfProposal"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#isPartOfWallet"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#isProposalOf"/>
     </Declaration>
     <Declaration>
@@ -201,6 +210,9 @@
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#managesToken"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#managesWalletAccount"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#operates"/>
@@ -218,10 +230,19 @@
         <ObjectProperty IRI="#sharesCryptoWallet"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#supportedBySWWallet"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#supportsHWWallet"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#supportsToken"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#tokenOfHolds"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#tranfersFund"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#transacts"/>
@@ -261,6 +282,12 @@
     </Declaration>
     <Declaration>
         <DataProperty IRI="#minimumApproval"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#password"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#privateKey"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#proposalSummary"/>
@@ -315,6 +342,9 @@
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#OrganizationToken"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Trezor"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#USDT"/>
@@ -383,7 +413,7 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#EthereumWallet"/>
-        <Class IRI="#Web3Wallet"/>
+        <Class IRI="#Web3SWWallet"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Executive"/>
@@ -454,6 +484,14 @@
         <Class IRI="#SmartContract"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Web3HWWallet"/>
+        <Class IRI="#Web3Wallet"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Web3SWWallet"/>
+        <Class IRI="#Web3Wallet"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Web3Wallet"/>
         <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Agent"/>
     </SubClassOf>
@@ -468,6 +506,10 @@
         <Class IRI="#SmartContract"/>
         <Class IRI="#Web3Wallet"/>
         <Class IRI="#WebUserInterface"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Group"/>
+        <Class IRI="#OpenSourceSoftware"/>
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Person"/>
@@ -527,7 +569,11 @@
         <NamedIndividual IRI="#ETH"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#Web3Wallet"/>
+        <Class IRI="#EthereumWallet"/>
+        <NamedIndividual IRI="#MetaMask"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Web3SWWallet"/>
         <NamedIndividual IRI="#MetaMask"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -537,6 +583,10 @@
     <ClassAssertion>
         <Class IRI="#TokenCategory"/>
         <NamedIndividual IRI="#OrganizationToken"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Web3HWWallet"/>
+        <NamedIndividual IRI="#Trezor"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#FungibleToken"/>
@@ -564,6 +614,16 @@
         <ObjectProperty IRI="#hasTokenCategory"/>
         <NamedIndividual IRI="#ETH"/>
         <NamedIndividual IRI="#Cryptocurrency"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#supportsHWWallet"/>
+        <NamedIndividual IRI="#MetaMask"/>
+        <NamedIndividual IRI="#Trezor"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#supportedBySWWallet"/>
+        <NamedIndividual IRI="#Trezor"/>
+        <NamedIndividual IRI="#MetaMask"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#hasTokenCategory"/>
@@ -629,10 +689,6 @@
         <ObjectProperty IRI="#daoMember"/>
         <ObjectProperty IRI="http://www.fdi.ucm.es/disia/ont/FOAF#member"/>
     </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#sharesCryptoWallet"/>
-        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
-    </SubObjectPropertyOf>
     <InverseObjectProperties>
         <ObjectProperty IRI="#builtOn"/>
         <ObjectProperty IRI="#isMainContract"/>
@@ -674,6 +730,10 @@
         <ObjectProperty IRI="#isPartOfProposal"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
+        <ObjectProperty IRI="#isPartOfWallet"/>
+        <ObjectProperty IRI="#managesWalletAccount"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
         <ObjectProperty IRI="#isProposalOf"/>
         <ObjectProperty IRI="#receivesProposal"/>
     </InverseObjectProperties>
@@ -696,6 +756,10 @@
     <InverseObjectProperties>
         <ObjectProperty IRI="#sharesCryptoWallet"/>
         <ObjectProperty IRI="#usedByDAO"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#supportedBySWWallet"/>
+        <ObjectProperty IRI="#supportsHWWallet"/>
     </InverseObjectProperties>
     <FunctionalObjectProperty>
         <ObjectProperty IRI="#builtOn"/>
@@ -749,6 +813,9 @@
         <ObjectProperty IRI="#isPartOfProposal"/>
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
+        <ObjectProperty IRI="#isPartOfWallet"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
         <ObjectProperty IRI="#isProposalOf"/>
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
@@ -797,6 +864,9 @@
         <ObjectProperty IRI="#isPartOfProposal"/>
     </InverseFunctionalObjectProperty>
     <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#managesWalletAccount"/>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
         <ObjectProperty IRI="#ownsToken"/>
     </InverseFunctionalObjectProperty>
     <InverseFunctionalObjectProperty>
@@ -815,6 +885,9 @@
         <ObjectProperty IRI="#interacts"/>
     </IrreflexiveObjectProperty>
     <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#tranfersFund"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
         <ObjectProperty IRI="#usesAuxiliaryContract"/>
     </IrreflexiveObjectProperty>
     <ObjectPropertyDomain>
@@ -827,7 +900,7 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#daoMember"/>
-        <Class IRI="#DAO"/>
+        <Class IRI="#Committee"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#eoaOfHolds"/>
@@ -842,12 +915,12 @@
         <Class IRI="#DAO"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasDecision"/>
-        <Class IRI="#Votes"/>
+        <ObjectProperty IRI="#hasCryptoWallet"/>
+        <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Person"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasEOA"/>
-        <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Person"/>
+        <ObjectProperty IRI="#hasDecision"/>
+        <Class IRI="#Votes"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasSmartContract"/>
@@ -914,6 +987,10 @@
         <Class IRI="#ProposalDocument"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isPartOfWallet"/>
+        <Class IRI="#EOA"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#isProposalOf"/>
         <Class IRI="#Proposal"/>
     </ObjectPropertyDomain>
@@ -927,6 +1004,10 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#managesToken"/>
+        <Class IRI="#Web3Wallet"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#managesWalletAccount"/>
         <Class IRI="#Web3Wallet"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
@@ -950,12 +1031,24 @@
         <Class IRI="#DAO"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#supportedBySWWallet"/>
+        <Class IRI="#Web3HWWallet"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#supportsHWWallet"/>
+        <Class IRI="#Web3SWWallet"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#supportsToken"/>
         <Class IRI="#DAO"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#tokenOfHolds"/>
         <Class IRI="#Token"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#tranfersFund"/>
+        <Class IRI="#EOA"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#transacts"/>
@@ -1002,12 +1095,12 @@
         <Class IRI="#DAOAgreement"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasDecision"/>
-        <Class IRI="#Decision"/>
+        <ObjectProperty IRI="#hasCryptoWallet"/>
+        <Class IRI="#Web3Wallet"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasEOA"/>
-        <Class IRI="#EOA"/>
+        <ObjectProperty IRI="#hasDecision"/>
+        <Class IRI="#Decision"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasSmartContract"/>
@@ -1074,6 +1167,10 @@
         <Class IRI="#Proposal"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#isPartOfWallet"/>
+        <Class IRI="#Web3Wallet"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#isProposalOf"/>
         <Class IRI="#DAO"/>
     </ObjectPropertyRange>
@@ -1088,6 +1185,10 @@
     <ObjectPropertyRange>
         <ObjectProperty IRI="#managesToken"/>
         <Class IRI="#Token"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#managesWalletAccount"/>
+        <Class IRI="#EOA"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#operates"/>
@@ -1110,12 +1211,24 @@
         <Class IRI="#Web3Wallet"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#supportedBySWWallet"/>
+        <Class IRI="#Web3SWWallet"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#supportsHWWallet"/>
+        <Class IRI="#Web3HWWallet"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#supportsToken"/>
         <Class IRI="#Token"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#tokenOfHolds"/>
         <Class IRI="#Holds"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#tranfersFund"/>
+        <Class IRI="#EOA"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#transacts"/>
@@ -1222,6 +1335,18 @@
         <Class IRI="#Proposal"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
+        <DataProperty IRI="#password"/>
+        <Class IRI="#Web3Wallet"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#privateKey"/>
+        <Class IRI="#EOA"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#privateKey"/>
+        <Class IRI="#Web3Wallet"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
         <DataProperty IRI="#proposalSummary"/>
         <Class IRI="#Proposal"/>
     </DataPropertyDomain>
@@ -1284,6 +1409,14 @@
     <DataPropertyRange>
         <DataProperty IRI="#minimumApproval"/>
         <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#password"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#privateKey"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="#proposalSummary"/>
@@ -1495,6 +1628,18 @@ Instead of running on banking infrastructure like USD or EUR, tokens are used th
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#MetaMask</IRI>
+        <Literal xml:lang="en">MetaMask is a software wallet available as a browser extension and as a mobile app. MetaMask equips users with a key vault, secure login, token wallet, and token exchange—everything users need to manage their digital assets.
+
+MetaMaks currently supports the next hardware wallets: Trezor, Ledger. Lattice, Keystone and AirGap Vault on Extension, and Mobile supports Keystone.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#MetaMask</IRI>
+        <IRI>https://metamask.io/</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#No</IRI>
         <Literal xml:lang="en">No, we shouldn&apos;t not approve this proposal.</Literal>
     </AnnotationAssertion>
@@ -1609,15 +1754,27 @@ Smart contracts are written in high-level languages, such as Solidity.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Web3HWWallet</IRI>
+        <Literal xml:lang="en">Web3 HW wallets are physical devices resembling an external drive that are separate from online exchange platforms. 
+
+HW wallets require users to plug into a computer or online device to access their digital currency. Once accessed, digital currency can be stored onto the hardware wallet device and it will no longer be stored on online servers. The private keys remain on the device which only owners have access to.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#Web3HWWallet</IRI>
+        <IRI>https://medium.com/coinbundle/hardware-vs-software-wallets-f03fb4727354</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Web3SWWallet</IRI>
+        <Literal xml:lang="en">Web3 Software wallets are applications designed for mobile devices and desktops which can be installed on different devices. Software wallets can be used for accessing user&apos;s Crypto tokens, making transactions, and even displaying the balance.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Web3Wallet</IRI>
         <Literal xml:lang="en">Cryptocurrency wallet that helps users to manage blockchain accounts and store digital assets such as cryptocurrency and Non-Fungible Tokens (NFTs). 
 
-A web3 wallet is the gateway to a blockchain system.
-
-***QUITAR***
-Propiedades:
-- Puede transferir fondos de una wallet a otra wallet.
-- Gestiona cuentas web3wallet</Literal>
+A web3 wallet is the gateway to a blockchain system.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
