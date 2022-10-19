@@ -134,6 +134,12 @@
         <ObjectProperty IRI="#composedOfCommittee"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#createdBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#createsProposal"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#daoMember"/>
     </Declaration>
     <Declaration>
@@ -188,6 +194,9 @@
         <ObjectProperty IRI="#interacts"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#isAssociatedWithAccount"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#isChartOf"/>
     </Declaration>
     <Declaration>
@@ -207,6 +216,9 @@
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#isProposalOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isResponsibleMember"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#isSupportedBy"/>
@@ -266,7 +278,19 @@
         <ObjectProperty IRI="#votesOfProposal"/>
     </Declaration>
     <Declaration>
+        <DataProperty IRI="#abstainVotes"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#cancelled"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#cancelledAt"/>
+    </Declaration>
+    <Declaration>
         <DataProperty IRI="#chartName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#createdAt"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#dappDescription"/>
@@ -276,6 +300,12 @@
     </Declaration>
     <Declaration>
         <DataProperty IRI="#dappURL"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#delegateKey"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#didPass"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#endDate"/>
@@ -290,10 +320,19 @@
         <DataProperty IRI="#minimumApproval"/>
     </Declaration>
     <Declaration>
+        <DataProperty IRI="#noVotes"/>
+    </Declaration>
+    <Declaration>
         <DataProperty IRI="#password"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#privateKey"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#processed"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#processedAt"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#proposalSummary"/>
@@ -317,7 +356,7 @@
         <DataProperty IRI="#tokenUSDValue"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#totalVotes"/>
+        <DataProperty IRI="#yesVotes"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#ADA"/>
@@ -764,6 +803,10 @@
         <ObjectProperty IRI="#isPartOfDAO"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
+        <ObjectProperty IRI="#createdBy"/>
+        <ObjectProperty IRI="#createsProposal"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
         <ObjectProperty IRI="#eoaOfHolds"/>
         <ObjectProperty IRI="#holdsOfEOA"/>
     </InverseObjectProperties>
@@ -774,6 +817,10 @@
     <InverseObjectProperties>
         <ObjectProperty IRI="#hasCharter"/>
         <ObjectProperty IRI="#isChartOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasSmartContract"/>
+        <ObjectProperty IRI="#isAssociatedWithAccount"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="#hasTokenOwner"/>
@@ -831,6 +878,9 @@
         <ObjectProperty IRI="#builtOn"/>
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
+        <ObjectProperty IRI="#createdBy"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
         <ObjectProperty IRI="#hasCharter"/>
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
@@ -867,6 +917,9 @@
         <ObjectProperty IRI="#includesProposalDocument"/>
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
+        <ObjectProperty IRI="#isAssociatedWithAccount"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
         <ObjectProperty IRI="#isChartOf"/>
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
@@ -888,6 +941,9 @@
         <ObjectProperty IRI="#isProposalOf"/>
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
+        <ObjectProperty IRI="#isResponsibleMember"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
         <ObjectProperty IRI="#ownsToken"/>
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
@@ -906,7 +962,19 @@
         <ObjectProperty IRI="#composedOfCommittee"/>
     </InverseFunctionalObjectProperty>
     <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#createsProposal"/>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#eoaOfHolds"/>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#eoaOfVotes"/>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
         <ObjectProperty IRI="#hasCharter"/>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#hasSmartContract"/>
     </InverseFunctionalObjectProperty>
     <InverseFunctionalObjectProperty>
         <ObjectProperty IRI="#hasTokenOwner"/>
@@ -924,6 +992,9 @@
         <ObjectProperty IRI="#includesProposalDocument"/>
     </InverseFunctionalObjectProperty>
     <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#isAssociatedWithAccount"/>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
         <ObjectProperty IRI="#isChartOf"/>
     </InverseFunctionalObjectProperty>
     <InverseFunctionalObjectProperty>
@@ -939,7 +1010,13 @@
         <ObjectProperty IRI="#ownsToken"/>
     </InverseFunctionalObjectProperty>
     <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#proposalOfVotes"/>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
         <ObjectProperty IRI="#receivesProposal"/>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#tokenOfHolds"/>
     </InverseFunctionalObjectProperty>
     <InverseFunctionalObjectProperty>
         <ObjectProperty IRI="#usedByDAO"/>
@@ -966,6 +1043,14 @@
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#composedOfCommittee"/>
         <Class IRI="#DAO"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#createdBy"/>
+        <Class IRI="#Proposal"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#createsProposal"/>
+        <Class IRI="#EOA"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#daoMember"/>
@@ -1040,6 +1125,10 @@
         <Class IRI="#DAO"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isAssociatedWithAccount"/>
+        <Class IRI="#SmartContract"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#isChartOf"/>
         <Class IRI="#DAOAgreement"/>
     </ObjectPropertyDomain>
@@ -1065,6 +1154,10 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#isProposalOf"/>
+        <Class IRI="#Proposal"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isResponsibleMember"/>
         <Class IRI="#Proposal"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
@@ -1141,6 +1234,10 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#votesOfProposal"/>
+        <Class IRI="#Proposal"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#votesOfProposal"/>
         <Class IRI="#Votes"/>
     </ObjectPropertyDomain>
     <ObjectPropertyRange>
@@ -1150,6 +1247,14 @@
     <ObjectPropertyRange>
         <ObjectProperty IRI="#composedOfCommittee"/>
         <Class IRI="#Committee"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#createdBy"/>
+        <Class IRI="#EOA"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#createsProposal"/>
+        <Class IRI="#Proposal"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#daoMember"/>
@@ -1224,6 +1329,10 @@
         <Class IRI="#DAO"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#isAssociatedWithAccount"/>
+        <Class IRI="#ContractAccount"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#isChartOf"/>
         <Class IRI="#DAO"/>
     </ObjectPropertyRange>
@@ -1250,6 +1359,10 @@
     <ObjectPropertyRange>
         <ObjectProperty IRI="#isProposalOf"/>
         <Class IRI="#DAO"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isResponsibleMember"/>
+        <Class IRI="#EOA"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#isSupportedBy"/>
@@ -1344,13 +1457,37 @@
         <DataProperty IRI="http://www.fdi.ucm.es/disia/ont/FOAF#name"/>
     </SubDataPropertyOf>
     <FunctionalDataProperty>
+        <DataProperty IRI="#abstainVotes"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#cancelled"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#cancelledAt"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
         <DataProperty IRI="#chartName"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#createdAt"/>
     </FunctionalDataProperty>
     <FunctionalDataProperty>
         <DataProperty IRI="#dappDescription"/>
     </FunctionalDataProperty>
     <FunctionalDataProperty>
         <DataProperty IRI="#dappName"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#dappURL"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#delegateKey"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#didPass"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#endDate"/>
     </FunctionalDataProperty>
     <FunctionalDataProperty>
         <DataProperty IRI="#holderBalance"/>
@@ -1362,10 +1499,28 @@
         <DataProperty IRI="#minimumApproval"/>
     </FunctionalDataProperty>
     <FunctionalDataProperty>
+        <DataProperty IRI="#noVotes"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#password"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#privateKey"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#processed"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#processedAt"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
         <DataProperty IRI="#proposalSummary"/>
     </FunctionalDataProperty>
     <FunctionalDataProperty>
         <DataProperty IRI="#proposalSupport"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#startDate"/>
     </FunctionalDataProperty>
     <FunctionalDataProperty>
         <DataProperty IRI="#tokenBalance"/>
@@ -1374,14 +1529,37 @@
         <DataProperty IRI="#tokenName"/>
     </FunctionalDataProperty>
     <FunctionalDataProperty>
+        <DataProperty IRI="#tokenSymbol"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
         <DataProperty IRI="#tokenUSDValue"/>
     </FunctionalDataProperty>
     <FunctionalDataProperty>
-        <DataProperty IRI="#totalVotes"/>
+        <DataProperty IRI="#yesVotes"/>
     </FunctionalDataProperty>
+    <DataPropertyDomain>
+        <DataProperty IRI="#abstainVotes"/>
+        <Class IRI="#Proposal"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#cancelled"/>
+        <Class IRI="#Proposal"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#cancelledAt"/>
+        <Class IRI="#Proposal"/>
+    </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#chartName"/>
         <Class IRI="#DAOAgreement"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#createdAt"/>
+        <Class IRI="#Proposal"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#createdAt"/>
+        <Class IRI="#Votes"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#dappDescription"/>
@@ -1394,6 +1572,14 @@
     <DataPropertyDomain>
         <DataProperty IRI="#dappURL"/>
         <Class IRI="#Dapp"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#delegateKey"/>
+        <Class IRI="#Votes"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#didPass"/>
+        <Class IRI="#Proposal"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#endDate"/>
@@ -1412,6 +1598,10 @@
         <Class IRI="#Proposal"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
+        <DataProperty IRI="#noVotes"/>
+        <Class IRI="#Proposal"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
         <DataProperty IRI="#password"/>
         <Class IRI="#Web3Wallet"/>
     </DataPropertyDomain>
@@ -1422,6 +1612,14 @@
     <DataPropertyDomain>
         <DataProperty IRI="#privateKey"/>
         <Class IRI="#Web3Wallet"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#processed"/>
+        <Class IRI="#Proposal"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#processedAt"/>
+        <Class IRI="#Proposal"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#proposalSummary"/>
@@ -1452,12 +1650,28 @@
         <Class IRI="#Token"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty IRI="#totalVotes"/>
-        <Class IRI="#Votes"/>
+        <DataProperty IRI="#yesVotes"/>
+        <Class IRI="#Proposal"/>
     </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#abstainVotes"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#cancelled"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#cancelledAt"/>
+        <Datatype abbreviatedIRI="xsd:dateTime"/>
+    </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="#chartName"/>
         <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#createdAt"/>
+        <Datatype abbreviatedIRI="xsd:dateTime"/>
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="#dappDescription"/>
@@ -1470,6 +1684,14 @@
     <DataPropertyRange>
         <DataProperty IRI="#dappURL"/>
         <Datatype abbreviatedIRI="xsd:anyURI"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#delegateKey"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#didPass"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="#endDate"/>
@@ -1488,12 +1710,24 @@
         <Datatype abbreviatedIRI="xsd:integer"/>
     </DataPropertyRange>
     <DataPropertyRange>
+        <DataProperty IRI="#noVotes"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
         <DataProperty IRI="#password"/>
         <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="#privateKey"/>
         <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#processed"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#processedAt"/>
+        <Datatype abbreviatedIRI="xsd:dateTime"/>
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="#proposalSummary"/>
@@ -1524,8 +1758,8 @@
         <Datatype abbreviatedIRI="xsd:double"/>
     </DataPropertyRange>
     <DataPropertyRange>
-        <DataProperty IRI="#totalVotes"/>
-        <Datatype abbreviatedIRI="xsd:integer"/>
+        <DataProperty IRI="#yesVotes"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
     </DataPropertyRange>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -1639,9 +1873,9 @@ In summary, dapps have their backend code (smart contracts) running on a decentr
         <IRI>#EOA</IRI>
         <Literal xml:lang="en">Externally Owned Account (EOA).
 
-Externally Owned Accounts are those that have a private key; having the private key means control over acccess to funds or contracts.
+Externally Owned Accounts are user accounts that have a private key; having the private key means control over acccess to funds or smart contracts.
 
-EOAs can initiate transactions.</Literal>
+EOAs can initiate transactions and they can send and receive funds.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -1687,6 +1921,11 @@ An Ethereum Wallet is the gateway to the Ethereum system.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#FundAllocationContract</IRI>
+        <Literal xml:lang="en">Smart contract focused on financial issues related to a DAO.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#FungibleToken</IRI>
         <Literal xml:lang="en">Fungible tokens are items that represent interchangeable assets (i.e., divisible and not unique) that can be used as money or in exchange for specific services on the internet. 
 
@@ -1711,6 +1950,11 @@ Instead of running on banking infrastructure like USD or EUR, tokens are used th
         <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
         <IRI>#Main</IRI>
         <IRI>https://blog.aragon.org/an-dao-launch/</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#MembershipContract</IRI>
+        <Literal xml:lang="en">Smart contract where users will need to transact (e.g., pay a subscription fee in a native token such as ether) in order to be a member of a DAO and execute different actions.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -1789,7 +2033,7 @@ Habrá distintos tipos de proposals dependiendo de si la DAO permite crear propu
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#SmartContract</IRI>
-        <Literal xml:lang="en">A software agent representing a piece of software deployed on a blockchain and executed in a decentralized and automated way.
+        <Literal xml:lang="en">A software agent representing a piece of software deployed on a blockchain and executed in a decentralized, deterministic (i.e., the outcome of the execution of a smart contract is the same for everyone who runs it, given the context of the transaction that initiated its execution and the state of the blockchain at the moment of execution) and automated way.
 
 Once smart contracts are deployed on a decentralized network thet cannot be changed.
 
@@ -1851,6 +2095,11 @@ Smart contracts are written in high-level languages, such as Solidity.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#VotingContract</IRI>
+        <Literal xml:lang="en">Smart contract that allows users to vote on proposals.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Web3HWWallet</IRI>
         <Literal xml:lang="en">Web3 HW wallets are physical devices resembling an external drive that are separate from online exchange platforms. 
 
@@ -1877,6 +2126,11 @@ According to https://ethereum.org/en/dapps/, wallets are dapps too.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#WebUserInterface</IRI>
+        <Literal xml:lang="en">Frontend code written in any language which allows users to make calls to the DAO smart contract running on a blockchain through a Web browser.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Yes</IRI>
         <Literal xml:lang="en">Yes, we should approve this proposal.</Literal>
     </AnnotationAssertion>
@@ -1884,6 +2138,26 @@ According to https://ethereum.org/en/dapps/, wallets are dapps too.</Literal>
         <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
         <IRI>#Yes</IRI>
         <IRI>https://voice.aragon.org/processes/#/0x07b68415f2c74de6b52ee116d307ee3a8afa2ca74e2600b48258b1b712241e21</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#cancelled</IRI>
+        <Literal xml:lang="en">Boolean value of whether proposal was cancelled.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#cancelledAt</IRI>
+        <Literal xml:lang="en">Datetime when the proposal was cancelled.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#createdBy</IRI>
+        <Literal xml:lang="en">The user account (EOA) of the proposer that has created the proposal.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#createsProposal</IRI>
+        <Literal xml:lang="en">The user account (EOA) of the proposal proposer.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -1904,10 +2178,40 @@ URL (Uniform Resource Locator)</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#delegateKey</IRI>
+        <Literal xml:lang="en">Address that has received delegated shares from the member (if this value is equal to member address then the vote has not been delegated).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#didPass</IRI>
+        <Literal xml:lang="en">Boolean value of whether proposal was passed.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#identifier</IRI>
+        <Literal xml:lang="en">Each NFT must be associated with a unique identifier, such a serial number.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isResponsibleMember</IRI>
+        <Literal xml:lang="en">Address (i.e., user account) of the DAO member who is responsible of the proposal (when the proposer is not a member of the DAO).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#minimumApproval</IRI>
         <Literal xml:lang="en">Minimum Approval is the percentage of the total token supply that is required to vote “Yes” on a proposal before it can be approved. For example, if the “Minimum Approval” is set to 20%, then more than 20% of the outstanding token supply must vote “Yes” on a proposal for it to pass. 
 
 Default value: 15</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#processed</IRI>
+        <Literal xml:lang="en">Boolean value of whether proposal was processed.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#processedAt</IRI>
+        <Literal xml:lang="en">Datetime when the proposal was processed.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
