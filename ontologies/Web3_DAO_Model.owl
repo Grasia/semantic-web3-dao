@@ -38,6 +38,9 @@
         <Class IRI="#Dapp"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#DappCategory"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Decision"/>
     </Declaration>
     <Declaration>
@@ -144,6 +147,9 @@
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasCryptoWallet"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDappCategory"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasDecision"/>
@@ -323,6 +329,9 @@
         <NamedIndividual IRI="#Abstain"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#ArtsAndCollectibles"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#BTC"/>
     </Declaration>
     <Declaration>
@@ -335,6 +344,12 @@
         <NamedIndividual IRI="#ETH"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#Finance"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Gaming"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#MetaMask"/>
     </Declaration>
     <Declaration>
@@ -342,6 +357,9 @@
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#OrganizationToken"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Technology"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Trezor"/>
@@ -376,6 +394,29 @@
         </ObjectIntersectionOf>
     </EquivalentClasses>
     <EquivalentClasses>
+        <Class IRI="#Dapp"/>
+        <ObjectIntersectionOf>
+            <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Agent"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#builtOn"/>
+                <Class IRI="#SmartContract"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasWebUserInterface"/>
+                <Class IRI="#WebUserInterface"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#DappCategory"/>
+        <ObjectOneOf>
+            <NamedIndividual IRI="#ArtsAndCollectibles"/>
+            <NamedIndividual IRI="#Finance"/>
+            <NamedIndividual IRI="#Gaming"/>
+            <NamedIndividual IRI="#Technology"/>
+        </ObjectOneOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
         <Class IRI="#Decision"/>
         <ObjectOneOf>
             <NamedIndividual IRI="#Abstain"/>
@@ -398,10 +439,6 @@
     <SubClassOf>
         <Class IRI="#DAOAgreement"/>
         <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Document"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Dapp"/>
-        <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Agent"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#EOA"/>
@@ -493,7 +530,7 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Web3Wallet"/>
-        <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Agent"/>
+        <Class IRI="#Dapp"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#WebUserInterface"/>
@@ -501,10 +538,15 @@
     </SubClassOf>
     <DisjointClasses>
         <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Group"/>
+        <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Organization"/>
+        <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Person"/>
+        <Class IRI="#SmartContract"/>
+        <Class IRI="#WebUserInterface"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Group"/>
         <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Person"/>
         <Class IRI="#Dapp"/>
-        <Class IRI="#SmartContract"/>
-        <Class IRI="#Web3Wallet"/>
         <Class IRI="#WebUserInterface"/>
     </DisjointClasses>
     <DisjointClasses>
@@ -522,8 +564,16 @@
         <Class IRI="#Tech"/>
     </DisjointClasses>
     <DisjointClasses>
+        <Class IRI="#DAO"/>
+        <Class IRI="#Web3Wallet"/>
+    </DisjointClasses>
+    <DisjointClasses>
         <Class IRI="#DAOAgreement"/>
         <Class IRI="#ProposalDocument"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Dapp"/>
+        <Class IRI="#SmartContract"/>
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#Elections"/>
@@ -537,8 +587,8 @@
         <Class IRI="#VotingContract"/>
     </DisjointClasses>
     <DisjointClasses>
-        <Class IRI="#OpenSourceSoftware"/>
-        <Class IRI="#Web3Wallet"/>
+        <Class IRI="#Web3HWWallet"/>
+        <Class IRI="#Web3SWWallet"/>
     </DisjointClasses>
     <ClassAssertion>
         <Class IRI="#FungibleToken"/>
@@ -551,6 +601,10 @@
     <ClassAssertion>
         <Class IRI="#Decision"/>
         <NamedIndividual IRI="#Abstain"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DappCategory"/>
+        <NamedIndividual IRI="#ArtsAndCollectibles"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#FungibleToken"/>
@@ -569,6 +623,14 @@
         <NamedIndividual IRI="#ETH"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="#DappCategory"/>
+        <NamedIndividual IRI="#Finance"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DappCategory"/>
+        <NamedIndividual IRI="#Gaming"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#EthereumWallet"/>
         <NamedIndividual IRI="#MetaMask"/>
     </ClassAssertion>
@@ -583,6 +645,10 @@
     <ClassAssertion>
         <Class IRI="#TokenCategory"/>
         <NamedIndividual IRI="#OrganizationToken"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DappCategory"/>
+        <NamedIndividual IRI="#Technology"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Web3HWWallet"/>
@@ -768,6 +834,9 @@
         <ObjectProperty IRI="#hasCharter"/>
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasDappCategory"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
         <ObjectProperty IRI="#hasDecision"/>
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
@@ -917,6 +986,10 @@
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasCryptoWallet"/>
         <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Person"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasDappCategory"/>
+        <Class IRI="#Dapp"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasDecision"/>
@@ -1097,6 +1170,10 @@
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasCryptoWallet"/>
         <Class IRI="#Web3Wallet"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasDappCategory"/>
+        <Class IRI="#DappCategory"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasDecision"/>
@@ -1542,11 +1619,20 @@ It represents the Charter of a DAO.</Literal>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Dapp</IRI>
-        <Literal xml:lang="en">Decentralized application.
+        <Literal xml:lang="en">Decentralized application (dapp).
 
 A program implemented on the blockchain that executes the rules of a particular business application. Usually the term Dapp encompasses both the program’s backend as well as (various) web user interfaces (frontends).
 
-A Dapp is, at the very least, a smart contract and a web user interface. More broadly, a Dapp is a web application that is built on top of open, decentralized, peer-to-peer infrastructure services.</Literal>
+A dapp is, at the very least, a smart contract and a web user interface. More broadly, a Dapp is a web application that is built on top of open, decentralized, peer-to-peer infrastructure services.
+
+Once dapps are deployed on the decentralized network they cannot be changed. Dapps can be decentralized because they are controlled by the logic written into the contract, not an individual or a company.
+
+In summary, dapps have their backend code (smart contracts) running on a decentralized network and not a centralized server. They use blockchain technology for data storage and smart contracts for their app logic.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#Dapp</IRI>
+        <IRI>https://ethereum.org/en/developers/docs/dapps/</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
@@ -1705,7 +1791,18 @@ Habrá distintos tipos de proposals dependiendo de si la DAO permite crear propu
         <IRI>#SmartContract</IRI>
         <Literal xml:lang="en">A software agent representing a piece of software deployed on a blockchain and executed in a decentralized and automated way.
 
+Once smart contracts are deployed on a decentralized network thet cannot be changed.
+
+Smart contracts are not controlled by users, instead they are deployed to the network and run as programmed. User accounts (i.e., EOAs) can then interact with a smart contract by submitting transactions that execute a function defined on the smart contract. Smart contracts can define rights, norms and limitations like a regular contract in terms of rules, and automatically enforce them via the code. Smart contracts cannot be deleted by default, and interactions with them are irreversible.
+
+Smart contracts can perform computations, create currency, store data, mint NFTs, send communications and even generate graphics.
+
 Smart contracts are written in high-level languages, such as Solidity.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#SmartContract</IRI>
+        <IRI>https://ethereum.org/en/developers/docs/smart-contracts/</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -1774,7 +1871,9 @@ HW wallets require users to plug into a computer or online device to access thei
         <IRI>#Web3Wallet</IRI>
         <Literal xml:lang="en">Cryptocurrency wallet that helps users to manage blockchain accounts and store digital assets such as cryptocurrency and Non-Fungible Tokens (NFTs). 
 
-A web3 wallet is the gateway to a blockchain system.</Literal>
+A web3 wallet is the gateway to a blockchain system.
+
+According to https://ethereum.org/en/dapps/, wallets are dapps too.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
