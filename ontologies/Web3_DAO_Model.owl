@@ -20,6 +20,9 @@
         <Literal xml:lang="en">An ontology that describes the Decentralized Autonomous Organization (DAO) domain which is based on Blockchain tecnology.</Literal>
     </Annotation>
     <Declaration>
+        <Class IRI="#Blockchain"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#CollectorDAO"/>
     </Declaration>
     <Declaration>
@@ -29,7 +32,13 @@
         <Class IRI="#Compliance"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#ConsortiumNetwork"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#ContractAccount"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Cryptocurrency"/>
     </Declaration>
     <Declaration>
         <Class IRI="#DAO"/>
@@ -45,6 +54,9 @@
     </Declaration>
     <Declaration>
         <Class IRI="#Decision"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DevelopmentNetwork"/>
     </Declaration>
     <Declaration>
         <Class IRI="#EOA"/>
@@ -80,10 +92,16 @@
         <Class IRI="#Main"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Mainnet"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#MediaDAO"/>
     </Declaration>
     <Declaration>
         <Class IRI="#MembershipContract"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Network"/>
     </Declaration>
     <Declaration>
         <Class IRI="#NonFungibleToken"/>
@@ -98,6 +116,9 @@
         <Class IRI="#PhilanthropyDAO"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#PrivateNetwork"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Proposal"/>
     </Declaration>
     <Declaration>
@@ -105,6 +126,9 @@
     </Declaration>
     <Declaration>
         <Class IRI="#ProtocolDAO"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PublicNetwork"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Restriction"/>
@@ -125,10 +149,10 @@
         <Class IRI="#Tech"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Token"/>
+        <Class IRI="#Testnet"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#TokenCategory"/>
+        <Class IRI="#Token"/>
     </Declaration>
     <Declaration>
         <Class IRI="#TokenContract"/>
@@ -164,6 +188,9 @@
         <ObjectProperty IRI="#composedOfCommittee"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#containsNetwork"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#createdBy"/>
     </Declaration>
     <Declaration>
@@ -173,16 +200,25 @@
         <ObjectProperty IRI="#daoMember"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#deployedOn"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#eoaOfHolds"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#eoaOfVotes"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#hasBlockchainParent"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#hasCharter"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasCryptoWallet"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasCurrency"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasDappCategory"/>
@@ -221,7 +257,7 @@
         <ObjectProperty IRI="#holdsOfToken"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#implementedByContract"/>
+        <ObjectProperty IRI="#implementedBy"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#implementsToken"/>
@@ -236,10 +272,16 @@
         <ObjectProperty IRI="#isAssociatedWithAccount"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#isBlockchainParentOf"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#isChartOf"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#isMainContract"/>
+        <ObjectProperty IRI="#isMainContractOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isPartOfBlockchain"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#isPartOfDAO"/>
@@ -293,6 +335,9 @@
         <ObjectProperty IRI="#sharesCryptoWallet"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#storesSmartContract"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#supportedBySWWallet"/>
     </Declaration>
     <Declaration>
@@ -332,6 +377,9 @@
         <DataProperty IRI="#cancelledAt"/>
     </Declaration>
     <Declaration>
+        <DataProperty IRI="#chainID"/>
+    </Declaration>
+    <Declaration>
         <DataProperty IRI="#chartName"/>
     </Declaration>
     <Declaration>
@@ -350,9 +398,6 @@
         <DataProperty IRI="#delegateKey"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#description"/>
-    </Declaration>
-    <Declaration>
         <DataProperty IRI="#didPass"/>
     </Declaration>
     <Declaration>
@@ -363,6 +408,9 @@
     </Declaration>
     <Declaration>
         <DataProperty IRI="#identifier"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#isTransferable"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#minimumApproval"/>
@@ -395,9 +443,6 @@
         <DataProperty IRI="#tokenBalance"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#tokenCategoryName"/>
-    </Declaration>
-    <Declaration>
         <DataProperty IRI="#tokenName"/>
     </Declaration>
     <Declaration>
@@ -419,19 +464,40 @@
         <NamedIndividual IRI="#Abstain"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#Arbitrum"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ArbitrumRinkeby"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#ArtsAndCollectibles"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#BTC"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#Bit"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#BitDAO"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Cardano"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#CardanoNetwork"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#CryptoKitty"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#Cryptocurrency"/>
+        <NamedIndividual IRI="#ETH"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#ETH"/>
+        <NamedIndividual IRI="#Ethereum"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#EthereumMainnet"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Finance"/>
@@ -446,19 +512,34 @@
         <NamedIndividual IRI="#Gaming"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#Ganache"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#HardHat"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#MainnetETH"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#MetaMask"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#No"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#OrganizationToken"/>
+        <NamedIndividual IRI="#Optimism"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Polygon"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Portis"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#SecurityToken"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Solana"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Technology"/>
@@ -471,6 +552,9 @@
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Uniswap"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#UniswapDAO"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#UtilityToken"/>
@@ -530,6 +614,10 @@
         </ObjectOneOf>
     </EquivalentClasses>
     <SubClassOf>
+        <Class IRI="#Blockchain"/>
+        <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Agent"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#CollectorDAO"/>
         <Class IRI="#DAO"/>
     </SubClassOf>
@@ -542,12 +630,24 @@
         <Class IRI="#Committee"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#ConsortiumNetwork"/>
+        <Class IRI="#PrivateNetwork"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#ContractAccount"/>
         <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#OnlineAccount"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Cryptocurrency"/>
+        <Class IRI="#UtlityToken"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#DAOAgreement"/>
         <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Document"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DevelopmentNetwork"/>
+        <Class IRI="#PrivateNetwork"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#EOA"/>
@@ -594,12 +694,20 @@
         <Class IRI="#Committee"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Mainnet"/>
+        <Class IRI="#PublicNetwork"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#MediaDAO"/>
         <Class IRI="#DAO"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#MembershipContract"/>
         <Class IRI="#SmartContract"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Network"/>
+        <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Agent"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#NonFungibleToken"/>
@@ -618,6 +726,10 @@
         <Class IRI="#DAO"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#PrivateNetwork"/>
+        <Class IRI="#Network"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Proposal"/>
         <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Project"/>
     </SubClassOf>
@@ -628,6 +740,10 @@
     <SubClassOf>
         <Class IRI="#ProtocolDAO"/>
         <Class IRI="#DAO"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PublicNetwork"/>
+        <Class IRI="#Network"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#SecurityToken"/>
@@ -648,6 +764,10 @@
     <SubClassOf>
         <Class IRI="#Tech"/>
         <Class IRI="#Committee"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Testnet"/>
+        <Class IRI="#PublicNetwork"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#TokenContract"/>
@@ -690,23 +810,73 @@
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Group"/>
-        <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Person"/>
+        <Class IRI="#Blockchain"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Group"/>
         <Class IRI="#Dapp"/>
-        <Class IRI="#WebUserInterface"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Group"/>
+        <Class IRI="#Network"/>
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Group"/>
         <Class IRI="#OpenSourceSoftware"/>
     </DisjointClasses>
     <DisjointClasses>
+        <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Organization"/>
+        <Class IRI="#Blockchain"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Organization"/>
+        <Class IRI="#Network"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Person"/>
+        <Class IRI="#Blockchain"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Person"/>
+        <Class IRI="#Dapp"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Person"/>
+        <Class IRI="#Network"/>
+    </DisjointClasses>
+    <DisjointClasses>
         <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Person"/>
         <Class IRI="#OpenSourceSoftware"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Blockchain"/>
+        <Class IRI="#Dapp"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Blockchain"/>
+        <Class IRI="#Network"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Blockchain"/>
+        <Class IRI="#SmartContract"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Blockchain"/>
+        <Class IRI="#WebUserInterface"/>
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#Compliance"/>
         <Class IRI="#Executive"/>
         <Class IRI="#Main"/>
         <Class IRI="#Tech"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#ConsortiumNetwork"/>
+        <Class IRI="#DevelopmentNetwork"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#ContractAccount"/>
+        <Class IRI="#EOA"/>
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#DAO"/>
@@ -718,7 +888,15 @@
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#Dapp"/>
+        <Class IRI="#Network"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Dapp"/>
         <Class IRI="#SmartContract"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Dapp"/>
+        <Class IRI="#WebUserInterface"/>
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#Elections"/>
@@ -732,11 +910,31 @@
         <Class IRI="#VotingContract"/>
     </DisjointClasses>
     <DisjointClasses>
+        <Class IRI="#FungibleToken"/>
+        <Class IRI="#NonFungibleToken"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Holds"/>
+        <Class IRI="#Votes"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Network"/>
+        <Class IRI="#SmartContract"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Network"/>
+        <Class IRI="#WebUserInterface"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#SecurityToken"/>
+        <Class IRI="#UtlityToken"/>
+    </DisjointClasses>
+    <DisjointClasses>
         <Class IRI="#Web3HWWallet"/>
         <Class IRI="#Web3SWWallet"/>
     </DisjointClasses>
     <ClassAssertion>
-        <Class IRI="#FungibleToken"/>
+        <Class IRI="#Cryptocurrency"/>
         <NamedIndividual IRI="#ADA"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -748,24 +946,52 @@
         <NamedIndividual IRI="#Abstain"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="#Blockchain"/>
+        <NamedIndividual IRI="#Arbitrum"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Testnet"/>
+        <NamedIndividual IRI="#ArbitrumRinkeby"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#DappCategory"/>
         <NamedIndividual IRI="#ArtsAndCollectibles"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#FungibleToken"/>
+        <Class IRI="#Cryptocurrency"/>
         <NamedIndividual IRI="#BTC"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#TokenCategory"/>
+        <Class IRI="#SecurityToken"/>
+        <NamedIndividual IRI="#Bit"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DAO"/>
+        <NamedIndividual IRI="#BitDAO"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Blockchain"/>
+        <NamedIndividual IRI="#Cardano"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#ConsortiumNetwork"/>
+        <NamedIndividual IRI="#CardanoNetwork"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#NonFungibleToken"/>
         <NamedIndividual IRI="#CryptoKitty"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#TokenCategory"/>
-        <NamedIndividual IRI="#Cryptocurrency"/>
+        <Class IRI="#Cryptocurrency"/>
+        <NamedIndividual IRI="#ETH"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#FungibleToken"/>
-        <NamedIndividual IRI="#ETH"/>
+        <Class IRI="#Blockchain"/>
+        <NamedIndividual IRI="#Ethereum"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mainnet"/>
+        <NamedIndividual IRI="#EthereumMainnet"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#DappCategory"/>
@@ -784,6 +1010,18 @@
         <NamedIndividual IRI="#Gaming"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="#DevelopmentNetwork"/>
+        <NamedIndividual IRI="#Ganache"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DevelopmentNetwork"/>
+        <NamedIndividual IRI="#HardHat"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mainnet"/>
+        <NamedIndividual IRI="#MainnetETH"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#EthereumWallet"/>
         <NamedIndividual IRI="#MetaMask"/>
     </ClassAssertion>
@@ -796,12 +1034,20 @@
         <NamedIndividual IRI="#No"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#TokenCategory"/>
-        <NamedIndividual IRI="#OrganizationToken"/>
+        <Class IRI="#Blockchain"/>
+        <NamedIndividual IRI="#Optimism"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Blockchain"/>
+        <NamedIndividual IRI="#Polygon"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Web3SWWallet"/>
         <NamedIndividual IRI="#Portis"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Blockchain"/>
+        <NamedIndividual IRI="#Solana"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#DappCategory"/>
@@ -812,31 +1058,79 @@
         <NamedIndividual IRI="#Trezor"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#FungibleToken"/>
+        <Class IRI="#Cryptocurrency"/>
         <NamedIndividual IRI="#USDT"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#FungibleToken"/>
+        <Class IRI="#SecurityToken"/>
         <NamedIndividual IRI="#Uniswap"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DAO"/>
+        <NamedIndividual IRI="#UniswapDAO"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Decision"/>
         <NamedIndividual IRI="#Yes"/>
     </ClassAssertion>
+    <SameIndividual>
+        <NamedIndividual IRI="#EthereumMainnet"/>
+        <NamedIndividual IRI="#MainnetETH"/>
+    </SameIndividual>
     <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#hasTokenCategory"/>
-        <NamedIndividual IRI="#ADA"/>
-        <NamedIndividual IRI="#Cryptocurrency"/>
+        <ObjectProperty IRI="#hasBlockchainParent"/>
+        <NamedIndividual IRI="#Arbitrum"/>
+        <NamedIndividual IRI="#Ethereum"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#hasTokenCategory"/>
-        <NamedIndividual IRI="#BTC"/>
-        <NamedIndividual IRI="#Cryptocurrency"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#hasTokenCategory"/>
+        <ObjectProperty IRI="#hasCurrency"/>
+        <NamedIndividual IRI="#ArbitrumRinkeby"/>
         <NamedIndividual IRI="#ETH"/>
-        <NamedIndividual IRI="#Cryptocurrency"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isPartOfBlockchain"/>
+        <NamedIndividual IRI="#ArbitrumRinkeby"/>
+        <NamedIndividual IRI="#Arbitrum"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ownsToken"/>
+        <NamedIndividual IRI="#BitDAO"/>
+        <NamedIndividual IRI="#Bit"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#supportsToken"/>
+        <NamedIndividual IRI="#BitDAO"/>
+        <NamedIndividual IRI="#USDT"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasCurrency"/>
+        <NamedIndividual IRI="#CardanoNetwork"/>
+        <NamedIndividual IRI="#ADA"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isBlockchainParentOf"/>
+        <NamedIndividual IRI="#Ethereum"/>
+        <NamedIndividual IRI="#Optimism"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isBlockchainParentOf"/>
+        <NamedIndividual IRI="#Ethereum"/>
+        <NamedIndividual IRI="#Polygon"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isPartOfBlockchain"/>
+        <NamedIndividual IRI="#EthereumMainnet"/>
+        <NamedIndividual IRI="#Ethereum"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasCurrency"/>
+        <NamedIndividual IRI="#MainnetETH"/>
+        <NamedIndividual IRI="#ETH"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isPartOfBlockchain"/>
+        <NamedIndividual IRI="#MainnetETH"/>
+        <NamedIndividual IRI="#Ethereum"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#supportsHWWallet"/>
@@ -844,14 +1138,24 @@
         <NamedIndividual IRI="#Trezor"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBlockchainParent"/>
+        <NamedIndividual IRI="#Optimism"/>
+        <NamedIndividual IRI="#Ethereum"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBlockchainParent"/>
+        <NamedIndividual IRI="#Polygon"/>
+        <NamedIndividual IRI="#Ethereum"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#supportedBySWWallet"/>
         <NamedIndividual IRI="#Trezor"/>
         <NamedIndividual IRI="#MetaMask"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#hasTokenCategory"/>
-        <NamedIndividual IRI="#USDT"/>
-        <NamedIndividual IRI="#Cryptocurrency"/>
+        <ObjectProperty IRI="#ownsToken"/>
+        <NamedIndividual IRI="#UniswapDAO"/>
+        <NamedIndividual IRI="#Uniswap"/>
     </ObjectPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#tokenName"/>
@@ -869,6 +1173,11 @@
         <Literal>Aragon Network DAO Charter</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
+        <DataProperty IRI="#chainID"/>
+        <NamedIndividual IRI="#ArbitrumRinkeby"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">421611</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
         <DataProperty IRI="#tokenName"/>
         <NamedIndividual IRI="#BTC"/>
         <Literal>bitcoin</Literal>
@@ -880,6 +1189,16 @@
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#tokenName"/>
+        <NamedIndividual IRI="#Bit"/>
+        <Literal>Bit</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#tokenSymbol"/>
+        <NamedIndividual IRI="#Bit"/>
+        <Literal>BIT</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#tokenName"/>
         <NamedIndividual IRI="#ETH"/>
         <Literal>ether</Literal>
     </DataPropertyAssertion>
@@ -887,6 +1206,16 @@
         <DataProperty IRI="#tokenSymbol"/>
         <NamedIndividual IRI="#ETH"/>
         <Literal>ETH</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#chainID"/>
+        <NamedIndividual IRI="#EthereumMainnet"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#chainID"/>
+        <NamedIndividual IRI="#MainnetETH"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">1</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#tokenName"/>
@@ -914,15 +1243,23 @@
     </SubObjectPropertyOf>
     <InverseObjectProperties>
         <ObjectProperty IRI="#builtOn"/>
-        <ObjectProperty IRI="#isMainContract"/>
+        <ObjectProperty IRI="#isMainContractOf"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="#composedOfCommittee"/>
         <ObjectProperty IRI="#isPartOfDAO"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
+        <ObjectProperty IRI="#containsNetwork"/>
+        <ObjectProperty IRI="#isPartOfBlockchain"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
         <ObjectProperty IRI="#createdBy"/>
         <ObjectProperty IRI="#createsProposal"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#deployedOn"/>
+        <ObjectProperty IRI="#storesSmartContract"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="#eoaOfHolds"/>
@@ -931,6 +1268,10 @@
     <InverseObjectProperties>
         <ObjectProperty IRI="#eoaOfVotes"/>
         <ObjectProperty IRI="#votesOfEOA"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasBlockchainParent"/>
+        <ObjectProperty IRI="#isBlockchainParentOf"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="#hasCharter"/>
@@ -961,7 +1302,7 @@
         <ObjectProperty IRI="#tokenOfHolds"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
-        <ObjectProperty IRI="#implementedByContract"/>
+        <ObjectProperty IRI="#implementedBy"/>
         <ObjectProperty IRI="#implementsToken"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
@@ -1007,7 +1348,16 @@
         <ObjectProperty IRI="#createdBy"/>
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
+        <ObjectProperty IRI="#deployedOn"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasBlockchainParent"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
         <ObjectProperty IRI="#hasCharter"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasCurrency"/>
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
         <ObjectProperty IRI="#hasDappCategory"/>
@@ -1040,7 +1390,7 @@
         <ObjectProperty IRI="#holdsOfToken"/>
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
-        <ObjectProperty IRI="#implementedByContract"/>
+        <ObjectProperty IRI="#implementedBy"/>
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
         <ObjectProperty IRI="#implementsToken"/>
@@ -1055,7 +1405,10 @@
         <ObjectProperty IRI="#isChartOf"/>
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
-        <ObjectProperty IRI="#isMainContract"/>
+        <ObjectProperty IRI="#isMainContractOf"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#isPartOfBlockchain"/>
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
         <ObjectProperty IRI="#isPartOfDAO"/>
@@ -1094,6 +1447,9 @@
         <ObjectProperty IRI="#composedOfCommittee"/>
     </InverseFunctionalObjectProperty>
     <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#containsNetwork"/>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
         <ObjectProperty IRI="#createsProposal"/>
     </InverseFunctionalObjectProperty>
     <InverseFunctionalObjectProperty>
@@ -1115,7 +1471,7 @@
         <ObjectProperty IRI="#hasWebUserInterface"/>
     </InverseFunctionalObjectProperty>
     <InverseFunctionalObjectProperty>
-        <ObjectProperty IRI="#implementedByContract"/>
+        <ObjectProperty IRI="#implementedBy"/>
     </InverseFunctionalObjectProperty>
     <InverseFunctionalObjectProperty>
         <ObjectProperty IRI="#implementsToken"/>
@@ -1127,10 +1483,13 @@
         <ObjectProperty IRI="#isAssociatedWithAccount"/>
     </InverseFunctionalObjectProperty>
     <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#isBlockchainParentOf"/>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
         <ObjectProperty IRI="#isChartOf"/>
     </InverseFunctionalObjectProperty>
     <InverseFunctionalObjectProperty>
-        <ObjectProperty IRI="#isMainContract"/>
+        <ObjectProperty IRI="#isMainContractOf"/>
     </InverseFunctionalObjectProperty>
     <InverseFunctionalObjectProperty>
         <ObjectProperty IRI="#isPartOfProposal"/>
@@ -1151,6 +1510,9 @@
         <ObjectProperty IRI="#receivesProposal"/>
     </InverseFunctionalObjectProperty>
     <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#storesSmartContract"/>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
         <ObjectProperty IRI="#tokenOfHolds"/>
     </InverseFunctionalObjectProperty>
     <InverseFunctionalObjectProperty>
@@ -1163,7 +1525,13 @@
         <ObjectProperty IRI="#usesAuxiliaryContract"/>
     </AsymmetricObjectProperty>
     <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#hasBlockchainParent"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
         <ObjectProperty IRI="#interacts"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#isBlockchainParentOf"/>
     </IrreflexiveObjectProperty>
     <IrreflexiveObjectProperty>
         <ObjectProperty IRI="#tranfersFund"/>
@@ -1180,6 +1548,10 @@
         <Class IRI="#DAO"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#containsNetwork"/>
+        <Class IRI="#Blockchain"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#createdBy"/>
         <Class IRI="#Proposal"/>
     </ObjectPropertyDomain>
@@ -1192,6 +1564,10 @@
         <Class IRI="#Committee"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#deployedOn"/>
+        <Class IRI="#SmartContract"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#eoaOfHolds"/>
         <Class IRI="#EOA"/>
     </ObjectPropertyDomain>
@@ -1200,12 +1576,20 @@
         <Class IRI="#EOA"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasBlockchainParent"/>
+        <Class IRI="#Blockchain"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasCharter"/>
         <Class IRI="#DAO"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasCryptoWallet"/>
         <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Person"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasCurrency"/>
+        <Class IRI="#Network"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasDappCategory"/>
@@ -1256,7 +1640,7 @@
         <Class IRI="#Holds"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#implementedByContract"/>
+        <ObjectProperty IRI="#implementedBy"/>
         <Class IRI="#Token"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
@@ -1276,12 +1660,20 @@
         <Class IRI="#SmartContract"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isBlockchainParentOf"/>
+        <Class IRI="#Blockchain"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#isChartOf"/>
         <Class IRI="#DAOAgreement"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#isMainContract"/>
+        <ObjectProperty IRI="#isMainContractOf"/>
         <Class IRI="#SmartContract"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isPartOfBlockchain"/>
+        <Class IRI="#Network"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#isPartOfDAO"/>
@@ -1352,6 +1744,10 @@
         <Class IRI="#DAO"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#storesSmartContract"/>
+        <Class IRI="#Network"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#supportedBySWWallet"/>
         <Class IRI="#Web3HWWallet"/>
     </ObjectPropertyDomain>
@@ -1404,6 +1800,10 @@
         <Class IRI="#Committee"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#containsNetwork"/>
+        <Class IRI="#Network"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#createdBy"/>
         <Class IRI="#EOA"/>
     </ObjectPropertyRange>
@@ -1416,6 +1816,10 @@
         <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Person"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#deployedOn"/>
+        <Class IRI="#Network"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#eoaOfHolds"/>
         <Class IRI="#Holds"/>
     </ObjectPropertyRange>
@@ -1424,12 +1828,20 @@
         <Class IRI="#Votes"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasBlockchainParent"/>
+        <Class IRI="#Blockchain"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#hasCharter"/>
         <Class IRI="#DAOAgreement"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasCryptoWallet"/>
         <Class IRI="#Web3Wallet"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasCurrency"/>
+        <Class IRI="#Cryptocurrency"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasDappCategory"/>
@@ -1442,10 +1854,6 @@
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasSmartContract"/>
         <Class IRI="#SmartContract"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasTokenCategory"/>
-        <Class IRI="#TokenCategory"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasTokenOwner"/>
@@ -1476,7 +1884,7 @@
         <Class IRI="#Token"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#implementedByContract"/>
+        <ObjectProperty IRI="#implementedBy"/>
         <Class IRI="#TokenContract"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
@@ -1496,12 +1904,20 @@
         <Class IRI="#ContractAccount"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#isBlockchainParentOf"/>
+        <Class IRI="#Blockchain"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#isChartOf"/>
         <Class IRI="#DAO"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#isMainContract"/>
+        <ObjectProperty IRI="#isMainContractOf"/>
         <Class IRI="#Dapp"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isPartOfBlockchain"/>
+        <Class IRI="#Blockchain"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#isPartOfDAO"/>
@@ -1570,6 +1986,10 @@
     <ObjectPropertyRange>
         <ObjectProperty IRI="#sharesCryptoWallet"/>
         <Class IRI="#Web3Wallet"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#storesSmartContract"/>
+        <Class IRI="#SmartContract"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#supportedBySWWallet"/>
@@ -1624,10 +2044,6 @@
         <DataProperty abbreviatedIRI="owl:topDataProperty"/>
     </SubDataPropertyOf>
     <SubDataPropertyOf>
-        <DataProperty IRI="#tokenCategoryName"/>
-        <DataProperty IRI="http://www.fdi.ucm.es/disia/ont/FOAF#name"/>
-    </SubDataPropertyOf>
-    <SubDataPropertyOf>
         <DataProperty IRI="#tokenName"/>
         <DataProperty IRI="http://www.fdi.ucm.es/disia/ont/FOAF#name"/>
     </SubDataPropertyOf>
@@ -1659,9 +2075,6 @@
         <DataProperty IRI="#delegateKey"/>
     </FunctionalDataProperty>
     <FunctionalDataProperty>
-        <DataProperty IRI="#description"/>
-    </FunctionalDataProperty>
-    <FunctionalDataProperty>
         <DataProperty IRI="#didPass"/>
     </FunctionalDataProperty>
     <FunctionalDataProperty>
@@ -1672,6 +2085,9 @@
     </FunctionalDataProperty>
     <FunctionalDataProperty>
         <DataProperty IRI="#identifier"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#isTransferable"/>
     </FunctionalDataProperty>
     <FunctionalDataProperty>
         <DataProperty IRI="#minimumApproval"/>
@@ -1702,9 +2118,6 @@
     </FunctionalDataProperty>
     <FunctionalDataProperty>
         <DataProperty IRI="#tokenBalance"/>
-    </FunctionalDataProperty>
-    <FunctionalDataProperty>
-        <DataProperty IRI="#tokenCategoryName"/>
     </FunctionalDataProperty>
     <FunctionalDataProperty>
         <DataProperty IRI="#tokenName"/>
@@ -1759,10 +2172,6 @@
         <Class IRI="#Votes"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty IRI="#description"/>
-        <Class IRI="#TokenCategory"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
         <DataProperty IRI="#didPass"/>
         <Class IRI="#Proposal"/>
     </DataPropertyDomain>
@@ -1777,6 +2186,10 @@
     <DataPropertyDomain>
         <DataProperty IRI="#identifier"/>
         <Class IRI="#NonFungibleToken"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#isTransferable"/>
+        <Class IRI="#SecurityToken"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#minimumApproval"/>
@@ -1821,10 +2234,6 @@
     <DataPropertyDomain>
         <DataProperty IRI="#tokenBalance"/>
         <Class IRI="#Token"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#tokenCategoryName"/>
-        <Class IRI="#TokenCategory"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#tokenName"/>
@@ -1879,10 +2288,6 @@
         <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
     <DataPropertyRange>
-        <DataProperty IRI="#description"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
         <DataProperty IRI="#didPass"/>
         <Datatype abbreviatedIRI="xsd:boolean"/>
     </DataPropertyRange>
@@ -1897,6 +2302,10 @@
     <DataPropertyRange>
         <DataProperty IRI="#identifier"/>
         <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#isTransferable"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="#minimumApproval"/>
@@ -1939,10 +2348,6 @@
         <Datatype abbreviatedIRI="xsd:double"/>
     </DataPropertyRange>
     <DataPropertyRange>
-        <DataProperty IRI="#tokenCategoryName"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
         <DataProperty IRI="#tokenName"/>
         <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
@@ -1970,8 +2375,41 @@
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Arbitrum</IRI>
+        <Literal xml:lang="en">Arbitrum scales Ethereum without compromising on security.
+
+Arbitrum is the next generation Layer2 technologies for Ethereum dApp development. Users can use the same tools to scale faster, at significantly lower costs.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#Arbitrum</IRI>
+        <IRI>https://arbitrum.io/</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#BTC</IRI>
         <Literal xml:lang="en">Bitcoin&apos;s currency unit (native token).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Blockchain</IRI>
+        <Literal xml:lang="en">Blockchain technology was initially introduced as the technology enabling Bitcoin (a new form of digital currency) and, in short, it can be seen as a distributed database that stores transactions grouped into blocks, which results in a decentralized public digital ledger.
+
+The blocks represent the history of the blockchain and the transactions change its state. In this context, a transaction could be seen as an atomic write operation triggered by a user that may alter one or several records of the corresponding database. For example, a currency transfer between two accounts will reduce the sender’s balance and will increase the recipient’s balance. Further, transactions are chosen and ordered in each block depending on blockchain consensus rules (i.e., the synchronization mechanism to maintain consistency across each copy of the database in each node).
+
+Blcockchain technology makes use of cryptography to securely host applications, store data, and easily transfer digital instruments or assets of value that represent  different items such as ownership, a secret password, a list, a message, digital cash, a document, a photo, corporate voting shares, or trademarks, among others.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Cardano</IRI>
+        <Literal xml:lang="en">Cardano is a decentralized third-generation proof-of-stake blockchain platform and home to the ada cryptocurrency. It is the first blockchain platform to evolve out of a scientific philosophy and a research-first driven approach.
+
+The Cardano platform has been designed from the ground up and verified by an industry-leading combination of top engineers and academic experts in the fields of blockchain and cryptography. It has a strong focus on sustainability, scalability, and transparency. It is a fully open source project that aims to deliver an inclusive, fair, and resilient infrastructure for financial and social applications on a global scale. One of its primary goals is to bring reliable, secure financial services to those people who do not currently have access.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#Cardano</IRI>
+        <IRI>https://docs.cardano.org</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -1999,6 +2437,13 @@ Examples: Flamingo DAO (https://flamingodao.xyz/), ConstitutionDAO (https://www.
         <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
         <IRI>#Compliance</IRI>
         <IRI>https://blog.aragon.org/an-dao-launch/</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ConsortiumNetwork</IRI>
+        <Literal xml:lang="en">The consensus process is controlled by a pre-defined set of nodes that are trusted. For example, a private network of known academic institutions that each govern a single node, and blocks are validated by a threshold of signatories within the network.
+
+If a public blockchain network is like the public internet, a consortium network is like a private intranet.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
@@ -2036,6 +2481,11 @@ Organization = Coordination &amp; collaboration around shared objectives.
 The term was coined by Ethereum founder Vitalik Buterin in his 2014 article (https://blog.ethereum.org/2014/05/06/daos-dacs-das-and-more-an-incomplete-terminology-guide).
 
 A DAO is a dapp that represents an online community that jointly controls a cryptocurrency wallet to pursue common goals, such as running a business or charity.
+
+DAO Explorers:
+
+DeepDAO: https://deepdao.io/organizations
+Dao Analyzer: https://dao-analyzer.science
 
 DAO examples: 
 https://andao.aragon.org/
@@ -2076,6 +2526,18 @@ In summary, dapps have their backend code (smart contracts) running on a decentr
         <IRI>https://ethereum.org/en/developers/docs/dapps/</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#DevelopmentNetwork</IRI>
+        <Literal xml:lang="en">To develop a blockchain application, users will want to run it on a private network to see how it works before deploying it. Similar to how users create a local server on a computer for web development, users can create a local blockchain instance to test their dapp. This allows for much faster iteration than a public testnet.
+
+In summary, development networks are essentially blockchain clients (implementations of a specific blockchain, such as Ethereum) designed specifically for local development.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#DevelopmentNetwork</IRI>
+        <IRI>https://ethereum.org/en/developers/docs/development-networks/</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
         <IRI>#EOA</IRI>
         <Literal xml:lang="en">Externally Owned Account (EOA).
@@ -2098,6 +2560,20 @@ EOAs can initiate transactions and they can send and receive funds.</Literal>
         <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
         <IRI>#Elections</IRI>
         <IRI>https://blog.aragon.org/an-dao-launch/</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Ethereum</IRI>
+        <Literal xml:lang="en">Ethereum is a technology for building apps and organizations, holding assets, transacting and communicating without being controlled by a central authority. There is no need to hand over all user&apos;s personal details to use Ethereum - users keep control of their own data and what is being shared. 
+
+Ethereum has its own cryptocurrency, Ether (ETH), which is used to pay for certain activities on the Ethereum network.
+
+https://ethereum.org/en/what-is-ethereum/</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#Ethereum</IRI>
+        <IRI>https://ethereum.org/en/</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -2163,11 +2639,21 @@ It can be used with any EVM chain: Ethereum Mainnet, Optimism, Arbitrum, Polygon
 Instead of running on banking infrastructure like USD or EUR, tokens are used through Blockchain technology.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#Ganache</IRI>
+        <IRI>https://trufflesuite.com/ganache/</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#GrantDAO</IRI>
         <Literal xml:lang="en">Grant DAOs are are designed to facilitate nonprofit donations, strategically deploy capital assets throughout the web3 ecosystem, and are either a charitable extension of a larger project or an entirely separate entity in the DeFi space. 
 
 Examples: MetaCartel (https://www.metacartel.org/), AAVE Grants (https://aave.com/ =&gt; https://aavegrants.org/).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#HardHat</IRI>
+        <IRI>https://hardhat.org/</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -2198,6 +2684,13 @@ Examples: KrauseHouse (https://www.krausehouse.club/), MetaCartel Ventures (http
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Mainnet</IRI>
+        <Literal xml:lang="en">Public mainnets are networks where actual-value transactions occur on the distributed ledger.
+
+For example, when people and exchanges discuss ETH prices, they&apos;re talking about Mainnet ETH, the primary public network of the Ethereum mainnet blockchain.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#MediaDAO</IRI>
         <Literal xml:lang="en">In contrast to a top-down approach where content is produced with a central agenda or influenced by advertisers, Media DAOs reinvent traditional media platforms by creating content driven by the community.
 
@@ -2221,6 +2714,18 @@ MetaMaks currently supports the next hardware wallets: Trezor, Ledger. Lattice, 
         <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
         <IRI>#MetaMask</IRI>
         <IRI>https://metamask.io/</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Network</IRI>
+        <Literal xml:lang="en">Networks are different Blockchain environments that can be accessed for development, testing, or production use cases.
+
+Examples: Ethereum Mainnet, Goerli testnet.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#Network</IRI>
+        <IRI>https://ethereum.org/en/developers/docs/networks/</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -2258,6 +2763,16 @@ Open source software is developed in a decentralized and collaborative way, rely
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Optimism</IRI>
+        <Literal xml:lang="en">Optimism is a fast, stable, and scalable Layer2 (L2) blockchain built by Ethereum developers, for Ethereum developers. Built as a minimal extension to existing Ethereum software, Optimism’s EVM-equivalent architecture scales your Ethereum apps without surprises. If it works on Ethereum, it works on Optimism at a fraction of the cost.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#Optimism</IRI>
+        <IRI>https://www.optimism.io/</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Others</IRI>
         <Literal xml:lang="en">This type of proposal invokes changes to metagovernance, code, parameters, etc.</Literal>
     </AnnotationAssertion>
@@ -2275,6 +2790,16 @@ Examples: Big Green DAO (https://dao.biggreen.org/), PleasrDAO. (https://pleasr.
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Polygon</IRI>
+        <Literal xml:lang="en">Polygon is a decentralised Ethereum scaling platform that enables developers to build scalable user-friendly dApps with low transaction fees without ever sacrificing on security.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#Polygon</IRI>
+        <IRI>https://polygon.technology/</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Portis</IRI>
         <Literal xml:lang="en">Portis is an easy-to-use self-custody wallet that integrates seamlessly with the most notable NFT and dApps.</Literal>
     </AnnotationAssertion>
@@ -2282,6 +2807,16 @@ Examples: Big Green DAO (https://dao.biggreen.org/), PleasrDAO. (https://pleasr.
         <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
         <IRI>#Portis</IRI>
         <IRI>https://wallet.portis.io/login</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#PrivateNetwork</IRI>
+        <Literal xml:lang="en">A private blockchain network is a permissioned network if its nodes are not connected to a public network (i.e. Mainnet or a testnet). In this context, private only means reserved or isolated, rather than protected or secure.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#PrivateNetwork</IRI>
+        <IRI>https://ethereum.org/en/developers/docs/networks/</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -2302,12 +2837,17 @@ Examples: MakerDAO (https://makerdao.com/), Uniswap (https://uniswap.org/), year
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#PublicNetwork</IRI>
+        <Literal xml:lang="en">Public networks are accessible to anyone in the world with an internet connection. Anyone can read or create transactions on a public blockchain and validate the transactions being executed. The consensus among peers decides on the inclusion of transactions and the state of the network.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#SecurityToken</IRI>
         <Literal xml:lang="en">Token that is subjected to regulations and securities. That is, this type of tokens will always have federal regullation making it a safer choice.
 
 Security tokens represents tradable assets and investmen contracts as determined by Howey Test (USA) or the Directive 2014/65/EU (MiFID II).
 
-Security tokens provide finacial rights, such as voting, profit share and dividends.
+Security tokens are governance tokens that provide finacial rights, such as voting, profit share and dividends.
 
 Security tokens, also known as ownership tokens, are de facto digital securities. For example, they can be stocks or bonds that are listed on the blockchain. Blockchain does not allow changing or deleting information, so it has become a reliable solution for storing tokenized assets.
 
@@ -2342,6 +2882,16 @@ Example: Friends with Benefits (https://www.fwb.help/).</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Solana</IRI>
+        <Literal xml:lang="en">Solana is a decentralized blockchain built to enable scalable, user-friendly apps for the world.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#Solana</IRI>
+        <IRI>https://solana.com/es</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#SubDAO</IRI>
         <Literal xml:lang="en">A SubDAO is a new kind of DAO that is a subset of DAO members that are organized to manage specific functions such as operations, partnerships, marketing, treasury, and grants.
 
@@ -2363,18 +2913,22 @@ The creativity of the community is truly the limit of what can be built within t
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Testnet</IRI>
+        <Literal xml:lang="en">Public testnets are networks used by protocol developers or smart contract developers to test both protocol upgrades as well as potential smart contracts in a production-like environment before deployment to a production network.
+
+This is analog to production versus staging servers in software development domain.
+
+Transaction cost on testnets has no real value; therefore, there are no markets for testnet cryptocurrency. However, since you need ETH to actually interact with Ethereum, for example, most people get testnet ETH from faucets. Most faucets are webapps where you can input an address which you request ETH to be sent to.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Token</IRI>
         <Literal xml:lang="en">Tokens are items administered on blockchains that can represent assets (tangible or intangible), currency or voting rights, among others.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#TokenCategory</IRI>
-        <Literal xml:lang="en">The dao:TokenCategory  is used to specify the type of a dao:Token (e.g., Cryptocurrency, Cryptokitty NFT...)</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#TokenContract</IRI>
-        <Literal xml:lang="en">A token contract keeps track of fungible tokens: any one token is exactly equal to any other token; no tokens have special rights or behavior associated with them. This makes ERC20 tokens useful for things like a medium of exchange currency, voting rights, staking, and more.</Literal>
+        <Literal xml:lang="en">A token contract keeps track of fungible tokens: any one token is exactly equal to any other token; no tokens have special rights or behavior associated with them. This makes fungible tokens useful for things like a medium of exchange currency, voting rights, staking, and more.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -2463,6 +3017,16 @@ According to https://ethereum.org/en/dapps/, wallets are dapps too.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#chainID</IRI>
+        <Literal xml:lang="en">The integer value assigned to indicate the identification of a specific network of a blockchain.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#chainID</IRI>
+        <IRI>https://chainlist.org/</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#createdBy</IRI>
         <Literal xml:lang="en">The user account (EOA) of the proposer that has created the proposal.</Literal>
     </AnnotationAssertion>
@@ -2500,6 +3064,11 @@ URL (Uniform Resource Locator)</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#endDate</IRI>
+        <Literal xml:lang="en">End datetime for the voting process.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#hasVotingMember</IRI>
         <Literal xml:lang="en">The committee(s) that can vote for this proposal.</Literal>
     </AnnotationAssertion>
@@ -2512,6 +3081,11 @@ URL (Uniform Resource Locator)</Literal>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#isResponsibleMember</IRI>
         <Literal xml:lang="en">Address (i.e., user account) of the DAO member who is responsible of the proposal (when the proposer is not a member of the DAO).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isTransferable</IRI>
+        <Literal xml:lang="en">Boolean value assigned to indicate if the token is transferable or not.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -2541,6 +3115,11 @@ Default value: 15</Literal>
         <Literal xml:lang="en">Support is the relative percentage of tokens that are required to vote “Yes” for a proposal to be approved. For example, if “Support” is set to 50%, then more than 50% of the tokens used to vote on a proposal must vote “Yes” for it to pass.
 
 Default value: 50</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#startDate</IRI>
+        <Literal xml:lang="en">Start datetime for the voting process.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
