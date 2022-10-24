@@ -111,7 +111,7 @@
     </ObjectPropertyRange>
     <SubDataPropertyOf>
         <DataProperty IRI="#accountName"/>
-        <DataProperty IRI="#name"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
     </SubDataPropertyOf>
     <FunctionalDataProperty>
         <DataProperty IRI="#accountName"/>
@@ -294,6 +294,17 @@ A foaf:homepage in this sense is a public Web document, typically but not necess
         <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
         <IRI>#member</IRI>
         <IRI>http://xmlns.com/foaf/0.1/#term_member</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#name</IRI>
+        <Literal xml:lang="en">A name for some thing. 
+The foaf:name of something is a simple textual string.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#name</IRI>
+        <IRI>http://xmlns.com/foaf/0.1/#term_name</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
