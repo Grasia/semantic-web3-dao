@@ -20,6 +20,9 @@
         <Literal xml:lang="en">An ontology that describes the Decentralized Autonomous Organization (DAO) domain which is based on Blockchain tecnology.</Literal>
     </Annotation>
     <Declaration>
+        <Class IRI="#BaseUnit"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Blockchain"/>
     </Declaration>
     <Declaration>
@@ -207,6 +210,9 @@
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#eoaOfVotes"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasBaseUnit"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasBlockchainParent"/>
@@ -413,6 +419,9 @@
         <DataProperty IRI="#isTransferable"/>
     </Declaration>
     <Declaration>
+        <DataProperty IRI="#isVotingRight"/>
+    </Declaration>
+    <Declaration>
         <DataProperty IRI="#minimumApproval"/>
     </Declaration>
     <Declaration>
@@ -452,6 +461,12 @@
         <DataProperty IRI="#tokenUSDValue"/>
     </Declaration>
     <Declaration>
+        <DataProperty IRI="#unitName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#unitValue"/>
+    </Declaration>
+    <Declaration>
         <DataProperty IRI="#yesVotes"/>
     </Declaration>
     <Declaration>
@@ -489,6 +504,9 @@
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#CryptoKitty"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#DOT"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#ETH"/>
@@ -562,6 +580,12 @@
     <Declaration>
         <NamedIndividual IRI="#Yes"/>
     </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#planck"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#wei"/>
+    </Declaration>
     <EquivalentClasses>
         <Class IRI="#DAO"/>
         <ObjectIntersectionOf>
@@ -578,7 +602,11 @@
             </ObjectSomeValuesFrom>
             <ObjectSomeValuesFrom>
                 <ObjectProperty IRI="#ownsToken"/>
-                <Class IRI="#FungibleToken"/>
+                <Class IRI="#SecurityToken"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#supportsToken"/>
+                <Class IRI="#Cryptocurrency"/>
             </ObjectSomeValuesFrom>
         </ObjectIntersectionOf>
     </EquivalentClasses>
@@ -612,6 +640,32 @@
             <NamedIndividual IRI="#No"/>
             <NamedIndividual IRI="#Yes"/>
         </ObjectOneOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Proposal"/>
+        <ObjectIntersectionOf>
+            <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Project"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasVotingToken"/>
+                <ObjectIntersectionOf>
+                    <Class IRI="#SecurityToken"/>
+                    <DataHasValue>
+                        <DataProperty IRI="#isVotingRight"/>
+                        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+                    </DataHasValue>
+                </ObjectIntersectionOf>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#UtlityToken"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#FungibleToken"/>
+            <DataHasValue>
+                <DataProperty IRI="#isTransferable"/>
+                <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+            </DataHasValue>
+        </ObjectIntersectionOf>
     </EquivalentClasses>
     <SubClassOf>
         <Class IRI="#Blockchain"/>
@@ -983,6 +1037,10 @@
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Cryptocurrency"/>
+        <NamedIndividual IRI="#DOT"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Cryptocurrency"/>
         <NamedIndividual IRI="#ETH"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -1073,6 +1131,14 @@
         <Class IRI="#Decision"/>
         <NamedIndividual IRI="#Yes"/>
     </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#BaseUnit"/>
+        <NamedIndividual IRI="#planck"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#BaseUnit"/>
+        <NamedIndividual IRI="#wei"/>
+    </ClassAssertion>
     <SameIndividual>
         <NamedIndividual IRI="#EthereumMainnet"/>
         <NamedIndividual IRI="#MainnetETH"/>
@@ -1106,6 +1172,16 @@
         <ObjectProperty IRI="#hasCurrency"/>
         <NamedIndividual IRI="#CardanoNetwork"/>
         <NamedIndividual IRI="#ADA"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseUnit"/>
+        <NamedIndividual IRI="#DOT"/>
+        <NamedIndividual IRI="#planck"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseUnit"/>
+        <NamedIndividual IRI="#ETH"/>
+        <NamedIndividual IRI="#wei"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#isBlockchainParentOf"/>
@@ -1199,6 +1275,16 @@
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#tokenName"/>
+        <NamedIndividual IRI="#DOT"/>
+        <Literal>polkadot</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#tokenSymbol"/>
+        <NamedIndividual IRI="#DOT"/>
+        <Literal>DOT</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#tokenName"/>
         <NamedIndividual IRI="#ETH"/>
         <Literal>ether</Literal>
     </DataPropertyAssertion>
@@ -1236,6 +1322,26 @@
         <DataProperty IRI="#tokenSymbol"/>
         <NamedIndividual IRI="#Uniswap"/>
         <Literal>UNI</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#unitName"/>
+        <NamedIndividual IRI="#planck"/>
+        <Literal>planck</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#unitValue"/>
+        <NamedIndividual IRI="#planck"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">1000000000000</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#unitName"/>
+        <NamedIndividual IRI="#wei"/>
+        <Literal>wei</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#unitValue"/>
+        <NamedIndividual IRI="#wei"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">1000000000000000000</Literal>
     </DataPropertyAssertion>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#daoMember"/>
@@ -1349,6 +1455,9 @@
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
         <ObjectProperty IRI="#deployedOn"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasBaseUnit"/>
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
         <ObjectProperty IRI="#hasBlockchainParent"/>
@@ -1574,6 +1683,10 @@
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#eoaOfVotes"/>
         <Class IRI="#EOA"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasBaseUnit"/>
+        <Class IRI="#Cryptocurrency"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasBlockchainParent"/>
@@ -1826,6 +1939,10 @@
     <ObjectPropertyRange>
         <ObjectProperty IRI="#eoaOfVotes"/>
         <Class IRI="#Votes"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasBaseUnit"/>
+        <Class IRI="#BaseUnit"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasBlockchainParent"/>
@@ -2047,6 +2164,10 @@
         <DataProperty IRI="#tokenName"/>
         <DataProperty IRI="http://www.fdi.ucm.es/disia/ont/FOAF#name"/>
     </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#unitName"/>
+        <DataProperty IRI="http://www.fdi.ucm.es/disia/ont/FOAF#name"/>
+    </SubDataPropertyOf>
     <FunctionalDataProperty>
         <DataProperty IRI="#abstainVotes"/>
     </FunctionalDataProperty>
@@ -2090,6 +2211,9 @@
         <DataProperty IRI="#isTransferable"/>
     </FunctionalDataProperty>
     <FunctionalDataProperty>
+        <DataProperty IRI="#isVotingRight"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
         <DataProperty IRI="#minimumApproval"/>
     </FunctionalDataProperty>
     <FunctionalDataProperty>
@@ -2127,6 +2251,9 @@
     </FunctionalDataProperty>
     <FunctionalDataProperty>
         <DataProperty IRI="#tokenUSDValue"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#unitValue"/>
     </FunctionalDataProperty>
     <FunctionalDataProperty>
         <DataProperty IRI="#yesVotes"/>
@@ -2189,6 +2316,10 @@
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#isTransferable"/>
+        <Class IRI="#Token"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#isVotingRight"/>
         <Class IRI="#SecurityToken"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
@@ -2246,6 +2377,14 @@
     <DataPropertyDomain>
         <DataProperty IRI="#tokenUSDValue"/>
         <Class IRI="#Token"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#unitName"/>
+        <Class IRI="#BaseUnit"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#unitValue"/>
+        <Class IRI="#BaseUnit"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#yesVotes"/>
@@ -2308,6 +2447,10 @@
         <Datatype abbreviatedIRI="xsd:boolean"/>
     </DataPropertyRange>
     <DataPropertyRange>
+        <DataProperty IRI="#isVotingRight"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
         <DataProperty IRI="#minimumApproval"/>
         <Datatype abbreviatedIRI="xsd:integer"/>
     </DataPropertyRange>
@@ -2360,6 +2503,14 @@
         <Datatype abbreviatedIRI="xsd:double"/>
     </DataPropertyRange>
     <DataPropertyRange>
+        <DataProperty IRI="#unitName"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#unitValue"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
         <DataProperty IRI="#yesVotes"/>
         <Datatype abbreviatedIRI="xsd:int"/>
     </DataPropertyRange>
@@ -2389,6 +2540,11 @@ Arbitrum is the next generation Layer2 technologies for Ethereum dApp developmen
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#BTC</IRI>
         <Literal xml:lang="en">Bitcoin&apos;s currency unit (native token).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#BaseUnit</IRI>
+        <Literal xml:lang="en">A base unit is a currency unit in which cryptocurrency can be divided. For example, 1 ether is 1 quitillion wei (1*10**18 or 1000000000000000000).</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -2506,6 +2662,16 @@ It represents the Charter of a DAO.</Literal>
         <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
         <IRI>#DAOAgreement</IRI>
         <IRI>https://blog.aragon.org/an-dao-launch/</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#DOT</IRI>
+        <Literal xml:lang="en">Polkadot blockchain</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#DOT</IRI>
+        <IRI>https://wiki.polkadot.network/docs/build-protocol-info#tokens</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -2740,7 +2906,7 @@ Examples: Ethereum Mainnet, Goerli testnet.</Literal>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#NonFungibleToken</IRI>
-        <Literal xml:lang="en">Non-fungible tokens (NFTs) are cryptographically unique tokens that are linked to digital (and sometimes physical) content, providing proof of ownership.
+        <Literal xml:lang="en">Non-fungible tokens (NFTs) are cryptographically unique and distinct tokens that are linked to digital (and sometimes physical) content, providing proof of ownership.
 
 NFTs are minted through smart contracts that assign ownership and reassign it when NFTs are transferred or resold. At a basic level, smart contracts can be seen as a tool aimed at implementing a sale agreement.
  
@@ -2938,7 +3104,7 @@ Transaction cost on testnets has no real value; therefore, there are no markets 
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#UtlityToken</IRI>
-        <Literal xml:lang="en">Utility token is a unit of account n network (e.g., Bitcoin, Ether, Filecoin, Golem and Storj).
+        <Literal xml:lang="en">Utility token is a unit of account on network (e.g., Bitcoin, Ether, Filecoin, Golem and Storj).
 
 Utility tokens enable access to products or services provided by different platforms.
 
@@ -3089,10 +3255,20 @@ URL (Uniform Resource Locator)</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isVotingRight</IRI>
+        <Literal xml:lang="en">The boolean value assigned to indicate if a security token can be used in a decision-making process (i.e., voting activities).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#minimumApproval</IRI>
         <Literal xml:lang="en">Minimum Approval is the percentage of the total token supply that is required to vote “Yes” on a proposal before it can be approved. For example, if the “Minimum Approval” is set to 20%, then more than 20% of the outstanding token supply must vote “Yes” on a proposal for it to pass. 
 
 Default value: 15</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#planck</IRI>
+        <IRI>https://wiki.polkadot.network/docs/build-protocol-info#tokens</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -3152,6 +3328,16 @@ Default value: 50</Literal>
         <Literal xml:lang="en">USD (United States Dollar).
 
 The double value assigned to indicate the USD exchange rate for a dao:Token.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#unitName</IRI>
+        <Literal></Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#unitValue</IRI>
+        <Literal xml:lang="en">Integer value assigned to indicate the subdivision of a cryptocurrency token (eg., 1 ETH is 1*10**18 wei).</Literal>
     </AnnotationAssertion>
 </Ontology>
 
