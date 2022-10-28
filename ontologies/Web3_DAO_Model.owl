@@ -134,6 +134,9 @@
         <Class IRI="#PublicNetwork"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Question"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Restriction"/>
     </Declaration>
     <Declaration>
@@ -185,6 +188,9 @@
         <Class IRI="#WebUserInterface"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#belongsTo"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#builtOn"/>
     </Declaration>
     <Declaration>
@@ -231,6 +237,9 @@
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasDecision"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasQuestion"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasSmartContract"/>
@@ -332,7 +341,7 @@
         <ObjectProperty IRI="#ownsToken"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#proposalOfVotes"/>
+        <ObjectProperty IRI="#questionOfVotes"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#receivesProposal"/>
@@ -371,7 +380,7 @@
         <ObjectProperty IRI="#votesOfEOA"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#votesOfProposal"/>
+        <ObjectProperty IRI="#votesOfQuestion"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#abstainVotes"/>
@@ -447,6 +456,9 @@
     </Declaration>
     <Declaration>
         <DataProperty IRI="#startDate"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#text"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#tokenBalance"/>
@@ -595,10 +607,6 @@
             <ObjectSomeValuesFrom>
                 <ObjectProperty IRI="#composedOfCommittee"/>
                 <Class IRI="#Main"/>
-            </ObjectSomeValuesFrom>
-            <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="#hasSmartContract"/>
-                <Class IRI="#SmartContract"/>
             </ObjectSomeValuesFrom>
             <ObjectSomeValuesFrom>
                 <ObjectProperty IRI="#ownsToken"/>
@@ -1348,6 +1356,10 @@
         <ObjectProperty IRI="http://www.fdi.ucm.es/disia/ont/FOAF#member"/>
     </SubObjectPropertyOf>
     <InverseObjectProperties>
+        <ObjectProperty IRI="#belongsTo"/>
+        <ObjectProperty IRI="#hasQuestion"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
         <ObjectProperty IRI="#builtOn"/>
         <ObjectProperty IRI="#isMainContractOf"/>
     </InverseObjectProperties>
@@ -1436,8 +1448,8 @@
         <ObjectProperty IRI="#transacts"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
-        <ObjectProperty IRI="#proposalOfVotes"/>
-        <ObjectProperty IRI="#votesOfProposal"/>
+        <ObjectProperty IRI="#questionOfVotes"/>
+        <ObjectProperty IRI="#votesOfQuestion"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="#sharesCryptoWallet"/>
@@ -1447,6 +1459,9 @@
         <ObjectProperty IRI="#supportedBySWWallet"/>
         <ObjectProperty IRI="#supportsHWWallet"/>
     </InverseObjectProperties>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#belongsTo"/>
+    </FunctionalObjectProperty>
     <FunctionalObjectProperty>
         <ObjectProperty IRI="#builtOn"/>
     </FunctionalObjectProperty>
@@ -1473,6 +1488,9 @@
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
         <ObjectProperty IRI="#hasDecision"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasQuestion"/>
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
         <ObjectProperty IRI="#hasSmartContract"/>
@@ -1547,8 +1565,11 @@
         <ObjectProperty IRI="#votesOfEOA"/>
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
-        <ObjectProperty IRI="#votesOfProposal"/>
+        <ObjectProperty IRI="#votesOfQuestion"/>
     </FunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#belongsTo"/>
+    </InverseFunctionalObjectProperty>
     <InverseFunctionalObjectProperty>
         <ObjectProperty IRI="#builtOn"/>
     </InverseFunctionalObjectProperty>
@@ -1569,6 +1590,9 @@
     </InverseFunctionalObjectProperty>
     <InverseFunctionalObjectProperty>
         <ObjectProperty IRI="#hasCharter"/>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#hasQuestion"/>
     </InverseFunctionalObjectProperty>
     <InverseFunctionalObjectProperty>
         <ObjectProperty IRI="#hasSmartContract"/>
@@ -1613,7 +1637,7 @@
         <ObjectProperty IRI="#ownsToken"/>
     </InverseFunctionalObjectProperty>
     <InverseFunctionalObjectProperty>
-        <ObjectProperty IRI="#proposalOfVotes"/>
+        <ObjectProperty IRI="#questionOfVotes"/>
     </InverseFunctionalObjectProperty>
     <InverseFunctionalObjectProperty>
         <ObjectProperty IRI="#receivesProposal"/>
@@ -1648,6 +1672,10 @@
     <IrreflexiveObjectProperty>
         <ObjectProperty IRI="#usesAuxiliaryContract"/>
     </IrreflexiveObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#belongsTo"/>
+        <Class IRI="#Question"/>
+    </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#builtOn"/>
         <Class IRI="#Dapp"/>
@@ -1711,6 +1739,10 @@
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasDecision"/>
         <Class IRI="#Votes"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasQuestion"/>
+        <Class IRI="#Proposal"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasSmartContract"/>
@@ -1845,8 +1877,8 @@
         <Class IRI="#DAO"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#proposalOfVotes"/>
-        <Class IRI="#Proposal"/>
+        <ObjectProperty IRI="#questionOfVotes"/>
+        <Class IRI="#Question"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#receivesProposal"/>
@@ -1897,13 +1929,13 @@
         <Class IRI="#Votes"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#votesOfProposal"/>
-        <Class IRI="#Proposal"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#votesOfProposal"/>
+        <ObjectProperty IRI="#votesOfQuestion"/>
         <Class IRI="#Votes"/>
     </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#belongsTo"/>
+        <Class IRI="#Proposal"/>
+    </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#builtOn"/>
         <Class IRI="#SmartContract"/>
@@ -1967,6 +1999,10 @@
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasDecision"/>
         <Class IRI="#Decision"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasQuestion"/>
+        <Class IRI="#Question"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasSmartContract"/>
@@ -2093,7 +2129,7 @@
         <Class IRI="#Token"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#proposalOfVotes"/>
+        <ObjectProperty IRI="#questionOfVotes"/>
         <Class IRI="#Votes"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
@@ -2145,8 +2181,8 @@
         <Class IRI="#EOA"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#votesOfProposal"/>
-        <Class IRI="#Proposal"/>
+        <ObjectProperty IRI="#votesOfQuestion"/>
+        <Class IRI="#Question"/>
     </ObjectPropertyRange>
     <SubDataPropertyOf>
         <DataProperty IRI="#chartName"/>
@@ -2239,6 +2275,9 @@
     </FunctionalDataProperty>
     <FunctionalDataProperty>
         <DataProperty IRI="#startDate"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#text"/>
     </FunctionalDataProperty>
     <FunctionalDataProperty>
         <DataProperty IRI="#tokenBalance"/>
@@ -2363,6 +2402,10 @@
         <Class IRI="#VoteDuration"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
+        <DataProperty IRI="#text"/>
+        <Class IRI="#Question"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
         <DataProperty IRI="#tokenBalance"/>
         <Class IRI="#Token"/>
     </DataPropertyDomain>
@@ -2485,6 +2528,10 @@
     <DataPropertyRange>
         <DataProperty IRI="#startDate"/>
         <Datatype abbreviatedIRI="xsd:dateTime"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#text"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="#tokenBalance"/>
@@ -3005,6 +3052,11 @@ Examples: MakerDAO (https://makerdao.com/), Uniswap (https://uniswap.org/), year
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#PublicNetwork</IRI>
         <Literal xml:lang="en">Public networks are accessible to anyone in the world with an internet connection. Anyone can read or create transactions on a public blockchain and validate the transactions being executed. The consensus among peers decides on the inclusion of transactions and the state of the network.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Question</IRI>
+        <Literal xml:lang="en">Question is the text that represents the aim of the proposal.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
