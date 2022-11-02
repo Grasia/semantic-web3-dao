@@ -296,6 +296,9 @@
         <ObjectProperty IRI="#isMainContractOf"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#isMemberofDAO"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#isPartOfBlockchain"/>
     </Declaration>
     <Declaration>
@@ -348,6 +351,9 @@
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#sharesCryptoWallet"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#stakeholder"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#storesSmartContract"/>
@@ -1353,7 +1359,7 @@
     </DataPropertyAssertion>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#daoMember"/>
-        <ObjectProperty IRI="http://www.fdi.ucm.es/disia/ont/FOAF#member"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <InverseObjectProperties>
         <ObjectProperty IRI="#belongsTo"/>
@@ -1374,6 +1380,10 @@
     <InverseObjectProperties>
         <ObjectProperty IRI="#createdBy"/>
         <ObjectProperty IRI="#createsProposal"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#daoMember"/>
+        <ObjectProperty IRI="#isMemberofDAO"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="#deployedOn"/>
@@ -1817,6 +1827,10 @@
         <Class IRI="#SmartContract"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isMemberofDAO"/>
+        <Class IRI="#EOA"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#isPartOfBlockchain"/>
         <Class IRI="#Network"/>
     </ObjectPropertyDomain>
@@ -1889,6 +1903,10 @@
         <Class IRI="#DAO"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#stakeholder"/>
+        <Class IRI="#DAO"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#storesSmartContract"/>
         <Class IRI="#Network"/>
     </ObjectPropertyDomain>
@@ -1958,7 +1976,7 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#daoMember"/>
-        <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Person"/>
+        <Class IRI="#EOA"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#deployedOn"/>
@@ -2069,6 +2087,10 @@
         <Class IRI="#Dapp"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#isMemberofDAO"/>
+        <Class IRI="#Committee"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#isPartOfBlockchain"/>
         <Class IRI="#Blockchain"/>
     </ObjectPropertyRange>
@@ -2139,6 +2161,14 @@
     <ObjectPropertyRange>
         <ObjectProperty IRI="#sharesCryptoWallet"/>
         <Class IRI="#Web3Wallet"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#stakeholder"/>
+        <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Organization"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#stakeholder"/>
+        <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Person"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#storesSmartContract"/>
@@ -3343,6 +3373,11 @@ Default value: 15</Literal>
         <Literal xml:lang="en">Support is the relative percentage of tokens that are required to vote “Yes” for a proposal to be approved. For example, if “Support” is set to 50%, then more than 50% of the tokens used to vote on a proposal must vote “Yes” for it to pass.
 
 Default value: 50</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#stakeholder</IRI>
+        <Literal xml:lang="en">Person and/or organization that has an interest in a DAO (e.g., customers, employees, shareholders).</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
