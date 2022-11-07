@@ -299,7 +299,7 @@
         <ObjectProperty IRI="#isMainContractOf"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#isMemberofDAO"/>
+        <ObjectProperty IRI="#isMemberOfDAOCommittee"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#isPartOfBlockchain"/>
@@ -1393,7 +1393,7 @@
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="#daoMember"/>
-        <ObjectProperty IRI="#isMemberofDAO"/>
+        <ObjectProperty IRI="#isMemberOfDAOCommittee"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="#deployedOn"/>
@@ -1847,7 +1847,7 @@
         <Class IRI="#SmartContract"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#isMemberofDAO"/>
+        <ObjectProperty IRI="#isMemberOfDAOCommittee"/>
         <Class IRI="#EOA"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
@@ -2115,7 +2115,7 @@
         <Class IRI="#Dapp"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#isMemberofDAO"/>
+        <ObjectProperty IRI="#isMemberOfDAOCommittee"/>
         <Class IRI="#Committee"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
