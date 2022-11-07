@@ -215,10 +215,10 @@
         <ObjectProperty IRI="#deployedOn"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#eoaOfHolds"/>
+        <ObjectProperty IRI="#eoaHasHolds"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#eoaOfVotes"/>
+        <ObjectProperty IRI="#eoaHasVotes"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasBaseUnit"/>
@@ -347,7 +347,7 @@
         <ObjectProperty IRI="#ownsToken"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#questionOfVotes"/>
+        <ObjectProperty IRI="#questionHasVotes"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#receivesProposal"/>
@@ -374,7 +374,7 @@
         <ObjectProperty IRI="#supportsToken"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#tokenOfHolds"/>
+        <ObjectProperty IRI="#tokenHasHolds"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#tranfersFund"/>
@@ -1400,11 +1400,11 @@
         <ObjectProperty IRI="#storesSmartContract"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
-        <ObjectProperty IRI="#eoaOfHolds"/>
+        <ObjectProperty IRI="#eoaHasHolds"/>
         <ObjectProperty IRI="#holdsOfEOA"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
-        <ObjectProperty IRI="#eoaOfVotes"/>
+        <ObjectProperty IRI="#eoaHasVotes"/>
         <ObjectProperty IRI="#votesOfEOA"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
@@ -1437,7 +1437,7 @@
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="#holdsOfToken"/>
-        <ObjectProperty IRI="#tokenOfHolds"/>
+        <ObjectProperty IRI="#tokenHasHolds"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="#implementedBy"/>
@@ -1468,7 +1468,7 @@
         <ObjectProperty IRI="#transacts"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
-        <ObjectProperty IRI="#questionOfVotes"/>
+        <ObjectProperty IRI="#questionHasVotes"/>
         <ObjectProperty IRI="#votesOfQuestion"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
@@ -1609,10 +1609,10 @@
         <ObjectProperty IRI="#createsProposal"/>
     </InverseFunctionalObjectProperty>
     <InverseFunctionalObjectProperty>
-        <ObjectProperty IRI="#eoaOfHolds"/>
+        <ObjectProperty IRI="#eoaHasHolds"/>
     </InverseFunctionalObjectProperty>
     <InverseFunctionalObjectProperty>
-        <ObjectProperty IRI="#eoaOfVotes"/>
+        <ObjectProperty IRI="#eoaHasVotes"/>
     </InverseFunctionalObjectProperty>
     <InverseFunctionalObjectProperty>
         <ObjectProperty IRI="#hasCharter"/>
@@ -1663,7 +1663,7 @@
         <ObjectProperty IRI="#ownsToken"/>
     </InverseFunctionalObjectProperty>
     <InverseFunctionalObjectProperty>
-        <ObjectProperty IRI="#questionOfVotes"/>
+        <ObjectProperty IRI="#questionHasVotes"/>
     </InverseFunctionalObjectProperty>
     <InverseFunctionalObjectProperty>
         <ObjectProperty IRI="#receivesProposal"/>
@@ -1672,7 +1672,7 @@
         <ObjectProperty IRI="#storesSmartContract"/>
     </InverseFunctionalObjectProperty>
     <InverseFunctionalObjectProperty>
-        <ObjectProperty IRI="#tokenOfHolds"/>
+        <ObjectProperty IRI="#tokenHasHolds"/>
     </InverseFunctionalObjectProperty>
     <InverseFunctionalObjectProperty>
         <ObjectProperty IRI="#usedByDAO"/>
@@ -1735,11 +1735,11 @@
         <Class IRI="#SmartContract"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#eoaOfHolds"/>
+        <ObjectProperty IRI="#eoaHasHolds"/>
         <Class IRI="#EOA"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#eoaOfVotes"/>
+        <ObjectProperty IRI="#eoaHasVotes"/>
         <Class IRI="#EOA"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
@@ -1911,7 +1911,7 @@
         <Class IRI="#DAO"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#questionOfVotes"/>
+        <ObjectProperty IRI="#questionHasVotes"/>
         <Class IRI="#Question"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
@@ -1947,7 +1947,7 @@
         <Class IRI="#DAO"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#tokenOfHolds"/>
+        <ObjectProperty IRI="#tokenHasHolds"/>
         <Class IRI="#Token"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
@@ -2011,11 +2011,11 @@
         <Class IRI="#Network"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#eoaOfHolds"/>
+        <ObjectProperty IRI="#eoaHasHolds"/>
         <Class IRI="#Holds"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#eoaOfVotes"/>
+        <ObjectProperty IRI="#eoaHasVotes"/>
         <Class IRI="#Votes"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
@@ -2179,7 +2179,7 @@
         <Class IRI="#Token"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#questionOfVotes"/>
+        <ObjectProperty IRI="#questionHasVotes"/>
         <Class IRI="#Votes"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
@@ -2219,7 +2219,7 @@
         <Class IRI="#Token"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#tokenOfHolds"/>
+        <ObjectProperty IRI="#tokenHasHolds"/>
         <Class IRI="#Holds"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
