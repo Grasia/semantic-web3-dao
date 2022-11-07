@@ -2276,6 +2276,9 @@
         <DataProperty IRI="#cancelledAt"/>
     </FunctionalDataProperty>
     <FunctionalDataProperty>
+        <DataProperty IRI="#chainID"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
         <DataProperty IRI="#chartName"/>
     </FunctionalDataProperty>
     <FunctionalDataProperty>
@@ -2370,6 +2373,10 @@
     <DataPropertyDomain>
         <DataProperty IRI="#cancelledAt"/>
         <Class IRI="#Proposal"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#chainID"/>
+        <Class IRI="#Network"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#chartName"/>
@@ -2508,6 +2515,10 @@
         <Datatype abbreviatedIRI="xsd:dateTime"/>
     </DataPropertyRange>
     <DataPropertyRange>
+        <DataProperty IRI="#chainID"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
         <DataProperty IRI="#chartName"/>
         <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
@@ -2557,7 +2568,7 @@
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="#minimumApproval"/>
-        <Datatype abbreviatedIRI="xsd:integer"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="#noVotes"/>
@@ -2585,7 +2596,7 @@
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="#proposalSupport"/>
-        <Datatype abbreviatedIRI="xsd:integer"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="#startDate"/>
