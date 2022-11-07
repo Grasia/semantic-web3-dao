@@ -197,6 +197,9 @@
         <ObjectProperty IRI="#composedOfCommittee"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#composedOfDapp"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#containsNetwork"/>
     </Declaration>
     <Declaration>
@@ -360,6 +363,9 @@
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#supportedBySWWallet"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#supportsDAO"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#supportsHWWallet"/>
@@ -1374,6 +1380,10 @@
         <ObjectProperty IRI="#isPartOfDAO"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
+        <ObjectProperty IRI="#composedOfDapp"/>
+        <ObjectProperty IRI="#supportsDAO"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
         <ObjectProperty IRI="#containsNetwork"/>
         <ObjectProperty IRI="#isPartOfBlockchain"/>
     </InverseObjectProperties>
@@ -1572,6 +1582,9 @@
         <ObjectProperty IRI="#sharesCryptoWallet"/>
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
+        <ObjectProperty IRI="#supportsDAO"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
         <ObjectProperty IRI="#votesOfEOA"/>
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
@@ -1585,6 +1598,9 @@
     </InverseFunctionalObjectProperty>
     <InverseFunctionalObjectProperty>
         <ObjectProperty IRI="#composedOfCommittee"/>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#composedOfDapp"/>
     </InverseFunctionalObjectProperty>
     <InverseFunctionalObjectProperty>
         <ObjectProperty IRI="#containsNetwork"/>
@@ -1661,9 +1677,9 @@
     <InverseFunctionalObjectProperty>
         <ObjectProperty IRI="#usedByDAO"/>
     </InverseFunctionalObjectProperty>
-    <AsymmetricObjectProperty>
+    <SymmetricObjectProperty>
         <ObjectProperty IRI="#interacts"/>
-    </AsymmetricObjectProperty>
+    </SymmetricObjectProperty>
     <AsymmetricObjectProperty>
         <ObjectProperty IRI="#usesAuxiliaryContract"/>
     </AsymmetricObjectProperty>
@@ -1692,6 +1708,10 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#composedOfCommittee"/>
+        <Class IRI="#DAO"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#composedOfDapp"/>
         <Class IRI="#DAO"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
@@ -1915,6 +1935,10 @@
         <Class IRI="#Web3HWWallet"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#supportsDAO"/>
+        <Class IRI="#Dapp"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#supportsHWWallet"/>
         <Class IRI="#Web3SWWallet"/>
     </ObjectPropertyDomain>
@@ -1961,6 +1985,10 @@
     <ObjectPropertyRange>
         <ObjectProperty IRI="#composedOfCommittee"/>
         <Class IRI="#Committee"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#composedOfDapp"/>
+        <Class IRI="#Dapp"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#containsNetwork"/>
@@ -2177,6 +2205,10 @@
     <ObjectPropertyRange>
         <ObjectProperty IRI="#supportedBySWWallet"/>
         <Class IRI="#Web3SWWallet"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#supportsDAO"/>
+        <Class IRI="#DAO"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#supportsHWWallet"/>
