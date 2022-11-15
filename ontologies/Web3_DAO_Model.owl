@@ -26,6 +26,12 @@
         <Class IRI="#Blockchain"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#BrowserExtensionWallet"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BrowserWallet"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#CollectorDAO"/>
     </Declaration>
     <Declaration>
@@ -59,6 +65,9 @@
         <Class IRI="#Decision"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#DesktopApplicationWallet"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#DevelopmentNetwork"/>
     </Declaration>
     <Declaration>
@@ -66,9 +75,6 @@
     </Declaration>
     <Declaration>
         <Class IRI="#Elections"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#EthereumWallet"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Executive"/>
@@ -102,6 +108,9 @@
     </Declaration>
     <Declaration>
         <Class IRI="#MembershipContract"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MobileAppWallet"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Network"/>
@@ -248,13 +257,7 @@
         <ObjectProperty IRI="#hasSmartContract"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasTokenCategory"/>
-    </Declaration>
-    <Declaration>
         <ObjectProperty IRI="#hasTokenOwner"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasTokenType"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasVoteDuration"/>
@@ -294,6 +297,9 @@
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#isChartOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isGatewayToBlockchain"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#isMainContractOf"/>
@@ -692,6 +698,14 @@
         <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Agent"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#BrowserExtensionWallet"/>
+        <Class IRI="#Web3SWWallet"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BrowserWallet"/>
+        <Class IRI="#Web3SWWallet"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#CollectorDAO"/>
         <Class IRI="#DAO"/>
     </SubClassOf>
@@ -720,6 +734,10 @@
         <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Document"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#DesktopApplicationWallet"/>
+        <Class IRI="#Web3SWWallet"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#DevelopmentNetwork"/>
         <Class IRI="#PrivateNetwork"/>
     </SubClassOf>
@@ -730,10 +748,6 @@
     <SubClassOf>
         <Class IRI="#Elections"/>
         <Class IRI="#Proposal"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#EthereumWallet"/>
-        <Class IRI="#Web3SWWallet"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Executive"/>
@@ -778,6 +792,10 @@
     <SubClassOf>
         <Class IRI="#MembershipContract"/>
         <Class IRI="#SmartContract"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MobileAppWallet"/>
+        <Class IRI="#Web3SWWallet"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Network"/>
@@ -865,11 +883,15 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Web3SWWallet"/>
+        <Class IRI="#Dapp"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Web3SWWallet"/>
         <Class IRI="#Web3Wallet"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Web3Wallet"/>
-        <Class IRI="#Dapp"/>
+        <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Agent"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#WebUserInterface"/>
@@ -899,12 +921,20 @@
         <Class IRI="#OpenSourceSoftware"/>
     </DisjointClasses>
     <DisjointClasses>
+        <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Group"/>
+        <Class IRI="#Web3Wallet"/>
+    </DisjointClasses>
+    <DisjointClasses>
         <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Organization"/>
         <Class IRI="#Blockchain"/>
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Organization"/>
         <Class IRI="#Network"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Organization"/>
+        <Class IRI="#Web3Wallet"/>
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Person"/>
@@ -923,6 +953,10 @@
         <Class IRI="#OpenSourceSoftware"/>
     </DisjointClasses>
     <DisjointClasses>
+        <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Person"/>
+        <Class IRI="#Web3Wallet"/>
+    </DisjointClasses>
+    <DisjointClasses>
         <Class IRI="#Blockchain"/>
         <Class IRI="#Dapp"/>
     </DisjointClasses>
@@ -936,7 +970,19 @@
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#Blockchain"/>
+        <Class IRI="#Web3Wallet"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Blockchain"/>
         <Class IRI="#WebUserInterface"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#BrowserExtensionWallet"/>
+        <Class IRI="#DesktopApplicationWallet"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#BrowserWallet"/>
+        <Class IRI="#DesktopApplicationWallet"/>
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#Compliance"/>
@@ -973,6 +1019,10 @@
         <Class IRI="#WebUserInterface"/>
     </DisjointClasses>
     <DisjointClasses>
+        <Class IRI="#DesktopApplicationWallet"/>
+        <Class IRI="#MobileAppWallet"/>
+    </DisjointClasses>
+    <DisjointClasses>
         <Class IRI="#Elections"/>
         <Class IRI="#Financial"/>
         <Class IRI="#Others"/>
@@ -997,15 +1047,31 @@
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#Network"/>
+        <Class IRI="#Web3Wallet"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Network"/>
         <Class IRI="#WebUserInterface"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#OpenSourceSoftware"/>
+        <Class IRI="#Web3HWWallet"/>
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#SecurityToken"/>
         <Class IRI="#UtlityToken"/>
     </DisjointClasses>
     <DisjointClasses>
+        <Class IRI="#SmartContract"/>
+        <Class IRI="#Web3Wallet"/>
+    </DisjointClasses>
+    <DisjointClasses>
         <Class IRI="#Web3HWWallet"/>
         <Class IRI="#Web3SWWallet"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Web3Wallet"/>
+        <Class IRI="#WebUserInterface"/>
     </DisjointClasses>
     <ClassAssertion>
         <Class IRI="#Cryptocurrency"/>
@@ -1100,11 +1166,11 @@
         <NamedIndividual IRI="#MainnetETH"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#EthereumWallet"/>
+        <Class IRI="#BrowserExtensionWallet"/>
         <NamedIndividual IRI="#MetaMask"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#Web3SWWallet"/>
+        <Class IRI="#MobileAppWallet"/>
         <NamedIndividual IRI="#MetaMask"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -1219,6 +1285,16 @@
         <NamedIndividual IRI="#Ethereum"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isGatewayToBlockchain"/>
+        <NamedIndividual IRI="#Fortmatic"/>
+        <NamedIndividual IRI="#Ethereum"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isGatewayToBlockchain"/>
+        <NamedIndividual IRI="#Frame"/>
+        <NamedIndividual IRI="#Ethereum"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#hasCurrency"/>
         <NamedIndividual IRI="#MainnetETH"/>
         <NamedIndividual IRI="#ETH"/>
@@ -1241,6 +1317,11 @@
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#hasBlockchainParent"/>
         <NamedIndividual IRI="#Polygon"/>
+        <NamedIndividual IRI="#Ethereum"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isGatewayToBlockchain"/>
+        <NamedIndividual IRI="#Portis"/>
         <NamedIndividual IRI="#Ethereum"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
@@ -1516,13 +1597,7 @@
         <ObjectProperty IRI="#hasSmartContract"/>
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
-        <ObjectProperty IRI="#hasTokenCategory"/>
-    </FunctionalObjectProperty>
-    <FunctionalObjectProperty>
         <ObjectProperty IRI="#hasTokenOwner"/>
-    </FunctionalObjectProperty>
-    <FunctionalObjectProperty>
-        <ObjectProperty IRI="#hasTokenType"/>
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
         <ObjectProperty IRI="#hasVoteDuration"/>
@@ -1779,15 +1854,7 @@
         <Class IRI="#ContractAccount"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasTokenCategory"/>
-        <Class IRI="#Token"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasTokenOwner"/>
-        <Class IRI="#Token"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasTokenType"/>
         <Class IRI="#Token"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
@@ -1841,6 +1908,10 @@
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#isChartOf"/>
         <Class IRI="#DAOAgreement"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isGatewayToBlockchain"/>
+        <Class IRI="#Web3Wallet"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#isMainContractOf"/>
@@ -2109,6 +2180,10 @@
     <ObjectPropertyRange>
         <ObjectProperty IRI="#isChartOf"/>
         <Class IRI="#DAO"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isGatewayToBlockchain"/>
+        <Class IRI="#Blockchain"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#isMainContractOf"/>
@@ -2677,6 +2752,26 @@ Blcockchain technology makes use of cryptography to securely host applications, 
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#BrowserExtensionWallet</IRI>
+        <Literal xml:lang="en">Browser extension wallets are extensions users download that let them interact with tieir account and applications through the browser.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#BrowserExtensionWallet</IRI>
+        <IRI>https://ethereum.org/en/wallets/</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#BrowserWallet</IRI>
+        <Literal xml:lang="en">Browser wallets are web applications that let users interact with their account directly in the browser</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#BrowserWallet</IRI>
+        <IRI>https://ethereum.org/en/wallets/</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Cardano</IRI>
         <Literal xml:lang="en">Cardano is a decentralized third-generation proof-of-stake blockchain platform and home to the ada cryptocurrency. It is the first blockchain platform to evolve out of a scientific philosophy and a research-first driven approach.
 
@@ -2813,6 +2908,16 @@ In summary, dapps have their backend code (smart contracts) running on a decentr
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#DesktopApplicationWallet</IRI>
+        <Literal xml:lang="en">Desktop application wallets when users pefer to manage their funds via macOS, Windows or Linux.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#DesktopApplicationWallet</IRI>
+        <IRI>https://ethereum.org/en/wallets/</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#DevelopmentNetwork</IRI>
         <Literal xml:lang="en">To develop a blockchain application, users will want to run it on a private network to see how it works before deploying it. Similar to how users create a local server on a computer for web development, users can create a local blockchain instance to test their dapp. This allows for much faster iteration than a public testnet.
 
@@ -2860,13 +2965,6 @@ https://ethereum.org/en/what-is-ethereum/</Literal>
         <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
         <IRI>#Ethereum</IRI>
         <IRI>https://ethereum.org/en/</IRI>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#EthereumWallet</IRI>
-        <Literal xml:lang="en">A software application that helps users manage their Ethereum accounts. 
-
-An Ethereum Wallet is the gateway to the Ethereum system.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -3003,6 +3101,16 @@ MetaMaks currently supports the next hardware wallets: Trezor, Ledger. Lattice, 
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#MobileAppWallet</IRI>
+        <Literal xml:lang="en">Mobile app wallets that make your funds accessible from anywhere.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#MobileAppWallet</IRI>
+        <IRI>https://ethereum.org/en/wallets/</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Network</IRI>
         <Literal xml:lang="en">Networks are different Blockchain environments that can be accessed for development, testing, or production use cases.
 
@@ -3134,11 +3242,11 @@ Examples: MakerDAO (https://makerdao.com/), Uniswap (https://uniswap.org/), year
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#SecurityToken</IRI>
-        <Literal xml:lang="en">Token that is subjected to regulations and securities. That is, this type of tokens will always have federal regullation making it a safer choice.
+        <Literal xml:lang="en">Token that is subjected to regulations and securities. That is, this type of tokens will always have federal regulation making it a safer choice.
 
-Security tokens represents tradable assets and investmen contracts as determined by Howey Test (USA) or the Directive 2014/65/EU (MiFID II).
+Security tokens represent tradable assets and investment contracts as determined by Howey Test (USA) and the Directive 2014/65/EU (MiFID II).
 
-Security tokens are governance tokens that provide finacial rights, such as voting, profit share and dividends.
+Security tokens are governance tokens that provide financial rights, such as voting, profit share and dividends.
 
 Security tokens, also known as ownership tokens, are de facto digital securities. For example, they can be stocks or bonds that are listed on the blockchain. Blockchain does not allow changing or deleting information, so it has become a reliable solution for storing tokenized assets.
 
@@ -3279,7 +3387,12 @@ HW wallets require users to plug into a computer or online device to access thei
 
 A web3 wallet is the gateway to a blockchain system.
 
-According to https://ethereum.org/en/dapps/, wallets are dapps too.</Literal>
+According to https://ethereum.org/en/dapps/#what-are-dapps wallets are dapps too.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#Web3Wallet</IRI>
+        <IRI>https://ethereum.org/en/wallets/find-wallet/</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
