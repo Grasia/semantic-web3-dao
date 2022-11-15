@@ -185,6 +185,9 @@
         <Class IRI="#VotingContract"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#WalletFeature"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Web3HWWallet"/>
     </Declaration>
     <Declaration>
@@ -267,6 +270,9 @@
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasVotingToken"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasWalletFeature"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasWebUserInterface"/>
@@ -527,16 +533,25 @@
         <NamedIndividual IRI="#BitDAO"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#BuyCrypto"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#Cardano"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#CardanoNetwork"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#ConnectToDapps"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#CryptoKitty"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#DOT"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ENSSupport"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#ETH"/>
@@ -546,6 +561,9 @@
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#EthereumMainnet"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#FeeOptimization"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Finance"/>
@@ -563,6 +581,12 @@
         <NamedIndividual IRI="#Ganache"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#GasFeeCustomization"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#HWWalletSupport"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#HardHat"/>
     </Declaration>
     <Declaration>
@@ -572,7 +596,16 @@
         <NamedIndividual IRI="#MetaMask"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#Multisig"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#NFTSupport"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#No"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#OpenSource"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Optimism"/>
@@ -584,13 +617,28 @@
         <NamedIndividual IRI="#Portis"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#SecurityToken"/>
+        <NamedIndividual IRI="#RPCImporting"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SellForFiat"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SocialRecovery"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Solana"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#Staking"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Swaps"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#Technology"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#TokenImporting"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Trezor"/>
@@ -605,7 +653,7 @@
         <NamedIndividual IRI="#UniswapDAO"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#UtilityToken"/>
+        <NamedIndividual IRI="#WalletConnect"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Yes"/>
@@ -692,6 +740,27 @@
                 <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
             </DataHasValue>
         </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#WalletFeature"/>
+        <ObjectOneOf>
+            <NamedIndividual IRI="#BuyCrypto"/>
+            <NamedIndividual IRI="#ConnectToDapps"/>
+            <NamedIndividual IRI="#ENSSupport"/>
+            <NamedIndividual IRI="#FeeOptimization"/>
+            <NamedIndividual IRI="#GasFeeCustomization"/>
+            <NamedIndividual IRI="#HWWalletSupport"/>
+            <NamedIndividual IRI="#Multisig"/>
+            <NamedIndividual IRI="#NFTSupport"/>
+            <NamedIndividual IRI="#OpenSource"/>
+            <NamedIndividual IRI="#RPCImporting"/>
+            <NamedIndividual IRI="#SellForFiat"/>
+            <NamedIndividual IRI="#SocialRecovery"/>
+            <NamedIndividual IRI="#Staking"/>
+            <NamedIndividual IRI="#Swaps"/>
+            <NamedIndividual IRI="#TokenImporting"/>
+            <NamedIndividual IRI="#WalletConnect"/>
+        </ObjectOneOf>
     </EquivalentClasses>
     <SubClassOf>
         <Class IRI="#Blockchain"/>
@@ -1110,6 +1179,10 @@
         <NamedIndividual IRI="#BitDAO"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="#WalletFeature"/>
+        <NamedIndividual IRI="#BuyCrypto"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#Blockchain"/>
         <NamedIndividual IRI="#Cardano"/>
     </ClassAssertion>
@@ -1118,12 +1191,20 @@
         <NamedIndividual IRI="#CardanoNetwork"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="#WalletFeature"/>
+        <NamedIndividual IRI="#ConnectToDapps"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#NonFungibleToken"/>
         <NamedIndividual IRI="#CryptoKitty"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Cryptocurrency"/>
         <NamedIndividual IRI="#DOT"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#WalletFeature"/>
+        <NamedIndividual IRI="#ENSSupport"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Cryptocurrency"/>
@@ -1136,6 +1217,10 @@
     <ClassAssertion>
         <Class IRI="#Mainnet"/>
         <NamedIndividual IRI="#EthereumMainnet"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#WalletFeature"/>
+        <NamedIndividual IRI="#FeeOptimization"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#DappCategory"/>
@@ -1158,6 +1243,14 @@
         <NamedIndividual IRI="#Ganache"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="#WalletFeature"/>
+        <NamedIndividual IRI="#GasFeeCustomization"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#WalletFeature"/>
+        <NamedIndividual IRI="#HWWalletSupport"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#DevelopmentNetwork"/>
         <NamedIndividual IRI="#HardHat"/>
     </ClassAssertion>
@@ -1174,8 +1267,20 @@
         <NamedIndividual IRI="#MetaMask"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="#WalletFeature"/>
+        <NamedIndividual IRI="#Multisig"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#WalletFeature"/>
+        <NamedIndividual IRI="#NFTSupport"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#Decision"/>
         <NamedIndividual IRI="#No"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#WalletFeature"/>
+        <NamedIndividual IRI="#OpenSource"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Blockchain"/>
@@ -1190,12 +1295,36 @@
         <NamedIndividual IRI="#Portis"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="#WalletFeature"/>
+        <NamedIndividual IRI="#RPCImporting"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#WalletFeature"/>
+        <NamedIndividual IRI="#SellForFiat"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#WalletFeature"/>
+        <NamedIndividual IRI="#SocialRecovery"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#Blockchain"/>
         <NamedIndividual IRI="#Solana"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="#WalletFeature"/>
+        <NamedIndividual IRI="#Staking"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#WalletFeature"/>
+        <NamedIndividual IRI="#Swaps"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#DappCategory"/>
         <NamedIndividual IRI="#Technology"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#WalletFeature"/>
+        <NamedIndividual IRI="#TokenImporting"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Web3HWWallet"/>
@@ -1212,6 +1341,10 @@
     <ClassAssertion>
         <Class IRI="#DAO"/>
         <NamedIndividual IRI="#UniswapDAO"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#WalletFeature"/>
+        <NamedIndividual IRI="#WalletConnect"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Decision"/>
@@ -1870,6 +2003,10 @@
         <Class IRI="#Proposal"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasWalletFeature"/>
+        <Class IRI="#Web3Wallet"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasWebUserInterface"/>
         <Class IRI="#Dapp"/>
     </ObjectPropertyDomain>
@@ -2140,6 +2277,10 @@
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasVotingToken"/>
         <Class IRI="#SecurityToken"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasWalletFeature"/>
+        <Class IRI="#WalletFeature"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasWebUserInterface"/>
@@ -2771,6 +2912,11 @@ Blcockchain technology makes use of cryptography to securely host applications, 
         <IRI>https://ethereum.org/en/wallets/</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#BuyCrypto</IRI>
+        <IRI>https://ethereum.org/en/wallets/find-wallet/</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Cardano</IRI>
         <Literal xml:lang="en">Cardano is a decentralized third-generation proof-of-stake blockchain platform and home to the ada cryptocurrency. It is the first blockchain platform to evolve out of a scientific philosophy and a research-first driven approach.
@@ -2808,6 +2954,11 @@ Examples: Flamingo DAO (https://flamingodao.xyz/), ConstitutionDAO (https://www.
         <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
         <IRI>#Compliance</IRI>
         <IRI>https://blog.aragon.org/an-dao-launch/</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#ConnectToDapps</IRI>
+        <IRI>https://ethereum.org/en/wallets/find-wallet/</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -2930,6 +3081,11 @@ In summary, development networks are essentially blockchain clients (implementat
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#ENSSupport</IRI>
+        <IRI>https://ethereum.org/en/wallets/find-wallet/</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
         <IRI>#EOA</IRI>
         <Literal xml:lang="en">Externally Owned Account (EOA).
 
@@ -2975,6 +3131,11 @@ https://ethereum.org/en/what-is-ethereum/</Literal>
         <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
         <IRI>#Executive</IRI>
         <IRI>https://blog.aragon.org/an-dao-launch/</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#FeeOptimization</IRI>
+        <IRI>https://ethereum.org/en/wallets/find-wallet/</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -3028,11 +3189,21 @@ Instead of running on banking infrastructure like USD or EUR, tokens are used th
         <IRI>https://trufflesuite.com/ganache/</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#GasFeeCustomization</IRI>
+        <IRI>https://ethereum.org/en/wallets/find-wallet/</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#GrantDAO</IRI>
         <Literal xml:lang="en">Grant DAOs are are designed to facilitate nonprofit donations, strategically deploy capital assets throughout the web3 ecosystem, and are either a charitable extension of a larger project or an entirely separate entity in the DeFi space. 
 
 Examples: MetaCartel (https://www.metacartel.org/), AAVE Grants (https://aave.com/ =&gt; https://aavegrants.org/).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#HWWalletSupport</IRI>
+        <IRI>https://ethereum.org/en/wallets/find-wallet/</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
@@ -3110,6 +3281,16 @@ MetaMaks currently supports the next hardware wallets: Trezor, Ledger. Lattice, 
         <IRI>https://ethereum.org/en/wallets/</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#Multisig</IRI>
+        <IRI>https://ethereum.org/en/wallets/find-wallet/</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#NFTSupport</IRI>
+        <IRI>https://ethereum.org/en/wallets/find-wallet/</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Network</IRI>
         <Literal xml:lang="en">Networks are different Blockchain environments that can be accessed for development, testing, or production use cases.
@@ -3139,6 +3320,11 @@ Examples: Ethereum Mainnet, Goerli testnet.</Literal>
 NFTs are minted through smart contracts that assign ownership and reassign it when NFTs are transferred or resold. At a basic level, smart contracts can be seen as a tool aimed at implementing a sale agreement.
  
 Each NFT is associated with a unique identifier, such a serial number.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#OpenSource</IRI>
+        <IRI>https://ethereum.org/en/wallets/find-wallet/</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -3240,17 +3426,14 @@ Examples: MakerDAO (https://makerdao.com/), Uniswap (https://uniswap.org/), year
         <Literal xml:lang="en">Question is the text that represents the aim of the proposal.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#SecurityToken</IRI>
-        <Literal xml:lang="en">Token that is subjected to regulations and securities. That is, this type of tokens will always have federal regulation making it a safer choice.
-
-Security tokens represent tradable assets and investment contracts as determined by Howey Test (USA) and the Directive 2014/65/EU (MiFID II).
-
-Security tokens are governance tokens that provide financial rights, such as voting, profit share and dividends.
-
-Security tokens, also known as ownership tokens, are de facto digital securities. For example, they can be stocks or bonds that are listed on the blockchain. Blockchain does not allow changing or deleting information, so it has become a reliable solution for storing tokenized assets.
-
-Security tokens are most often used by private firms that do not trade stocks on exchanges. Previously, such companies could only receive funding from banks, venture capital funds, or private investors with very large capital exceeding $1,000,000. The tokenization technology allowed such companies to find new funding sources, which is exactly the area in which Stobox works, helping its clients launch STOs (security token offerings).</Literal>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#RPCImporting</IRI>
+        <IRI>https://ethereum.org/en/wallets/find-wallet/</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#SellForFiat</IRI>
+        <IRI>https://ethereum.org/en/wallets/find-wallet/</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -3290,6 +3473,11 @@ Example: Friends with Benefits (https://www.fwb.help/).</Literal>
         <IRI>https://solana.com/es</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#Staking</IRI>
+        <IRI>https://ethereum.org/en/wallets/find-wallet/</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#SubDAO</IRI>
         <Literal xml:lang="en">A SubDAO is a new kind of DAO that is a subset of DAO members that are organized to manage specific functions such as operations, partnerships, marketing, treasury, and grants.
@@ -3299,6 +3487,11 @@ For example, Balancer (https://balancer.fi/) saw an opportunity with its growing
 In a unanimous vote, Balancer DAO successfully integrated subDAOs into their structure and are now able to move more efficiently as a Decentralized Autonomous Organization.
 
 The creativity of the community is truly the limit of what can be built within the DAO framework.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#Swaps</IRI>
+        <IRI>https://ethereum.org/en/wallets/find-wallet/</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -3328,6 +3521,11 @@ Transaction cost on testnets has no real value; therefore, there are no markets 
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#TokenContract</IRI>
         <Literal xml:lang="en">A token contract keeps track of fungible tokens: any one token is exactly equal to any other token; no tokens have special rights or behavior associated with them. This makes fungible tokens useful for things like a medium of exchange currency, voting rights, staking, and more.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#TokenImporting</IRI>
+        <IRI>https://ethereum.org/en/wallets/find-wallet/</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -3362,6 +3560,11 @@ Utility tokens does not reflect the company’s shares and they are exempted fro
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#VotingContract</IRI>
         <Literal xml:lang="en">Smart contract that allows users to vote on proposals.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#WalletConnect</IRI>
+        <IRI>https://ethereum.org/en/wallets/find-wallet/</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -3470,6 +3673,14 @@ URL (Uniform Resource Locator)</Literal>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#endDate</IRI>
         <Literal xml:lang="en">End datetime for the voting process.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasBlockchainParent</IRI>
+        <Literal xml:lang="en">For instance, Ethereum Layer 2 (L2) is a collective term to describe a specific set of Ethereum scaling solutions. A layer 2 is a separate blockchain that extends Ethereum and inherits the security guarantees of Ethereum. 
+
+Ethereum Mainnet is Layer 1
+Arbitrum is Layer 2</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
