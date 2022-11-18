@@ -1590,6 +1590,10 @@
         <NamedIndividual IRI="#wei"/>
         <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">1000000000000000000</Literal>
     </DataPropertyAssertion>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#sharesCryptoWallet"/>
+        <ObjectProperty IRI="#hasCryptoWallet"/>
+    </SubObjectPropertyOf>
     <InverseObjectProperties>
         <ObjectProperty IRI="#belongsTo"/>
         <ObjectProperty IRI="#hasQuestion"/>
@@ -1990,6 +1994,10 @@
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasCharter"/>
         <Class IRI="#DAO"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasCryptoWallet"/>
+        <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Organization"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasCryptoWallet"/>
