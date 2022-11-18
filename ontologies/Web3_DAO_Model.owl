@@ -98,6 +98,9 @@
         <Class IRI="#InvestmentDAO"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#IsMember"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Main"/>
     </Declaration>
     <Declaration>
@@ -206,6 +209,9 @@
         <ObjectProperty IRI="#builtOn"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#committeeHasIsMember"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#composedOfCommittee"/>
     </Declaration>
     <Declaration>
@@ -221,13 +227,13 @@
         <ObjectProperty IRI="#createsProposal"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#daoMember"/>
-    </Declaration>
-    <Declaration>
         <ObjectProperty IRI="#deployedOn"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#eoaHasHolds"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#eoaHasIsMember"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#eoaHasVotes"/>
@@ -311,7 +317,10 @@
         <ObjectProperty IRI="#isMainContractOf"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#isMemberOfDAOCommittee"/>
+        <ObjectProperty IRI="#isMemberOfCommittee"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isMemberOfEOA"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#isPartOfBlockchain"/>
@@ -845,6 +854,10 @@
     <SubClassOf>
         <Class IRI="#InvestmentDAO"/>
         <Class IRI="#DAO"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#IsMember"/>
+        <Class IRI="#Restriction"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Main"/>
@@ -1577,10 +1590,6 @@
         <NamedIndividual IRI="#wei"/>
         <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">1000000000000000000</Literal>
     </DataPropertyAssertion>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#daoMember"/>
-        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
-    </SubObjectPropertyOf>
     <InverseObjectProperties>
         <ObjectProperty IRI="#belongsTo"/>
         <ObjectProperty IRI="#hasQuestion"/>
@@ -1588,6 +1597,10 @@
     <InverseObjectProperties>
         <ObjectProperty IRI="#builtOn"/>
         <ObjectProperty IRI="#isMainContractOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#committeeHasIsMember"/>
+        <ObjectProperty IRI="#isMemberOfCommittee"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="#composedOfCommittee"/>
@@ -1606,16 +1619,16 @@
         <ObjectProperty IRI="#createsProposal"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
-        <ObjectProperty IRI="#daoMember"/>
-        <ObjectProperty IRI="#isMemberOfDAOCommittee"/>
-    </InverseObjectProperties>
-    <InverseObjectProperties>
         <ObjectProperty IRI="#deployedOn"/>
         <ObjectProperty IRI="#storesSmartContract"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="#eoaHasHolds"/>
         <ObjectProperty IRI="#holdsOfEOA"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#eoaHasIsMember"/>
+        <ObjectProperty IRI="#isMemberOfEOA"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="#eoaHasVotes"/>
@@ -1763,6 +1776,12 @@
         <ObjectProperty IRI="#isMainContractOf"/>
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
+        <ObjectProperty IRI="#isMemberOfCommittee"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#isMemberOfEOA"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
         <ObjectProperty IRI="#isPartOfBlockchain"/>
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
@@ -1805,6 +1824,9 @@
         <ObjectProperty IRI="#builtOn"/>
     </InverseFunctionalObjectProperty>
     <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#committeeHasIsMember"/>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
         <ObjectProperty IRI="#composedOfCommittee"/>
     </InverseFunctionalObjectProperty>
     <InverseFunctionalObjectProperty>
@@ -1818,6 +1840,9 @@
     </InverseFunctionalObjectProperty>
     <InverseFunctionalObjectProperty>
         <ObjectProperty IRI="#eoaHasHolds"/>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#eoaHasIsMember"/>
     </InverseFunctionalObjectProperty>
     <InverseFunctionalObjectProperty>
         <ObjectProperty IRI="#eoaHasVotes"/>
@@ -1915,6 +1940,10 @@
         <Class IRI="#Dapp"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#committeeHasIsMember"/>
+        <Class IRI="#Committee"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#composedOfCommittee"/>
         <Class IRI="#DAO"/>
     </ObjectPropertyDomain>
@@ -1935,15 +1964,15 @@
         <Class IRI="#EOA"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#daoMember"/>
-        <Class IRI="#Committee"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
         <ObjectProperty IRI="#deployedOn"/>
         <Class IRI="#SmartContract"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#eoaHasHolds"/>
+        <Class IRI="#EOA"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#eoaHasIsMember"/>
         <Class IRI="#EOA"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
@@ -2055,8 +2084,12 @@
         <Class IRI="#SmartContract"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#isMemberOfDAOCommittee"/>
-        <Class IRI="#EOA"/>
+        <ObjectProperty IRI="#isMemberOfCommittee"/>
+        <Class IRI="#IsMember"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isMemberOfEOA"/>
+        <Class IRI="#IsMember"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#isPartOfBlockchain"/>
@@ -2191,6 +2224,10 @@
         <Class IRI="#SmartContract"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#committeeHasIsMember"/>
+        <Class IRI="#IsMember"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#composedOfCommittee"/>
         <Class IRI="#Committee"/>
     </ObjectPropertyRange>
@@ -2211,16 +2248,16 @@
         <Class IRI="#Proposal"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#daoMember"/>
-        <Class IRI="#EOA"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
         <ObjectProperty IRI="#deployedOn"/>
         <Class IRI="#Network"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#eoaHasHolds"/>
         <Class IRI="#Holds"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#eoaHasIsMember"/>
+        <Class IRI="#IsMember"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#eoaHasVotes"/>
@@ -2331,8 +2368,12 @@
         <Class IRI="#Dapp"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#isMemberOfDAOCommittee"/>
+        <ObjectProperty IRI="#isMemberOfCommittee"/>
         <Class IRI="#Committee"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isMemberOfEOA"/>
+        <Class IRI="#EOA"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#isPartOfBlockchain"/>
@@ -2597,6 +2638,10 @@
     <DataPropertyDomain>
         <DataProperty IRI="#chartName"/>
         <Class IRI="#DAOAgreement"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#createdAt"/>
+        <Class IRI="#IsMember"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#createdAt"/>
@@ -3213,7 +3258,7 @@ Examples: MetaCartel (https://www.metacartel.org/), AAVE Grants (https://aave.co
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Holds</IRI>
-        <Literal xml:lang="en">This class represents the association-class between dao:Token and dao:EOA.</Literal>
+        <Literal xml:lang="en">This class represents the association-class between dao:EOA and dao:Token.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
@@ -3226,6 +3271,11 @@ Examples: MetaCartel (https://www.metacartel.org/), AAVE Grants (https://aave.co
         <Literal xml:lang="en">Investment DAOs, also called Venture DAOs, they pool capital to invest in early stage web3 startups, protocols, off-chain investments, and get access to portfolios not available in traditional finance.
 
 Examples: KrauseHouse (https://www.krausehouse.club/), MetaCartel Ventures (https://metacartel.xyz/).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#IsMember</IRI>
+        <Literal xml:lang="en">This class represents the association-class between dao:EOA and dao:Committee.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
