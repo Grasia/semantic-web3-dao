@@ -206,6 +206,9 @@
         <ObjectProperty IRI="#belongsTo"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#belongsToProposal"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#builtOn"/>
     </Declaration>
     <Declaration>
@@ -263,6 +266,9 @@
         <ObjectProperty IRI="#hasQuestion"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#hasResponsibleMember"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#hasSmartContract"/>
     </Declaration>
     <Declaration>
@@ -305,10 +311,16 @@
         <ObjectProperty IRI="#isAssociatedWithAccount"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#isBaseUnitOf"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#isBlockchainParentOf"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#isChartOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isCurrencyOf"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#isGatewayToBlockchain"/>
@@ -341,7 +353,7 @@
         <ObjectProperty IRI="#isProposalOf"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#isResponsibleMember"/>
+        <ObjectProperty IRI="#isResponsibleMemberOf"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#isSupportedBy"/>
@@ -1596,6 +1608,10 @@
     </SubObjectPropertyOf>
     <InverseObjectProperties>
         <ObjectProperty IRI="#belongsTo"/>
+        <ObjectProperty IRI="#hasCryptoWallet"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#belongsToProposal"/>
         <ObjectProperty IRI="#hasQuestion"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
@@ -1639,12 +1655,24 @@
         <ObjectProperty IRI="#votesOfEOA"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
+        <ObjectProperty IRI="#hasBaseUnit"/>
+        <ObjectProperty IRI="#isBaseUnitOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
         <ObjectProperty IRI="#hasBlockchainParent"/>
         <ObjectProperty IRI="#isBlockchainParentOf"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="#hasCharter"/>
         <ObjectProperty IRI="#isChartOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasCurrency"/>
+        <ObjectProperty IRI="#isCurrencyOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasResponsibleMember"/>
+        <ObjectProperty IRI="#isResponsibleMemberOf"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="#hasSmartContract"/>
@@ -1711,7 +1739,7 @@
         <ObjectProperty IRI="#supportsHWWallet"/>
     </InverseObjectProperties>
     <FunctionalObjectProperty>
-        <ObjectProperty IRI="#belongsTo"/>
+        <ObjectProperty IRI="#belongsToProposal"/>
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
         <ObjectProperty IRI="#builtOn"/>
@@ -1744,6 +1772,9 @@
         <ObjectProperty IRI="#hasQuestion"/>
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasResponsibleMember"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
         <ObjectProperty IRI="#hasSmartContract"/>
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
@@ -1772,6 +1803,9 @@
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
         <ObjectProperty IRI="#isAssociatedWithAccount"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#isBaseUnitOf"/>
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
         <ObjectProperty IRI="#isChartOf"/>
@@ -1804,9 +1838,6 @@
         <ObjectProperty IRI="#isProposalOf"/>
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
-        <ObjectProperty IRI="#isResponsibleMember"/>
-    </FunctionalObjectProperty>
-    <FunctionalObjectProperty>
         <ObjectProperty IRI="#ownsToken"/>
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
@@ -1822,7 +1853,7 @@
         <ObjectProperty IRI="#votesOfQuestion"/>
     </FunctionalObjectProperty>
     <InverseFunctionalObjectProperty>
-        <ObjectProperty IRI="#belongsTo"/>
+        <ObjectProperty IRI="#belongsToProposal"/>
     </InverseFunctionalObjectProperty>
     <InverseFunctionalObjectProperty>
         <ObjectProperty IRI="#builtOn"/>
@@ -1852,6 +1883,9 @@
         <ObjectProperty IRI="#eoaHasVotes"/>
     </InverseFunctionalObjectProperty>
     <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#hasBaseUnit"/>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
         <ObjectProperty IRI="#hasCharter"/>
     </InverseFunctionalObjectProperty>
     <InverseFunctionalObjectProperty>
@@ -1879,16 +1913,25 @@
         <ObjectProperty IRI="#isAssociatedWithAccount"/>
     </InverseFunctionalObjectProperty>
     <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#isBaseUnitOf"/>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
         <ObjectProperty IRI="#isBlockchainParentOf"/>
     </InverseFunctionalObjectProperty>
     <InverseFunctionalObjectProperty>
         <ObjectProperty IRI="#isChartOf"/>
     </InverseFunctionalObjectProperty>
     <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#isCurrencyOf"/>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
         <ObjectProperty IRI="#isMainContractOf"/>
     </InverseFunctionalObjectProperty>
     <InverseFunctionalObjectProperty>
         <ObjectProperty IRI="#isPartOfProposal"/>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#isResponsibleMemberOf"/>
     </InverseFunctionalObjectProperty>
     <InverseFunctionalObjectProperty>
         <ObjectProperty IRI="#isVotingToken"/>
@@ -1937,6 +1980,10 @@
     </IrreflexiveObjectProperty>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#belongsTo"/>
+        <Class IRI="#Web3Wallet"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#belongsToProposal"/>
         <Class IRI="#Question"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
@@ -2020,6 +2067,10 @@
         <Class IRI="#Proposal"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasResponsibleMember"/>
+        <Class IRI="#Proposal"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasSmartContract"/>
         <Class IRI="#ContractAccount"/>
     </ObjectPropertyDomain>
@@ -2076,12 +2127,20 @@
         <Class IRI="#SmartContract"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isBaseUnitOf"/>
+        <Class IRI="#BaseUnit"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#isBlockchainParentOf"/>
         <Class IRI="#Blockchain"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#isChartOf"/>
         <Class IRI="#DAOAgreement"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isCurrencyOf"/>
+        <Class IRI="#Cryptocurrency"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#isGatewayToBlockchain"/>
@@ -2124,8 +2183,8 @@
         <Class IRI="#Proposal"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#isResponsibleMember"/>
-        <Class IRI="#Proposal"/>
+        <ObjectProperty IRI="#isResponsibleMemberOf"/>
+        <Class IRI="#EOA"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#isSupportedBy"/>
@@ -2225,6 +2284,14 @@
     </ObjectPropertyDomain>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#belongsTo"/>
+        <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Organization"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#belongsTo"/>
+        <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Person"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#belongsToProposal"/>
         <Class IRI="#Proposal"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
@@ -2304,6 +2371,10 @@
         <Class IRI="#Question"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasResponsibleMember"/>
+        <Class IRI="#EOA"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#hasSmartContract"/>
         <Class IRI="#SmartContract"/>
     </ObjectPropertyRange>
@@ -2360,12 +2431,20 @@
         <Class IRI="#ContractAccount"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#isBaseUnitOf"/>
+        <Class IRI="#Cryptocurrency"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#isBlockchainParentOf"/>
         <Class IRI="#Blockchain"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#isChartOf"/>
         <Class IRI="#DAO"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isCurrencyOf"/>
+        <Class IRI="#Network"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#isGatewayToBlockchain"/>
@@ -2408,8 +2487,8 @@
         <Class IRI="#DAO"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#isResponsibleMember"/>
-        <Class IRI="#EOA"/>
+        <ObjectProperty IRI="#isResponsibleMemberOf"/>
+        <Class IRI="#Proposal"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#isSupportedBy"/>
@@ -3749,11 +3828,6 @@ Arbitrum is Layer 2</Literal>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#identifier</IRI>
         <Literal xml:lang="en">Each NFT must be associated with a unique identifier, such a serial number.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#isResponsibleMember</IRI>
-        <Literal xml:lang="en">Address (i.e., user account) of the DAO member who is responsible of the proposal (when the proposer is not a member of the DAO).</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
