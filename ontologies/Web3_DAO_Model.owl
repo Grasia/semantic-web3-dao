@@ -428,6 +428,9 @@
         <ObjectProperty IRI="#votesOfQuestion"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#votesProposal"/>
+    </Declaration>
+    <Declaration>
         <DataProperty IRI="#abstainVotes"/>
     </Declaration>
     <Declaration>
@@ -2282,6 +2285,10 @@
         <ObjectProperty IRI="#votesOfQuestion"/>
         <Class IRI="#Votes"/>
     </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#votesProposal"/>
+        <Class IRI="#EOA"/>
+    </ObjectPropertyDomain>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#belongsTo"/>
         <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Organization"/>
@@ -2589,6 +2596,10 @@
     <ObjectPropertyRange>
         <ObjectProperty IRI="#votesOfQuestion"/>
         <Class IRI="#Question"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#votesProposal"/>
+        <Class IRI="#Proposal"/>
     </ObjectPropertyRange>
     <SubDataPropertyOf>
         <DataProperty IRI="#chartName"/>
