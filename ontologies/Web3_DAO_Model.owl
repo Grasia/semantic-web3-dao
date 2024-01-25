@@ -7,8 +7,7 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      ontologyIRI="http://www.fdi.ucm.es/disia/ont/web3/DAO"
      versionIRI="http://www.fdi.ucm.es/disia/ont/web3/DAO/v1.0.0">
-    <Prefix name="" IRI="http://www.fdi.ucm.es/disia/ont/web3/DAO"/>
-    <Prefix name="dao" IRI="http://www.fdi.ucm.es/disia/ont/web3/DAO#"/>
+    <Prefix name="dao" IRI="http://www.fdi.ucm.es/disia/ont/web3/DAO"/>
     <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
     <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
@@ -3028,11 +3027,18 @@ Arbitrum is the next generation Layer2 technologies for Ethereum dApp developmen
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Blockchain</IRI>
-        <Literal xml:lang="en">Blockchain technology was initially introduced as the technology enabling Bitcoin (a new form of digital currency) and, in short, it can be seen as a distributed database that stores transactions grouped into blocks, which results in a decentralized public digital ledger.
+        <Literal xml:lang="en">Blockchain technology was initially introduced as the technology enabling Bitcoin (a new form of digital currency) and, in short, it can be seen as a public distributed database that  is updated and shared across many computers in a network. 
+
+A blockchain stores transactions grouped into blocks, which results in a decentralized public digital ledger. For example, if someone sends ETH, to someone else, the transaction data needs to be added to a block to be successful.
 
 The blocks represent the history of the blockchain and the transactions change its state. In this context, a transaction could be seen as an atomic write operation triggered by a user that may alter one or several records of the corresponding database. For example, a currency transfer between two accounts will reduce the sender’s balance and will increase the recipient’s balance. Further, transactions are chosen and ordered in each block depending on blockchain consensus rules (i.e., the synchronization mechanism to maintain consistency across each copy of the database in each node).
 
-Blcockchain technology makes use of cryptography to securely host applications, store data, and easily transfer digital instruments or assets of value that represent  different items such as ownership, a secret password, a list, a message, digital cash, a document, a photo, corporate voting shares, or trademarks, among others.</Literal>
+Blockchain technology makes use of cryptography to securely host applications, store data, and easily transfer digital instruments or assets of value that represent  different items such as ownership, a secret password, a list, a message, digital cash, a document, a photo, corporate voting shares, or trademarks, among others.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#Blockchain</IRI>
+        <IRI>https://ethereum.org/developers/docs/intro-to-ethereum</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -3047,7 +3053,7 @@ Blcockchain technology makes use of cryptography to securely host applications, 
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#BrowserWallet</IRI>
-        <Literal xml:lang="en">Browser wallets are web applications that let users interact with their account directly in the browser</Literal>
+        <Literal xml:lang="en">Browser wallets are web applications that let users interact with their account directly in the browser.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
@@ -3145,7 +3151,11 @@ Organization = Coordination &amp; collaboration around shared objectives.
 
 The term was coined by Ethereum founder Vitalik Buterin in his 2014 article (https://blog.ethereum.org/2014/05/06/daos-dacs-das-and-more-an-incomplete-terminology-guide).
 
-A DAO is a dapp that represents an online community that jointly controls a cryptocurrency wallet to pursue common goals, such as running a business or charity.
+A DAO is a software application (i.e., a dapp) that represents an online community that jointly controls a cryptocurrency wallet to pursue common goals, such as running a business or charity. That is, a DAO is a collectively-owned, blockchain-governed organization working towards a shared mission.
+
+DAOs allow us to work  with like-minded folks around the globe without trusting a benevolent leader to manage the funds or operations. There is no CEO who can spend funds on a whim or CFO who can manipulate the books. Instead, blockchain-based rules baked into the code define how the organization works and how funds are spent.
+
+DAOs have built-in treasuries that no one has the authority to access without the approval of the group. Decisions are governed by proposals and voting to ensure everyone in the organization has a voice, and everything happens transparently on-chain.
 
 DAO Explorers:
 
@@ -3153,12 +3163,17 @@ DeepDAO: https://deepdao.io/organizations
 Dao Analyzer: https://dao-analyzer.science
 
 DAO examples: 
-https://andao.aragon.org/
-https://molochdao.com/ =&gt; https://app.daohaus.club/dao/0x1/0x519f9662798c2e07fbd5b30c1445602320c5cf5b
-https://www.aavegotchi.com/
+- Aavegotchi (https://www.aavegotchi.com/) governed by Aavegotchi DAO (https://deepdao.io/organization/219ab5ef-9345-448b-bbf2-786a33e4edd8/organization_data/finance)
+- MolochDAO (https://molochdao.com/) 
+- Optimism Foundation (https://www.optimism.io/)
 
 Types of DAOs:
 https://www.alchemy.com/blog/types-of-daos</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#DAO</IRI>
+        <IRI>https://ethereum.org/dao</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -3187,7 +3202,8 @@ It represents the Charter of a DAO.</Literal>
         <IRI>#Dapp</IRI>
         <Literal xml:lang="en">Decentralized application (dapp).
 
-A program implemented on the blockchain that executes the rules of a particular business application. Usually the term Dapp encompasses both the program’s backend as well as (various) web user interfaces (frontends).
+An application built on a decentralized network that combines a smart contract and a frontend user interface. On Ethereum, smart contracts are accessible and transparent – like open APIs – so a dapp can even include a smart contract that someone else has written.
+
 
 A dapp is, at the very least, a smart contract and a web user interface. More broadly, a Dapp is a web application that is built on top of open, decentralized, peer-to-peer infrastructure services.
 
@@ -3341,7 +3357,7 @@ Instead of running on banking infrastructure like USD or EUR, tokens are used th
         <IRI>#GrantDAO</IRI>
         <Literal xml:lang="en">Grant DAOs are are designed to facilitate nonprofit donations, strategically deploy capital assets throughout the web3 ecosystem, and are either a charitable extension of a larger project or an entirely separate entity in the DeFi space. 
 
-Examples: MetaCartel (https://www.metacartel.org/), AAVE Grants (https://aave.com/ =&gt; https://aavegrants.org/).</Literal>
+Examples: MetaCartel (https://www.metacartel.org/), AAVE Grants (https://aave.com/  =&gt;  https://aavegrants.org/).</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
@@ -3561,7 +3577,7 @@ Examples: Big Green DAO (https://dao.biggreen.org/), PleasrDAO. (https://pleasr.
         <IRI>#ProtocolDAO</IRI>
         <Literal xml:lang="en">A protocol DAO is a kind of DAO that is designed to govern a decentralized protocol such as a borrow/lending application, decentralized exchange, or another type of dapp.
 
-Examples: MakerDAO (https://makerdao.com/), Uniswap (https://uniswap.org/), yearn.finance (https://yearn.finance/#/portfolio).</Literal>
+Examples: MakerDAO (https://makerdao.com/), Uniswap (https://uniswap.org/), yearn.finance (https://yearn.fi/#/portfolio).</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -3940,5 +3956,5 @@ The double value assigned to indicate the USD exchange rate for a dao:Token.</Li
 
 
 
-<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+<!-- Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi -->
 
