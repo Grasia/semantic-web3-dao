@@ -273,9 +273,7 @@ Example:
   &lt;foaf:name&gt;Dan Brickley&lt;/foaf:name&gt;
   &lt;foaf:account&gt;
     &lt;foaf:OnlineAccount&gt;
-      &lt;rdf:type rdf:resource=&quot;http://xmlns.com/foaf/0.1/OnlineChatAccount&quot;/&gt;
-      &lt;foaf:accountServiceHomepage 
-               rdf:resource=&quot;http://www.freenode.net/&quot;/&gt;
+      &lt;rdf:type rdf:resource=&quot;http://xmlns.com/foaf/spec/#term_OnlineAccount&quot;/&gt;
       &lt;foaf:accountName&gt;danbri&lt;/foaf:accountName&gt;
     &lt;/foaf:OnlineAccount&gt;
   &lt;/foaf:account&gt;
