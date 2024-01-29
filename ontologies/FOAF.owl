@@ -36,13 +36,19 @@
         <Class IRI="#Project"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#holdsAccount"/>
+        <ObjectProperty IRI="#account"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#homepage"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#isPrimaryTopicOf"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#member"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#primaryTopic"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#topic"/>
@@ -71,30 +77,65 @@
         <Class IRI="#Person"/>
         <Class IRI="#Agent"/>
     </SubClassOf>
-    <FunctionalObjectProperty>
+    <DisjointClasses>
+        <Class IRI="#Document"/>
+        <Class IRI="#Organization"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Document"/>
+        <Class IRI="#Project"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Organization"/>
+        <Class IRI="#Person"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Person"/>
+        <Class IRI="#Project"/>
+    </DisjointClasses>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#homepage"/>
-    </FunctionalObjectProperty>
+        <ObjectProperty IRI="#isPrimaryTopicOf"/>
+    </SubObjectPropertyOf>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#isPrimaryTopicOf"/>
+        <ObjectProperty IRI="#primaryTopic"/>
+    </InverseObjectProperties>
     <FunctionalObjectProperty>
-        <ObjectProperty IRI="#topic"/>
+        <ObjectProperty IRI="#primaryTopic"/>
     </FunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#homepage"/>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#isPrimaryTopicOf"/>
+    </InverseFunctionalObjectProperty>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#holdsAccount"/>
+        <ObjectProperty IRI="#account"/>
         <Class IRI="#Agent"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#homepage"/>
-        <Class IRI="#Agent"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isPrimaryTopicOf"/>
+        <Class abbreviatedIRI="owl:Thing"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#member"/>
         <Class IRI="#Group"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#primaryTopic"/>
+        <Class IRI="#Document"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#topic"/>
         <Class IRI="#Document"/>
     </ObjectPropertyDomain>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#holdsAccount"/>
+        <ObjectProperty IRI="#account"/>
         <Class IRI="#OnlineAccount"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
@@ -102,8 +143,16 @@
         <Class IRI="#Document"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#isPrimaryTopicOf"/>
+        <Class IRI="#Document"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#member"/>
         <Class IRI="#Agent"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#primaryTopic"/>
+        <Class abbreviatedIRI="owl:Thing"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#topic"/>
@@ -177,7 +226,7 @@ The foaf:Agent class is the class of agents; things that do stuff. A well known 
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
         <IRI>#Document</IRI>
-        <IRI>http://xmlns.com/foaf/0.1/#term_Document</IRI>
+        <IRI>http://xmlns.com/foaf/spec/#term_Document</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -186,7 +235,22 @@ The foaf:Agent class is the class of agents; things that do stuff. A well known 
 
 This concept is intentionally quite broad, covering informal and ad-hoc groups, long-lived communities, organizational groups within a workplace, etc. Some such groups may have associated characteristics which could be captured in RDF (perhaps a foaf:homepage, foaf:name, mailing list etc.).
 
-While a Group has the characteristics of a Agent, it is also associated with a number of other Agents (typically people) who constitute the Group. FOAF provides a mechanism, the membershipClass property, which relates a Group to a sub-class of the class Agent who are members of the group. This is a little complicated, but allows us to make group membership rules explicit.</Literal>
+While a foaf:Group has the characteristics of a foaf:Agent, it is also associated with a number of other Agents (typically people) who constitute the Group. FOAF provides a mechanism, the membershipClass property, which relates a foaf:Group to a sub-class of the class foaf:Agent who are members of the group. This is a little complicated, but allows us to make group membership rules explicit.
+
+Use a foaf:member property of the foaf:Group to indicate the agents that are members of the group.
+
+Example:
+
+&lt;foaf:Group&gt;
+ &lt;foaf:name&gt;ILRT staff&lt;/foaf:name&gt;
+ &lt;foaf:member&gt;
+  &lt;foaf:Person&gt;
+   &lt;foaf:name&gt;Martin Poulter&lt;/foaf:name&gt;
+   &lt;foaf:homepage rdf:resource=&quot;http://www.ilrt.bris.ac.uk/aboutus/staff/staffprofile/?search=plmlp&quot;/&gt;
+   &lt;foaf:workplaceHomepage rdf:resource=&quot;http://www.ilrt.bris.ac.uk/&quot;/&gt;
+  &lt;/foaf:Person&gt;
+ &lt;/foaf:member&gt;
+&lt;/foaf:Group&gt;</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
@@ -196,38 +260,50 @@ While a Group has the characteristics of a Agent, it is also associated with a n
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#OnlineAccount</IRI>
-        <IRI>http://xmlns.com/foaf/0.1/#term_OnlineAccount</IRI>
+        <IRI>http://xmlns.com/foaf/spec/#term_OnlineAccount</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#OnlineAccount</IRI>
-        <Literal xml:lang="en">A foaf:OnlineAccount represents the provision of some form of online service, by some party (indicated indirectly via a foaf:accountServiceHomepage) to some foaf:Agent. 
+        <Literal xml:lang="en">The foaf:OnlineAccount class represents the provision of some form of online service, by some party (indicated indirectly via a foaf:accountServiceHomepage) to some foaf:Agent. The foaf:account property of the foaf:Agent is used to indicate accounts that are associated with the agent.
 
-The foaf:holdsAccount property of the agent is used to indicate accounts that are associated with the agent.</Literal>
+Example:
+
+&lt;foaf:Person&gt;
+  &lt;foaf:name&gt;Dan Brickley&lt;/foaf:name&gt;
+  &lt;foaf:account&gt;
+    &lt;foaf:OnlineAccount&gt;
+      &lt;rdf:type rdf:resource=&quot;http://xmlns.com/foaf/0.1/OnlineChatAccount&quot;/&gt;
+      &lt;foaf:accountServiceHomepage 
+               rdf:resource=&quot;http://www.freenode.net/&quot;/&gt;
+      &lt;foaf:accountName&gt;danbri&lt;/foaf:accountName&gt;
+    &lt;/foaf:OnlineAccount&gt;
+  &lt;/foaf:account&gt;
+&lt;/foaf:Person&gt;</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Organization</IRI>
-        <Literal xml:lang="en">The foaf:Organization class represents a kind of foaf:Agent corresponding to social instititutions such as companies, societies, virtual entities, etc.</Literal>
+        <Literal xml:lang="en">The foaf:Organization class represents a kind of foaf:Agent corresponding to social instititutions such as companies, societies, etc.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
         <IRI>#Organization</IRI>
-        <IRI>http://xmlns.com/foaf/0.1/#term_Organization</IRI>
+        <IRI>http://xmlns.com/foaf/spec/#term_Organization</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Person</IRI>
         <Literal xml:lang="en">The foaf:Person class represents people. Something is a foaf:Person if it is a person. 
 
-We don&apos;t nitpic about whether they&apos;re alive, dead, real, or imaginary. 
+FOAF doesn&apos;t nitpic about whether they&apos;re alive, dead, real, or imaginary. 
 
 The foaf:Person class is a sub-class of the foaf:Agent class, since all people are considered &apos;agents&apos; in FOAF.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
         <IRI>#Person</IRI>
-        <IRI>http://xmlns.com/foaf/0.1/#term_Person</IRI>
+        <IRI>http://xmlns.com/foaf/spec/#term_Person</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -239,7 +315,17 @@ These may be formal or informal, collective or individual. It is often useful to
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
         <IRI>#Project</IRI>
-        <IRI>http://xmlns.com/foaf/0.1/#term_Project</IRI>
+        <IRI>http://xmlns.com/foaf/spec/#term_Project</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#account</IRI>
+        <Literal xml:lang="en">This property indicates an account held by a foaf:Agent.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#account</IRI>
+        <IRI>http://xmlns.com/foaf/spec/#term_account</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -263,16 +349,6 @@ These may be formal or informal, collective or individual. It is often useful to
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#holdsAccount</IRI>
-        <Literal xml:lang="en">Indicates an account held by a foaf:Agent.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
-        <IRI>#holdsAccount</IRI>
-        <IRI>http://xmlns.com/foaf/0.1/#term_holdsAccount</IRI>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#homepage</IRI>
         <Literal xml:lang="en">A homepage for some thing.
 
@@ -285,17 +361,29 @@ A foaf:homepage in this sense is a public Web document, typically but not necess
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
         <IRI>#homepage</IRI>
-        <IRI>http://xmlns.com/foaf/0.1/#term_homepage</IRI>
+        <IRI>http://xmlns.com/foaf/spec/#term_homepage</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isPrimaryTopicOf</IRI>
+        <Literal xml:lang="en">The foaf:isPrimaryTopicOf property relates something to a foaf:Document that is mainly about it.
+
+The foaf:isPrimaryTopicOf property is inverse functional: for any document that is the value of this property, there is at most one thing in the world that is the primary topic of that document. This is useful, as it allows for data merging, as described in the documentation for its inverse, foaf:primaryTopic.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#isPrimaryTopicOf</IRI>
+        <IRI>http://xmlns.com/foaf/spec/#term_isPrimaryTopicOf</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#member</IRI>
-        <Literal xml:lang="en">Indicates a member of a foaf:Group</Literal>
+        <Literal xml:lang="en">Indicates a member of a foaf:Group.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
         <IRI>#member</IRI>
-        <IRI>http://xmlns.com/foaf/0.1/#term_member</IRI>
+        <IRI>http://xmlns.com/foaf/spec/#term_member</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -310,6 +398,20 @@ The foaf:name of something is a simple textual string.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#primaryTopic</IRI>
+        <Literal xml:lang="en">The primary topic of some foaf:Page or foaf:Document.
+
+The foaf:primaryTopic property relates a foaf:Document to the main thing that the document is about.
+
+The foaf:primaryTopic property is functional: for any document it applies to, it can have at most one value. This is useful, as it allows for data merging. In many cases it may be difficult for third parties to determine the primary topic of a document, but in a useful number of cases (eg. descriptions of movies, restaurants, politicians, ...) it should be reasonably obvious. Documents are very often the most authoritative source of information about their own primary topics, although this cannot be guaranteed since documents cannot be assumed to be accurate, honest etc.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#primaryTopic</IRI>
+        <IRI>http://xmlns.com/foaf/spec/#term_primaryTopic</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#surname</IRI>
         <Literal xml:lang="en">The surname of some foaf:Person.</Literal>
     </AnnotationAssertion>
@@ -321,14 +423,14 @@ The foaf:name of something is a simple textual string.</Literal>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#topic</IRI>
-        <Literal xml:lang="en">A topic of some page or document.
+        <Literal xml:lang="en">A topic of some foaf:Page or foaf:Document.
 
 The foaf:topic property relates a document to a thing that the document is about.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
         <IRI>#topic</IRI>
-        <IRI>http://xmlns.com/foaf/0.1/#term_topic</IRI>
+        <IRI>http://xmlns.com/foaf/spec/#term_topic</IRI>
     </AnnotationAssertion>
 </Ontology>
 

@@ -7,6 +7,7 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      ontologyIRI="http://www.fdi.ucm.es/disia/ont/web3/DAO"
      versionIRI="http://www.fdi.ucm.es/disia/ont/web3/DAO/v1.0.0">
+    <Prefix name="" IRI="http://www.w3.org/2002/07/owl#"/>
     <Prefix name="dao" IRI="http://www.fdi.ucm.es/disia/ont/web3/DAO"/>
     <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
@@ -3043,22 +3044,22 @@ Blockchain technology makes use of cryptography to securely host applications, s
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#BrowserExtensionWallet</IRI>
-        <Literal xml:lang="en">Browser extension wallets are extensions users download that let them interact with tieir account and applications through the browser.</Literal>
+        <Literal xml:lang="en">Browser extension wallets are extensions people download that let them interact with their account and applications through the browser.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
         <IRI>#BrowserExtensionWallet</IRI>
-        <IRI>https://ethereum.org/en/wallets/</IRI>
+        <IRI>https://ethereum.org/wallets</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#BrowserWallet</IRI>
-        <Literal xml:lang="en">Browser wallets are web applications that let users interact with their account directly in the browser.</Literal>
+        <Literal xml:lang="en">Browser wallets are web applications that let people interact with their account directly in the browser.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
         <IRI>#BrowserWallet</IRI>
-        <IRI>https://ethereum.org/en/wallets/</IRI>
+        <IRI>https://ethereum.org/wallets</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
@@ -3202,29 +3203,28 @@ It represents the Charter of a DAO.</Literal>
         <IRI>#Dapp</IRI>
         <Literal xml:lang="en">Decentralized application (dapp).
 
-An application built on a decentralized network that combines a smart contract and a frontend user interface. On Ethereum, smart contracts are accessible and transparent – like open APIs – so a dapp can even include a smart contract that someone else has written.
+An application built on a decentralized network that combines a smart contract and a frontend user interface. On Ethereum, smart contracts are accessible and transparent (like open APIs), so a dapp can even include a smart contract that someone else has written.
 
-
-A dapp is, at the very least, a smart contract and a web user interface. More broadly, a Dapp is a web application that is built on top of open, decentralized, peer-to-peer infrastructure services.
+A dapp is, at the very least, a smart contract and a web user interface. More broadly, a dapp is a web application that is built on top of open, decentralized, peer-to-peer infrastructure services.
 
 Once dapps are deployed on the decentralized network they cannot be changed. Dapps can be decentralized because they are controlled by the logic written into the contract, not an individual or a company.
 
-In summary, dapps have their backend code (smart contracts) running on a decentralized network and not a centralized server. They use blockchain technology for data storage and smart contracts for their app logic.</Literal>
+In summary, dapps have their backend code (smart contracts) running on a decentralized peer-to-peer network. Contrast this with an app where the backend code is running on centralized servers. They use blockchain technology for data storage and smart contracts for their app logic.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
         <IRI>#Dapp</IRI>
-        <IRI>https://ethereum.org/en/developers/docs/dapps/</IRI>
+        <IRI>https://ethereum.org/developers/docs/dapps</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#DesktopApplicationWallet</IRI>
-        <Literal xml:lang="en">Desktop application wallets when users pefer to manage their funds via macOS, Windows or Linux.</Literal>
+        <Literal xml:lang="en">Desktop application wallets allow people to manage their funds via macOS, Windows or Linux.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
         <IRI>#DesktopApplicationWallet</IRI>
-        <IRI>https://ethereum.org/en/wallets/</IRI>
+        <IRI>https://ethereum.org/wallets/</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -3437,7 +3437,7 @@ MetaMaks currently supports the next hardware wallets: Trezor, Ledger. Lattice, 
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#MobileAppWallet</IRI>
-        <Literal xml:lang="en">Mobile app wallets that make your funds accessible from anywhere.</Literal>
+        <Literal xml:lang="en">Mobile app wallets that make people funds accessible from anywhere.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
@@ -3745,21 +3745,35 @@ HW wallets require users to plug into a computer or online device to access thei
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Web3SWWallet</IRI>
-        <Literal xml:lang="en">Web3 Software wallets are applications designed for mobile devices and desktops which can be installed on different devices. Software wallets can be used for accessing user&apos;s Crypto tokens, making transactions, and even displaying the balance.</Literal>
+        <Literal xml:lang="en">Web3 Software wallets are applications designed for mobile devices and desktops which can be installed on different devices. Software wallets can be used for accessing user&apos;s Crypto tokens, making transactions, and even displaying the balance.
+
+According to Ethereum, software wallets are dapps too.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#Web3SWWallet</IRI>
+        <IRI>https://ethereum.org/en/dapps/#what-are-dapps</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Web3Wallet</IRI>
         <Literal xml:lang="en">Cryptocurrency wallet that helps users to manage blockchain accounts and store digital assets such as cryptocurrency and Non-Fungible Tokens (NFTs). 
 
+A wallet contains everything people need to prove their identity and handle their assets. A  wallet allows people to sign in to applications, read their balance, send transactions and verify their identity.
+
 A web3 wallet is the gateway to a blockchain system.
 
-According to https://ethereum.org/en/dapps/#what-are-dapps wallets are dapps too.</Literal>
+Wallet providers don&apos;t have custody of funds. They just provide people a window to see their assets on a specific blockchain and tools to easily manage them.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
         <IRI>#Web3Wallet</IRI>
-        <IRI>https://ethereum.org/en/wallets/find-wallet/</IRI>
+        <IRI>https://ethereum.org/wallets</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#Web3Wallet</IRI>
+        <IRI>https://ethereum.org/en/wallets/find-wallet</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
