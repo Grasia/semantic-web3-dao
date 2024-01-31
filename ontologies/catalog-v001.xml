@@ -2,7 +2,7 @@
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
     <uri id="Imports Wizard Entry" name="http://www.fdi.ucm.es/disia/ont/FOAF/v1.0.0" uri="FOAF.owl"/>
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
-        <uri id="Automatically generated entry, Timestamp=1706540373682" name="http://www.fdi.ucm.es/disia/ont/FOAF" uri="FOAF.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1706540373682" name="http://www.fdi.ucm.es/disia/ont/web3/DAO" uri="Web3_DAO_Model.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1706723287662" name="http://www.fdi.ucm.es/disia/ont/FOAF" uri="FOAF.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1706723287662" name="http://www.fdi.ucm.es/disia/ont/web3/DAO" uri="Web3_DAO_Model.owl"/>
     </group>
 </catalog>

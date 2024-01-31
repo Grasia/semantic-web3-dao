@@ -125,6 +125,12 @@
         <Class IRI="#OpenSourceSoftware"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Oracle"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OracleContract"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Others"/>
     </Declaration>
     <Declaration>
@@ -198,6 +204,9 @@
     </Declaration>
     <Declaration>
         <Class IRI="#Web3Wallet"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Web3WalletCategory"/>
     </Declaration>
     <Declaration>
         <Class IRI="#WebUserInterface"/>
@@ -285,6 +294,9 @@
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasWalletFeature"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasWeb3WalletCategory"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasWebUserInterface"/>
@@ -380,10 +392,19 @@
         <ObjectProperty IRI="#ownsToken"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#passesSmartContractRequests"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#questionHasVotes"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#receivesExternalInformation"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#receivesProposal"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#receivesSmartContractRequests"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#sharesCryptoWallet"/>
@@ -416,6 +437,9 @@
         <ObjectProperty IRI="#transacts"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#transmitsExternalInformation"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#usedByDAO"/>
     </Declaration>
     <Declaration>
@@ -444,6 +468,9 @@
     </Declaration>
     <Declaration>
         <DataProperty IRI="#chartName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#contractSize"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#createdAt"/>
@@ -554,9 +581,6 @@
         <NamedIndividual IRI="#Bit"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#BitDAO"/>
-    </Declaration>
-    <Declaration>
         <NamedIndividual IRI="#BuyCrypto"/>
     </Declaration>
     <Declaration>
@@ -570,6 +594,9 @@
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#CryptoKitty"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Custodial"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#DOT"/>
@@ -617,6 +644,9 @@
         <NamedIndividual IRI="#MainnetETH"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#Mantle"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#MetaMask"/>
     </Declaration>
     <Declaration>
@@ -627,6 +657,9 @@
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#No"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#NonCustodial"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#OpenSource"/>
@@ -786,6 +819,13 @@
             <NamedIndividual IRI="#WalletConnect"/>
         </ObjectOneOf>
     </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Web3WalletCategory"/>
+        <ObjectOneOf>
+            <NamedIndividual IRI="#Custodial"/>
+            <NamedIndividual IRI="#NonCustodial"/>
+        </ObjectOneOf>
+    </EquivalentClasses>
     <SubClassOf>
         <Class IRI="#Blockchain"/>
         <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Agent"/>
@@ -907,6 +947,14 @@
         <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Agent"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Oracle"/>
+        <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Agent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OracleContract"/>
+        <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Agent"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Others"/>
         <Class IRI="#Proposal"/>
     </SubClassOf>
@@ -1019,6 +1067,14 @@
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Group"/>
+        <Class IRI="#Oracle"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Group"/>
+        <Class IRI="#OracleContract"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Group"/>
         <Class IRI="#Web3Wallet"/>
     </DisjointClasses>
     <DisjointClasses>
@@ -1028,6 +1084,14 @@
     <DisjointClasses>
         <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Organization"/>
         <Class IRI="#Network"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Organization"/>
+        <Class IRI="#Oracle"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Organization"/>
+        <Class IRI="#OracleContract"/>
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Organization"/>
@@ -1051,6 +1115,14 @@
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Person"/>
+        <Class IRI="#Oracle"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Person"/>
+        <Class IRI="#OracleContract"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Person"/>
         <Class IRI="#Web3Wallet"/>
     </DisjointClasses>
     <DisjointClasses>
@@ -1060,6 +1132,14 @@
     <DisjointClasses>
         <Class IRI="#Blockchain"/>
         <Class IRI="#Network"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Blockchain"/>
+        <Class IRI="#Oracle"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Blockchain"/>
+        <Class IRI="#OracleContract"/>
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#Blockchain"/>
@@ -1117,6 +1197,10 @@
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#Dapp"/>
+        <Class IRI="#Oracle"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Dapp"/>
         <Class IRI="#SmartContract"/>
     </DisjointClasses>
     <DisjointClasses>
@@ -1152,6 +1236,10 @@
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#Network"/>
+        <Class IRI="#OracleContract"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Network"/>
         <Class IRI="#SmartContract"/>
     </DisjointClasses>
     <DisjointClasses>
@@ -1165,6 +1253,34 @@
     <DisjointClasses>
         <Class IRI="#OpenSourceSoftware"/>
         <Class IRI="#Web3HWWallet"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Oracle"/>
+        <Class IRI="#OracleContract"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Oracle"/>
+        <Class IRI="#SmartContract"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Oracle"/>
+        <Class IRI="#Web3Wallet"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Oracle"/>
+        <Class IRI="#WebUserInterface"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#OracleContract"/>
+        <Class IRI="#SmartContract"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#OracleContract"/>
+        <Class IRI="#Web3Wallet"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#OracleContract"/>
+        <Class IRI="#WebUserInterface"/>
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#SecurityToken"/>
@@ -1215,10 +1331,6 @@
         <NamedIndividual IRI="#Bit"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#DAO"/>
-        <NamedIndividual IRI="#BitDAO"/>
-    </ClassAssertion>
-    <ClassAssertion>
         <Class IRI="#WalletFeature"/>
         <NamedIndividual IRI="#BuyCrypto"/>
     </ClassAssertion>
@@ -1237,6 +1349,10 @@
     <ClassAssertion>
         <Class IRI="#NonFungibleToken"/>
         <NamedIndividual IRI="#CryptoKitty"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Web3WalletCategory"/>
+        <NamedIndividual IRI="#Custodial"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Cryptocurrency"/>
@@ -1271,7 +1387,7 @@
         <NamedIndividual IRI="#Fortmatic"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#Web3SWWallet"/>
+        <Class IRI="#DesktopApplicationWallet"/>
         <NamedIndividual IRI="#Frame"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -1299,6 +1415,10 @@
         <NamedIndividual IRI="#MainnetETH"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="#DAO"/>
+        <NamedIndividual IRI="#Mantle"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#BrowserExtensionWallet"/>
         <NamedIndividual IRI="#MetaMask"/>
     </ClassAssertion>
@@ -1317,6 +1437,10 @@
     <ClassAssertion>
         <Class IRI="#Decision"/>
         <NamedIndividual IRI="#No"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Web3WalletCategory"/>
+        <NamedIndividual IRI="#NonCustodial"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#WalletFeature"/>
@@ -1418,16 +1542,6 @@
         <NamedIndividual IRI="#Arbitrum"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#ownsToken"/>
-        <NamedIndividual IRI="#BitDAO"/>
-        <NamedIndividual IRI="#Bit"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#supportsToken"/>
-        <NamedIndividual IRI="#BitDAO"/>
-        <NamedIndividual IRI="#USDT"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#hasCurrency"/>
         <NamedIndividual IRI="#CardanoNetwork"/>
         <NamedIndividual IRI="#ADA"/>
@@ -1458,9 +1572,19 @@
         <NamedIndividual IRI="#Ethereum"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasWeb3WalletCategory"/>
+        <NamedIndividual IRI="#Fortmatic"/>
+        <NamedIndividual IRI="#NonCustodial"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#isGatewayToBlockchain"/>
         <NamedIndividual IRI="#Fortmatic"/>
         <NamedIndividual IRI="#Ethereum"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasWeb3WalletCategory"/>
+        <NamedIndividual IRI="#Frame"/>
+        <NamedIndividual IRI="#NonCustodial"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#isGatewayToBlockchain"/>
@@ -1478,6 +1602,21 @@
         <NamedIndividual IRI="#Ethereum"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ownsToken"/>
+        <NamedIndividual IRI="#Mantle"/>
+        <NamedIndividual IRI="#Bit"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#supportsToken"/>
+        <NamedIndividual IRI="#Mantle"/>
+        <NamedIndividual IRI="#ETH"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasWeb3WalletCategory"/>
+        <NamedIndividual IRI="#MetaMask"/>
+        <NamedIndividual IRI="#NonCustodial"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#supportsHWWallet"/>
         <NamedIndividual IRI="#MetaMask"/>
         <NamedIndividual IRI="#Trezor"/>
@@ -1493,6 +1632,11 @@
         <NamedIndividual IRI="#Ethereum"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasWeb3WalletCategory"/>
+        <NamedIndividual IRI="#Portis"/>
+        <NamedIndividual IRI="#NonCustodial"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#isGatewayToBlockchain"/>
         <NamedIndividual IRI="#Portis"/>
         <NamedIndividual IRI="#Ethereum"/>
@@ -1506,6 +1650,16 @@
         <ObjectProperty IRI="#ownsToken"/>
         <NamedIndividual IRI="#UniswapDAO"/>
         <NamedIndividual IRI="#Uniswap"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#supportsToken"/>
+        <NamedIndividual IRI="#UniswapDAO"/>
+        <NamedIndividual IRI="#ETH"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#supportsToken"/>
+        <NamedIndividual IRI="#UniswapDAO"/>
+        <NamedIndividual IRI="#USDT"/>
     </ObjectPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#tokenName"/>
@@ -1545,7 +1699,7 @@
     <DataPropertyAssertion>
         <DataProperty IRI="#tokenSymbol"/>
         <NamedIndividual IRI="#Bit"/>
-        <Literal>BIT</Literal>
+        <Literal>MNT</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#tokenName"/>
@@ -1742,8 +1896,16 @@
         <ObjectProperty IRI="#transacts"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
+        <ObjectProperty IRI="#passesSmartContractRequests"/>
+        <ObjectProperty IRI="#receivesSmartContractRequests"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
         <ObjectProperty IRI="#questionHasVotes"/>
         <ObjectProperty IRI="#votesOfQuestion"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#receivesExternalInformation"/>
+        <ObjectProperty IRI="#transmitsExternalInformation"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="#sharesCryptoWallet"/>
@@ -1800,6 +1962,9 @@
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
         <ObjectProperty IRI="#hasVotingToken"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasWeb3WalletCategory"/>
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
         <ObjectProperty IRI="#holdsOfEOA"/>
@@ -2110,6 +2275,10 @@
         <Class IRI="#Web3Wallet"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasWeb3WalletCategory"/>
+        <Class IRI="#Web3Wallet"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasWebUserInterface"/>
         <Class IRI="#Dapp"/>
     </ObjectPropertyDomain>
@@ -2234,12 +2403,24 @@
         <Class IRI="#DAO"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#passesSmartContractRequests"/>
+        <Class IRI="#OracleContract"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#questionHasVotes"/>
         <Class IRI="#Question"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#receivesExternalInformation"/>
+        <Class IRI="#SmartContract"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#receivesProposal"/>
         <Class IRI="#DAO"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#receivesSmartContractRequests"/>
+        <Class IRI="#Oracle"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#sharesCryptoWallet"/>
@@ -2280,6 +2461,10 @@
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#transacts"/>
         <Class IRI="#EOA"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#transmitsExternalInformation"/>
+        <Class IRI="#Oracle"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#usedByDAO"/>
@@ -2418,6 +2603,10 @@
         <Class IRI="#WalletFeature"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasWeb3WalletCategory"/>
+        <Class IRI="#Web3WalletCategory"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#hasWebUserInterface"/>
         <Class IRI="#WebUserInterface"/>
     </ObjectPropertyRange>
@@ -2542,12 +2731,24 @@
         <Class IRI="#Token"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#passesSmartContractRequests"/>
+        <Class IRI="#Oracle"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#questionHasVotes"/>
         <Class IRI="#Votes"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#receivesExternalInformation"/>
+        <Class IRI="#Oracle"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#receivesProposal"/>
         <Class IRI="#Proposal"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#receivesSmartContractRequests"/>
+        <Class IRI="#OracleContract"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#sharesCryptoWallet"/>
@@ -2592,6 +2793,10 @@
     <ObjectPropertyRange>
         <ObjectProperty IRI="#transacts"/>
         <Class IRI="#DAO"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#transmitsExternalInformation"/>
+        <Class IRI="#SmartContract"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#usedByDAO"/>
@@ -2647,6 +2852,9 @@
     </FunctionalDataProperty>
     <FunctionalDataProperty>
         <DataProperty IRI="#chartName"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#contractSize"/>
     </FunctionalDataProperty>
     <FunctionalDataProperty>
         <DataProperty IRI="#createdAt"/>
@@ -2748,6 +2956,10 @@
     <DataPropertyDomain>
         <DataProperty IRI="#chartName"/>
         <Class IRI="#DAOAgreement"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#contractSize"/>
+        <Class IRI="#SmartContract"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#createdAt"/>
@@ -2892,6 +3104,10 @@
     <DataPropertyRange>
         <DataProperty IRI="#chartName"/>
         <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#contractSize"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="#createdAt"/>
@@ -3167,6 +3383,16 @@ The word “cryptocurrency” refers to a group of digital assets where transact
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Custodial</IRI>
+        <Literal xml:lang="en">A custodial wallet is managed by a third party like a centralized exchange. The third-party handles your private key and authorizes your transactions for you. This is fine as long as you trust them to do so. The benefits lean towards non-technical users who don&apos;t want to keep track of private keys. The drawback is that there is an inherent risk in trusting a third party to manage all your crypto assets. Centralized exchanges have been victims of cyberattacks in the past, compromising their user&apos;s keys and crypto.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#Custodial</IRI>
+        <IRI>https://hedera.com/learning/wallets-exchanges/custodial-vs-non-custodial-wallets</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#DAO</IRI>
         <Literal xml:lang="en">Decentralized = Online, global, uncensorable.
 Autonomous = Self-governing.
@@ -3209,6 +3435,11 @@ https://www.alchemy.com/blog/types-of-daos</Literal>
         <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
         <IRI>#DAO</IRI>
         <IRI>https://blog.aragon.org/what-is-a-dao/</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#DAO</IRI>
+        <IRI>https://docs.bitdao.io/v/es/</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
@@ -3463,6 +3694,16 @@ For example, when people and exchanges discuss ETH prices, they&apos;re talking 
         <IRI>https://ethereum.org/en/developers/docs/networks</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#Mantle</IRI>
+        <IRI>https://docs.bitdao.io/v/es/</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#Mantle</IRI>
+        <IRI>https://www.mantle.xyz/</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#MediaDAO</IRI>
         <Literal xml:lang="en">In contrast to a top-down approach where content is produced with a central agenda or influenced by advertisers, Media DAOs reinvent traditional media platforms by creating content driven by the community.
@@ -3537,6 +3778,16 @@ Examples: Ethereum Mainnet, Sepolia testnet.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#NonCustodial</IRI>
+        <Literal xml:lang="en">A non-custodial wallet is a wallet in which the user manages the keys. This is preferred by crypto-punks, security advocates, and the greater decentralized community. Non-custodial wallets put the responsibility on the user. If the user forgets their private key, no one can get it back for them. When you manage your keys, you don&apos;t have to put your trust in a third party. It is crucial that you keep your private key safe and that you never share it with anyone.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#NonCustodial</IRI>
+        <IRI>https://hedera.com/learning/wallets-exchanges/custodial-vs-non-custodial-wallets</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#NonFungibleToken</IRI>
         <Literal xml:lang="en">Non-fungible tokens (NFTs) are cryptographically unique and distinct tokens that are linked to digital (and sometimes physical) content, providing proof of ownership.
 
@@ -3573,6 +3824,36 @@ Open source software is developed in a decentralized and collaborative way, rely
         <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
         <IRI>#Optimism</IRI>
         <IRI>https://www.optimism.io/</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Oracle</IRI>
+        <Literal xml:lang="en">Off-chain application (called an oracle node) that sources, verifies, and transmits external information (i.e. information stored off-chain) to smart contracts running on the blockchain. Besides “pulling” off-chain data and broadcasting it on a blockchain, an oracle can also “push” information from the blockchain to external systems, e.g., unlocking a smart lock once the user sends a fee via a blockchain transaction.
+
+Without the oracle service, a smart contract would be limited entirely to on-chain data.
+Oracle (i.e.,  an oracle node) is the off-chain component of the oracle service. It extracts information from external sources, such as APIs hosted on third-party servers, and puts it on-chain for consumption by smart contracts. 
+
+Oracle nodes listen for events from the on-chain oracle contract and proceed to complete the task described in the log. That is, oracle nodes can query data sources (using application programming interfaces (APIs), for example), and send transactions to store the requested data in the smart contract&apos;s storage.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#Oracle</IRI>
+        <IRI>https://ethereum.org/developers/docs/oracles#what-is-a-blockchain-oracle</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#OracleContract</IRI>
+        <Literal xml:lang="en">The on-chain component for the oracle service that listens for data requests from other smart contracts, relays data queries to oracle nodes, and broadcasts returned data to client contracts. This contract may also perform some computation on the returned data points to produce an aggregate value to send to the requesting contract.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#OracleContract</IRI>
+        <IRI>https://ethereum.org/developers/docs/oracles#oracle-contract</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#OracleContract</IRI>
+        <IRI>https://ethereum.org/developers/docs/oracles#why-do-smart-contracts-need-oracles</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -3676,20 +3957,52 @@ Examples: MakerDAO (https://makerdao.com/), Uniswap (https://uniswap.org/), year
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#SmartContract</IRI>
-        <Literal xml:lang="en">A software agent representing a piece of software deployed on a blockchain and executed in a decentralized, deterministic (i.e., the outcome of the execution of a smart contract is the same for everyone who runs it, given the context of the transaction that initiated its execution and the state of the blockchain at the moment of execution) and automated way.
+        <Literal xml:lang="en">A program that runs on a blockchain. It&apos;s a collection of code (its functions) and data (its state) that resides at a specific address on the blockchain.
+
+Smart contracts enable transactions and business functions to happen without trusted intermediaries.
 
 Once smart contracts are deployed on a decentralized network thet cannot be changed.
 
 Smart contracts are not controlled by users, instead they are deployed to the network and run as programmed. User accounts (i.e., EOAs) can then interact with a smart contract by submitting transactions that execute a function defined on the smart contract. Smart contracts can define rights, norms and limitations like a regular contract in terms of rules, and automatically enforce them via the code. Smart contracts cannot be deleted by default, and interactions with them are irreversible.
 
-Smart contracts can perform computations, create currency, store data, mint NFTs, send communications and even generate graphics.
+Smart contracts execute precisely based on the conditions written within the contract&apos;s code. This precision means that given the same circumstances, the smart contract will produce the same result.
 
-Smart contracts are written in high-level languages, such as Solidity.</Literal>
+Smart contracts can do essentially anything that computer programs can do.
+
+They can perform computations, create currency, store data, mint NFTs, send communications and even generate graphics. Here are some popular, real-world examples:
+
+- Stablecoins
+- Creating and distributing unique digital assets
+- An automatic, open currency exchange
+- Decentralized gaming
+- An insurance policy that pays out automatically(opens in a new tab)
+- A standard that lets people create customized, interoperable currencies
+
+Smart contracts are written in high-level languages, such as Solidity.
+
+The main benefit of a smart contract is that it deterministically executes unambiguous code when certain conditions are met. There is no need to wait for a human to interpret or negotiate the result. This removes the need for trusted intermediaries.
+
+For example, a smart contract could hold funds in escrow for a child, allowing them to withdraw funds after a specific date. If they try to withdraw before that date, the smart contract won&apos;t execute. Or a smart contract could automatically gives a person a digital version of a car&apos;s title when he/she pays the dealer.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
         <IRI>#SmartContract</IRI>
-        <IRI>https://ethereum.org/en/developers/docs/smart-contracts/</IRI>
+        <IRI>https://ethereum.org/smart-contracts</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#SmartContract</IRI>
+        <IRI>https://ethereum.org/developers/docs/smart-contracts</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#SmartContract</IRI>
+        <IRI>https://github.com/OpenZeppelin/openzeppelin-contracts</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#SmartContract</IRI>
+        <IRI>https://www.openzeppelin.com/contracts</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -3786,6 +4099,11 @@ For example, ETH on testnets is supposed to have no real value; however, there h
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Uniswap</IRI>
         <Literal xml:lang="en">UNI is the native governance token owned by Uniswap, the largest decentralized crypto exchange (DEX) running on the Ethereum blockchain.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#UniswapDAO</IRI>
+        <IRI>https://uniswap.org/</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -3903,6 +4221,18 @@ Wallet providers don&apos;t have custody of funds. They just provide people a wi
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#contractSize</IRI>
+        <Literal xml:lang="en">The size of the contract.
+
+A limitation of smart contracts is the maximum contract size. A smart contract can be a maximum of 24KB or it will run out of gas. This can be circumnavigated by using The Diamond Pattern.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#contractSize</IRI>
+        <IRI>https://ethereum.org/developers/docs/smart-contracts#limitations</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#createdBy</IRI>
         <Literal xml:lang="en">The user account (EOA) of the proposer that has created the proposal.</Literal>
     </AnnotationAssertion>
@@ -4007,6 +4337,16 @@ Default value: 50</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#receivesExternalInformation</IRI>
+        <Literal xml:lang="en">Smart contracts send requests to Oracle through OracleContract.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#receivesExternalInformation</IRI>
+        <IRI>#passesSmartContractRequests</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#stakeholder</IRI>
         <Literal xml:lang="en">Person and/or organization that has an interest in a DAO (e.g., customers, employees, shareholders).</Literal>
     </AnnotationAssertion>
@@ -4046,6 +4386,21 @@ Default value: 50</Literal>
         <Literal xml:lang="en">USD (United States Dollar).
 
 The double value assigned to indicate the USD exchange rate for a dao:Token.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#transmitsExternalInformation</IRI>
+        <Literal xml:lang="en">Oracle can query data sources (using application programming interfaces (APIs), for example), and send transactions to store the requested data in the smart contract&apos;s storage.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#transmitsExternalInformation</IRI>
+        <IRI>#receivesSmartContractRequests</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#transmitsExternalInformation</IRI>
+        <IRI>https://ethereum.org/developers/docs/oracles#why-do-smart-contracts-need-oracles</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
