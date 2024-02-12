@@ -365,6 +365,9 @@
         <ObjectProperty IRI="#isProposalOf"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#isPublishedToEnvironment"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#isResponsibleMemberOf"/>
     </Declaration>
     <Declaration>
@@ -395,7 +398,7 @@
         <ObjectProperty IRI="#passesSmartContractRequests"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#questionHasVotes"/>
+        <ObjectProperty IRI="#proposalHasVotes"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#receivesExternalInformation"/>
@@ -449,10 +452,7 @@
         <ObjectProperty IRI="#votesOfEOA"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#votesOfQuestion"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#votesProposal"/>
+        <ObjectProperty IRI="#votesOfProposal"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#abstainVotes"/>
@@ -641,9 +641,6 @@
         <NamedIndividual IRI="#HardHat"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#MainnetETH"/>
-    </Declaration>
-    <Declaration>
         <NamedIndividual IRI="#Mantle"/>
     </Declaration>
     <Declaration>
@@ -724,9 +721,6 @@
     <EquivalentClasses>
         <Class IRI="#DAO"/>
         <ObjectIntersectionOf>
-            <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Organization"/>
-            <Class IRI="#Dapp"/>
-            <Class IRI="#OpenSourceSoftware"/>
             <ObjectSomeValuesFrom>
                 <ObjectProperty IRI="#composedOfCommittee"/>
                 <Class IRI="#Main"/>
@@ -744,7 +738,6 @@
     <EquivalentClasses>
         <Class IRI="#Dapp"/>
         <ObjectIntersectionOf>
-            <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Agent"/>
             <ObjectSomeValuesFrom>
                 <ObjectProperty IRI="#builtOn"/>
                 <Class IRI="#SmartContract"/>
@@ -863,8 +856,24 @@
         <Class IRI="#UtlityToken"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#DAO"/>
+        <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Organization"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DAO"/>
+        <Class IRI="#Dapp"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DAO"/>
+        <Class IRI="#OpenSourceSoftware"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#DAOAgreement"/>
         <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Document"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Dapp"/>
+        <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Agent"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#DesktopApplicationWallet"/>
@@ -1228,6 +1237,14 @@
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#Holds"/>
+        <Class IRI="#IsMember"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Holds"/>
+        <Class IRI="#Votes"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#IsMember"/>
         <Class IRI="#Votes"/>
     </DisjointClasses>
     <DisjointClasses>
@@ -1411,10 +1428,6 @@
         <NamedIndividual IRI="#HardHat"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#Mainnet"/>
-        <NamedIndividual IRI="#MainnetETH"/>
-    </ClassAssertion>
-    <ClassAssertion>
         <Class IRI="#DAO"/>
         <NamedIndividual IRI="#Mantle"/>
     </ClassAssertion>
@@ -1522,10 +1535,6 @@
         <Class IRI="#BaseUnit"/>
         <NamedIndividual IRI="#wei"/>
     </ClassAssertion>
-    <SameIndividual>
-        <NamedIndividual IRI="#EthereumMainnet"/>
-        <NamedIndividual IRI="#MainnetETH"/>
-    </SameIndividual>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#hasBlockchainParent"/>
         <NamedIndividual IRI="#Arbitrum"/>
@@ -1567,6 +1576,11 @@
         <NamedIndividual IRI="#Polygon"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasCurrency"/>
+        <NamedIndividual IRI="#EthereumMainnet"/>
+        <NamedIndividual IRI="#ETH"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#isPartOfBlockchain"/>
         <NamedIndividual IRI="#EthereumMainnet"/>
         <NamedIndividual IRI="#Ethereum"/>
@@ -1589,16 +1603,6 @@
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#isGatewayToBlockchain"/>
         <NamedIndividual IRI="#Frame"/>
-        <NamedIndividual IRI="#Ethereum"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#hasCurrency"/>
-        <NamedIndividual IRI="#MainnetETH"/>
-        <NamedIndividual IRI="#ETH"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#isPartOfBlockchain"/>
-        <NamedIndividual IRI="#MainnetETH"/>
         <NamedIndividual IRI="#Ethereum"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
@@ -1724,11 +1728,6 @@
     <DataPropertyAssertion>
         <DataProperty IRI="#chainID"/>
         <NamedIndividual IRI="#EthereumMainnet"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">1</Literal>
-    </DataPropertyAssertion>
-    <DataPropertyAssertion>
-        <DataProperty IRI="#chainID"/>
-        <NamedIndividual IRI="#MainnetETH"/>
         <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">1</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
@@ -1900,8 +1899,8 @@
         <ObjectProperty IRI="#receivesSmartContractRequests"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
-        <ObjectProperty IRI="#questionHasVotes"/>
-        <ObjectProperty IRI="#votesOfQuestion"/>
+        <ObjectProperty IRI="#proposalHasVotes"/>
+        <ObjectProperty IRI="#votesOfProposal"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="#receivesExternalInformation"/>
@@ -2018,6 +2017,9 @@
         <ObjectProperty IRI="#isProposalOf"/>
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
+        <ObjectProperty IRI="#isPublishedToEnvironment"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
         <ObjectProperty IRI="#ownsToken"/>
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
@@ -2030,7 +2032,7 @@
         <ObjectProperty IRI="#votesOfEOA"/>
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
-        <ObjectProperty IRI="#votesOfQuestion"/>
+        <ObjectProperty IRI="#votesOfProposal"/>
     </FunctionalObjectProperty>
     <InverseFunctionalObjectProperty>
         <ObjectProperty IRI="#belongsToProposal"/>
@@ -2123,7 +2125,7 @@
         <ObjectProperty IRI="#ownsToken"/>
     </InverseFunctionalObjectProperty>
     <InverseFunctionalObjectProperty>
-        <ObjectProperty IRI="#questionHasVotes"/>
+        <ObjectProperty IRI="#proposalHasVotes"/>
     </InverseFunctionalObjectProperty>
     <InverseFunctionalObjectProperty>
         <ObjectProperty IRI="#receivesProposal"/>
@@ -2367,6 +2369,10 @@
         <Class IRI="#Proposal"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isPublishedToEnvironment"/>
+        <Class IRI="#DAO"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#isResponsibleMemberOf"/>
         <Class IRI="#EOA"/>
     </ObjectPropertyDomain>
@@ -2407,8 +2413,8 @@
         <Class IRI="#OracleContract"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#questionHasVotes"/>
-        <Class IRI="#Question"/>
+        <ObjectProperty IRI="#proposalHasVotes"/>
+        <Class IRI="#Proposal"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#receivesExternalInformation"/>
@@ -2479,12 +2485,8 @@
         <Class IRI="#Votes"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#votesOfQuestion"/>
+        <ObjectProperty IRI="#votesOfProposal"/>
         <Class IRI="#Votes"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#votesProposal"/>
-        <Class IRI="#EOA"/>
     </ObjectPropertyDomain>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#belongsTo"/>
@@ -2695,6 +2697,10 @@
         <Class IRI="#DAO"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#isPublishedToEnvironment"/>
+        <Class IRI="#Network"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#isResponsibleMemberOf"/>
         <Class IRI="#Proposal"/>
     </ObjectPropertyRange>
@@ -2735,7 +2741,7 @@
         <Class IRI="#Oracle"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#questionHasVotes"/>
+        <ObjectProperty IRI="#proposalHasVotes"/>
         <Class IRI="#Votes"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
@@ -2811,11 +2817,7 @@
         <Class IRI="#EOA"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#votesOfQuestion"/>
-        <Class IRI="#Question"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#votesProposal"/>
+        <ObjectProperty IRI="#votesOfProposal"/>
         <Class IRI="#Proposal"/>
     </ObjectPropertyRange>
     <SubDataPropertyOf>
@@ -3258,7 +3260,7 @@ Arbitrum is the next generation Layer2 technologies for Ethereum dApp developmen
         <IRI>#Blockchain</IRI>
         <Literal xml:lang="en">Blockchain technology was initially introduced as the technology enabling Bitcoin (a new form of digital currency) and, in short, it can be seen as a public distributed database that  is updated and shared across many computers in a network. 
 
-A blockchain stores transactions grouped into blocks, which results in a decentralized public digital ledger. For example, if someone sends ETH, to someone else, the transaction data needs to be added to a block to be successful.
+A blockchain stores transactions grouped into blocks, which results in a decentralized public digital ledger. For example, if someone sends ETH (monetary value), to someone else, the transaction data needs to be added to a block to be successful.
 
 The blocks represent the history of the blockchain and the transactions change its state. In this context, a transaction could be seen as an atomic write operation triggered by a user that may alter one or several records of the corresponding database. For example, a currency transfer between two accounts will reduce the sender’s balance and will increase the recipient’s balance. Further, transactions are chosen and ordered in each block depending on blockchain consensus rules (i.e., the synchronization mechanism to maintain consistency across each copy of the database in each node).
 
@@ -3358,11 +3360,13 @@ If a public blockchain network is like the public internet, a consortium network
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
         <IRI>#ContractAccount</IRI>
-        <Literal xml:lang="en">A contract account has smart contract code and does not have a private key.
+        <Literal xml:lang="en">A ContractAccount is an account containing code that executes whenever it receives a transaction from another dao:OnlineAccount.
 
-A contract account cannot initiate transactions, but they can react to transactions by calling other contracts, building comple execution paths.
+A contract account has the smart contract code and does not have a private key.
 
-For instance, when a transaction destination is a Ethereum contract account, it causes that contract to run the Ethereum Virtual Machine (EVM), using the transaction, and the transaction&apos;s data as its input. In addition to ether, transactions can contain data indicating which specific function in the contract to run and what parameters to pass to that function. In this way, transactions can call functions within contracts.</Literal>
+A contract account cannot initiate transactions, but they can react to transactions by calling other smart contracts, building comple execution paths.
+
+For instance, when a transaction destination is the address of contract account, then the corresponding smart contract runs by using the transaction, and the transaction&apos;s data as its input. In addition to funds (e.g., ether), transactions can contain data indicating which specific function in the smart contract to run and what parameters to pass to that function. In this way, transactions can call functions within smart contracts.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -3449,7 +3453,7 @@ https://www.alchemy.com/blog/types-of-daos</Literal>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#DAOAgreement</IRI>
-        <Literal xml:lang="en">DAO Agreements that act like constitutions and are recognized by the organization in the case of any disputes related to the governance model of the DAO.
+        <Literal xml:lang="en">A DAO agreement is a document that acts like a constitution and is recognized by the organization in the case of any disputes related to the governance model of the DAO.
 
 It represents the Charter of a DAO.</Literal>
     </AnnotationAssertion>
@@ -3910,12 +3914,12 @@ Examples: Big Green DAO (https://dao.biggreen.org/), PleasrDAO. (https://pleasr.
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Proposal</IRI>
-        <Literal xml:lang="en">A proposal is a plan or suggestion, especially a formal or written one, put forward for consideration or discussion by others.</Literal>
+        <Literal xml:lang="en">A proposal is a plan or suggestion, especially a formal or written one, put forward for consideration or discussion by DAO members.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#ProposalDocument</IRI>
-        <Literal xml:lang="en">Document accompanying a proposal.</Literal>
+        <Literal xml:lang="en">A proposal document is the document accompanying a proposal.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -3942,7 +3946,7 @@ Examples: MakerDAO (https://makerdao.com/), Uniswap (https://uniswap.org/), year
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Question</IRI>
-        <Literal xml:lang="en">Question is the text that represents the aim of the proposal.</Literal>
+        <Literal xml:lang="en">Question is the text that represents the aim of a specific proposal.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
@@ -4275,6 +4279,11 @@ URL (Uniform Resource Locator)</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#eoaHasVotes</IRI>
+        <Literal xml:lang="en">Association class bewteen EOA and Proposal.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#hasBlockchainParent</IRI>
         <Literal xml:lang="en">For instance, Ethereum Layer 2 (L2) is a collective term to describe a specific set of Ethereum scaling solutions. A layer 2 is a separate blockchain that extends Ethereum and inherits the security guarantees of Ethereum. 
 
@@ -4322,6 +4331,11 @@ Default value: 15</Literal>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#processedAt</IRI>
         <Literal xml:lang="en">Datetime when the proposal was processed.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#proposalHasVotes</IRI>
+        <Literal xml:lang="en">Association class bewteen EOA and Proposal.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -4411,6 +4425,16 @@ The double value assigned to indicate the USD exchange rate for a dao:Token.</Li
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#unitValue</IRI>
         <Literal xml:lang="en">Integer value assigned to indicate the subdivision of a cryptocurrency token (eg., 1 ETH is 1*10**18 wei).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#votesOfEOA</IRI>
+        <Literal xml:lang="en">Association class bewteen EOA and Proposal.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#votesOfProposal</IRI>
+        <Literal xml:lang="en">Association class bewteen EOA and Proposal.</Literal>
     </AnnotationAssertion>
 </Ontology>
 
