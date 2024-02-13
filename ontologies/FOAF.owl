@@ -39,6 +39,9 @@
         <ObjectProperty IRI="#account"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#accountServiceHomepage"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#homepage"/>
     </Declaration>
     <Declaration>
@@ -115,6 +118,10 @@
         <Class IRI="#Agent"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#accountServiceHomepage"/>
+        <Class IRI="#OnlineAccount"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#homepage"/>
         <Class abbreviatedIRI="owl:Thing"/>
     </ObjectPropertyDomain>
@@ -137,6 +144,10 @@
     <ObjectPropertyRange>
         <ObjectProperty IRI="#account"/>
         <Class IRI="#OnlineAccount"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#accountServiceHomepage"/>
+        <Class IRI="#Document"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#homepage"/>
@@ -376,7 +387,9 @@ The foaf:isPrimaryTopicOf property is inverse functional: for any document that 
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#member</IRI>
-        <Literal xml:lang="en">Indicates a member of a foaf:Group.</Literal>
+        <Literal xml:lang="en">Indicates a member of a foaf:Group.
+
+The foaf:member property relates a foaf:Group to a foaf:Agent that is a member of that group.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
