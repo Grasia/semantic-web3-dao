@@ -812,6 +812,16 @@
         </ObjectIntersectionOf>
     </EquivalentClasses>
     <EquivalentClasses>
+        <Class IRI="#SecurityToken"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#FungibleToken"/>
+            <DataHasValue>
+                <DataProperty IRI="#isTransferable"/>
+                <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+            </DataHasValue>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
         <Class IRI="#UtilityToken"/>
         <ObjectIntersectionOf>
             <Class IRI="#FungibleToken"/>
