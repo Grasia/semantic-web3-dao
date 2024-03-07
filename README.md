@@ -1,6 +1,7 @@
 # Semantic Web3 DAO
 
 [![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
+[![License: GPLv3](https://img.shields.io/badge/License-GPLv3-red.svg)]([https://creativecommons.org/licenses/by-sa/4.0/](https://www.gnu.org/licenses/gpl-3.0.html))
 
 Semantic Web3 DAO is a formalization of our proposed model for Decentralized Autonomous Organizations (DAOs) using [OWL 2](https://www.w3.org/TR/owl2-overview/) Web Ontology Language and [NetworkX](https://networkx.org/).
 
