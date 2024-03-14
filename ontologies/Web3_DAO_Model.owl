@@ -593,6 +593,9 @@
         <NamedIndividual IRI="#Arbitrum"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#ArbitrumOne"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#ArbitrumSepolia"/>
     </Declaration>
     <Declaration>
@@ -659,6 +662,9 @@
         <NamedIndividual IRI="#GasFeeCustomization"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#Gnosis"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#GnosisChain"/>
     </Declaration>
     <Declaration>
@@ -666,6 +672,9 @@
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#HardHat"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#MATIC"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Mantle"/>
@@ -692,7 +701,13 @@
         <NamedIndividual IRI="#Optimism"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#POL"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#Polygon"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#PolygonMainnet"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Portis"/>
@@ -1386,6 +1401,10 @@
         <NamedIndividual IRI="#Arbitrum"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="#Mainnet"/>
+        <NamedIndividual IRI="#ArbitrumOne"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#Testnet"/>
         <NamedIndividual IRI="#ArbitrumSepolia"/>
     </ClassAssertion>
@@ -1475,6 +1494,10 @@
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Mainnet"/>
+        <NamedIndividual IRI="#Gnosis"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#PublicBlockchain"/>
         <NamedIndividual IRI="#GnosisChain"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -1484,6 +1507,10 @@
     <ClassAssertion>
         <Class IRI="#DevelopmentNetwork"/>
         <NamedIndividual IRI="#HardHat"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#UtilityToken"/>
+        <NamedIndividual IRI="#MATIC"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#DAO"/>
@@ -1522,8 +1549,16 @@
         <NamedIndividual IRI="#Optimism"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="#UtilityToken"/>
+        <NamedIndividual IRI="#POL"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#PublicBlockchain"/>
         <NamedIndividual IRI="#Polygon"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mainnet"/>
+        <NamedIndividual IRI="#PolygonMainnet"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Web3SWWallet"/>
@@ -1601,6 +1636,16 @@
         <ObjectProperty IRI="#hasBlockchainParent"/>
         <NamedIndividual IRI="#Arbitrum"/>
         <NamedIndividual IRI="#Ethereum"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasCurrency"/>
+        <NamedIndividual IRI="#ArbitrumOne"/>
+        <NamedIndividual IRI="#ETH"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isPartOfBlockchain"/>
+        <NamedIndividual IRI="#ArbitrumOne"/>
+        <NamedIndividual IRI="#Arbitrum"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#hasCurrency"/>
@@ -1684,13 +1729,23 @@
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#hasCurrency"/>
-        <NamedIndividual IRI="#GnosisChain"/>
+        <NamedIndividual IRI="#Gnosis"/>
         <NamedIndividual IRI="#XDAI"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#isPartOfBlockchain"/>
+        <NamedIndividual IRI="#Gnosis"/>
+        <NamedIndividual IRI="#GnosisChain"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBlockchainParent"/>
         <NamedIndividual IRI="#GnosisChain"/>
         <NamedIndividual IRI="#Ethereum"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isAssociatedWithCrypto"/>
+        <NamedIndividual IRI="#MATIC"/>
+        <NamedIndividual IRI="#ETH"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#ownsToken"/>
@@ -1718,9 +1773,24 @@
         <NamedIndividual IRI="#Ethereum"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isAssociatedWithCrypto"/>
+        <NamedIndividual IRI="#POL"/>
+        <NamedIndividual IRI="#ETH"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#hasBlockchainParent"/>
         <NamedIndividual IRI="#Polygon"/>
         <NamedIndividual IRI="#Ethereum"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasCurrency"/>
+        <NamedIndividual IRI="#PolygonMainnet"/>
+        <NamedIndividual IRI="#MATIC"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isPartOfBlockchain"/>
+        <NamedIndividual IRI="#PolygonMainnet"/>
+        <NamedIndividual IRI="#Polygon"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#hasWeb3WalletCategory"/>
@@ -1771,6 +1841,16 @@
         <DataProperty IRI="#chartName"/>
         <NamedIndividual IRI="#ANTAgreement"/>
         <Literal>Aragon Network DAO Charter</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#chainID"/>
+        <NamedIndividual IRI="#ArbitrumOne"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">42161</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#networkName"/>
+        <NamedIndividual IRI="#ArbitrumOne"/>
+        <Literal>Arbitrum One</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#chainID"/>
@@ -1854,13 +1934,63 @@
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#chainID"/>
-        <NamedIndividual IRI="#GnosisChain"/>
+        <NamedIndividual IRI="#Gnosis"/>
         <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">100</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#networkName"/>
-        <NamedIndividual IRI="#GnosisChain"/>
-        <Literal>Gnosis Chain</Literal>
+        <NamedIndividual IRI="#Gnosis"/>
+        <Literal>Gnosis</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#cryptoPrice"/>
+        <NamedIndividual IRI="#MATIC"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#double">3.12E-4</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#dollarPrice"/>
+        <NamedIndividual IRI="#MATIC"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#double">1.21</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#tokenName"/>
+        <NamedIndividual IRI="#MATIC"/>
+        <Literal>Matic</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#tokenSymbol"/>
+        <NamedIndividual IRI="#MATIC"/>
+        <Literal>MATIC</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#cryptoPrice"/>
+        <NamedIndividual IRI="#POL"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#double">3.14E-4</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#dollarPrice"/>
+        <NamedIndividual IRI="#POL"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#double">1.22</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#tokenName"/>
+        <NamedIndividual IRI="#POL"/>
+        <Literal>Polygon Ecosystem</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#tokenSymbol"/>
+        <NamedIndividual IRI="#POL"/>
+        <Literal>POL</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#chainID"/>
+        <NamedIndividual IRI="#PolygonMainnet"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">137</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#networkName"/>
+        <NamedIndividual IRI="#PolygonMainnet"/>
+        <Literal>Polygon Mainnet</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#tokenName"/>
@@ -3824,28 +3954,28 @@ Instead of running on banking infrastructure like USD or EUR, tokens are used th
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#GnosisChain</IRI>
-        <Literal xml:lang="en">Network Name: Gnosis Chain (formerly xDai)
-New RPC URL: https://rpc.gnosischain.com 
-Chain ID: 0x64 (the hexadecimal equivalent of 100; if you encounter issues, input 100 instead and retry)
+        <IRI>#Gnosis</IRI>
+        <Literal xml:lang="en">Network Name: Gnosis (formerly xDai)
+New Remote Procedure Calls (RPC) URL: https://docs.gnosischain.com/tools/rpc/ 
+Chain ID: 0x64 (the hexadecimal equivalent of 100)
 Symbol: xDai
-Block Explorer URL: https://blockscout.com/xdai/mainnet/
+Gnosis chain Explorer URL: https://gnosis.blockscout.com/
 
-Sidechain de Ethereum.</Literal>
+Sidechain of Ethereum.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
-        <IRI>#GnosisChain</IRI>
+        <IRI>#Gnosis</IRI>
         <IRI>https://ecosystem.gnosischain.com/</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
-        <IRI>#GnosisChain</IRI>
+        <IRI>#Gnosis</IRI>
         <IRI>https://support.metamask.io/hc/en-us/articles/360052711572-How-to-connect-to-the-Gnosis-Chain-network-formerly-xDai</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
-        <IRI>#GnosisChain</IRI>
+        <IRI>#Gnosis</IRI>
         <IRI>https://www.gnosis.io/</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
@@ -3914,6 +4044,22 @@ Examples: KrauseHouse (https://www.krausehouse.club/), MetaCartel Ventures (http
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#IsMember</IRI>
         <Literal xml:lang="en">This class represents the association-class between dao:EOA and dao:Committee.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#MATIC</IRI>
+        <Literal xml:lang="en">The MATIC token has been migrated to POL at a new address:
+https://etherscan.io/token/0x455e53CBB86018Ac2B8092FdCd39d8444aFFC3F6</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#MATIC</IRI>
+        <IRI>https://etherscan.io/token/0x7d1afa7b718fb893db30a3abc0cfc608aacfebb0</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#MATIC</IRI>
+        <IRI>https://polygon.technology/blog/polygon-2-0-tokenomics</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -4108,6 +4254,23 @@ Oracle nodes listen for events from the on-chain oracle contract and proceed to 
         <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
         <IRI>#Others</IRI>
         <IRI>https://blog.aragon.org/an-dao-launch/</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#POL</IRI>
+        <Literal xml:lang="en">Formerly MATIC: https://etherscan.io/token/0x7d1afa7b718fb893db30a3abc0cfc608aacfebb0
+
+The MATIC token has been migrated to POL.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#POL</IRI>
+        <IRI>#MATIC</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#POL</IRI>
+        <IRI>https://etherscan.io/token/0x455e53CBB86018Ac2B8092FdCd39d8444aFFC3F6</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
