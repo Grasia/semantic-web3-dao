@@ -169,10 +169,6 @@
         <ObjectProperty IRI="#topic"/>
         <Class abbreviatedIRI="owl:Thing"/>
     </ObjectPropertyRange>
-    <SubDataPropertyOf>
-        <DataProperty IRI="#accountName"/>
-        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
-    </SubDataPropertyOf>
     <FunctionalDataProperty>
         <DataProperty IRI="#accountName"/>
     </FunctionalDataProperty>

@@ -284,6 +284,9 @@
         <ObjectProperty IRI="#hasDecision"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#hasEOAAccount"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#hasNativeCryptocurrency"/>
     </Declaration>
     <Declaration>
@@ -291,6 +294,9 @@
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasResponsibleMember"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasSidechain"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasSmartContract"/>
@@ -387,6 +393,9 @@
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#isResponsibleMemberOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isSidechainOf"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#isSupportedBy"/>
@@ -1738,7 +1747,7 @@
         <NamedIndividual IRI="#GnosisChain"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#hasBlockchainParent"/>
+        <ObjectProperty IRI="#isSidechainOf"/>
         <NamedIndividual IRI="#GnosisChain"/>
         <NamedIndividual IRI="#Ethereum"/>
     </ObjectPropertyAssertion>
@@ -1779,6 +1788,11 @@
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#hasBlockchainParent"/>
+        <NamedIndividual IRI="#Polygon"/>
+        <NamedIndividual IRI="#Ethereum"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isSidechainOf"/>
         <NamedIndividual IRI="#Polygon"/>
         <NamedIndividual IRI="#Ethereum"/>
     </ObjectPropertyAssertion>
@@ -2043,12 +2057,12 @@
         <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">1000000000000000000</Literal>
     </DataPropertyAssertion>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#sharesCryptoWallet"/>
-        <ObjectProperty IRI="#hasCryptoWallet"/>
+        <ObjectProperty IRI="#isPartOfDAO"/>
+        <ObjectProperty IRI="http://www.fdi.ucm.es/disia/ont/FOAF#member"/>
     </SubObjectPropertyOf>
     <InverseObjectProperties>
         <ObjectProperty IRI="#belongsTo"/>
-        <ObjectProperty IRI="#hasCryptoWallet"/>
+        <ObjectProperty IRI="#hasEOAAccount"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="#belongsToProposal"/>
@@ -2113,6 +2127,10 @@
     <InverseObjectProperties>
         <ObjectProperty IRI="#hasResponsibleMember"/>
         <ObjectProperty IRI="#isResponsibleMemberOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasSidechain"/>
+        <ObjectProperty IRI="#isSidechainOf"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="#hasSmartContract"/>
@@ -2186,6 +2204,9 @@
         <ObjectProperty IRI="#supportedBySWWallet"/>
         <ObjectProperty IRI="#supportsHWWallet"/>
     </InverseObjectProperties>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#belongsTo"/>
+    </FunctionalObjectProperty>
     <FunctionalObjectProperty>
         <ObjectProperty IRI="#belongsToProposal"/>
     </FunctionalObjectProperty>
@@ -2298,6 +2319,9 @@
         <ObjectProperty IRI="#isPublishedToEnvironment"/>
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
+        <ObjectProperty IRI="#isSidechainOf"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
         <ObjectProperty IRI="#ownsToken"/>
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
@@ -2346,7 +2370,13 @@
         <ObjectProperty IRI="#hasCharter"/>
     </InverseFunctionalObjectProperty>
     <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#hasEOAAccount"/>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
         <ObjectProperty IRI="#hasQuestion"/>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#hasSidechain"/>
     </InverseFunctionalObjectProperty>
     <InverseFunctionalObjectProperty>
         <ObjectProperty IRI="#hasSmartContract"/>
@@ -2433,6 +2463,9 @@
         <ObjectProperty IRI="#isBlockchainParentOf"/>
     </IrreflexiveObjectProperty>
     <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#isSidechainOf"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
         <ObjectProperty IRI="#tranfersFund"/>
     </IrreflexiveObjectProperty>
     <IrreflexiveObjectProperty>
@@ -2440,7 +2473,7 @@
     </IrreflexiveObjectProperty>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#belongsTo"/>
-        <Class IRI="#Web3Wallet"/>
+        <Class IRI="#EOA"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#belongsToProposal"/>
@@ -2527,6 +2560,14 @@
         <Class IRI="#Votes"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasEOAAccount"/>
+        <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Organization"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasEOAAccount"/>
+        <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Person"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasNativeCryptocurrency"/>
         <Class IRI="#Blockchain"/>
     </ObjectPropertyDomain>
@@ -2537,6 +2578,10 @@
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasResponsibleMember"/>
         <Class IRI="#Proposal"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasSidechain"/>
+        <Class IRI="#Blockchain"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasSmartContract"/>
@@ -2665,6 +2710,10 @@
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#isResponsibleMemberOf"/>
         <Class IRI="#EOA"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isSidechainOf"/>
+        <Class IRI="#Blockchain"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#isSupportedBy"/>
@@ -2867,6 +2916,10 @@
         <Class IRI="#Decision"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasEOAAccount"/>
+        <Class IRI="#EOA"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#hasNativeCryptocurrency"/>
         <Class IRI="#Cryptocurrency"/>
     </ObjectPropertyRange>
@@ -2877,6 +2930,10 @@
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasResponsibleMember"/>
         <Class IRI="#EOA"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasSidechain"/>
+        <Class IRI="#Blockchain"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasSmartContract"/>
@@ -3007,6 +3064,10 @@
         <Class IRI="#Proposal"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#isSidechainOf"/>
+        <Class IRI="#Blockchain"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#isSupportedBy"/>
         <Class IRI="#DAO"/>
     </ObjectPropertyRange>
@@ -3125,10 +3186,6 @@
     <SubDataPropertyOf>
         <DataProperty IRI="#networkName"/>
         <DataProperty IRI="http://www.fdi.ucm.es/disia/ont/FOAF#name"/>
-    </SubDataPropertyOf>
-    <SubDataPropertyOf>
-        <DataProperty IRI="#tokenBalance"/>
-        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
     </SubDataPropertyOf>
     <SubDataPropertyOf>
         <DataProperty IRI="#tokenName"/>
@@ -4771,6 +4828,18 @@ Arbitrum is also Layer 2</Literal>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#identifier</IRI>
         <Literal xml:lang="en">Each NFT must be associated with a unique identifier, such a serial number.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isSidechainOf</IRI>
+        <Literal xml:lang="en">A sidechain is a separate, independent blockchain linked to the main blockchain (mainchain) using a two-way bridge. It enables tokens or other digital assets to be transferred between the mainchain and the sidechain.
+
+Popular sidechains include Polygon for Ethereum and Rootstock for Bitcoin.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#isSidechainOf</IRI>
+        <IRI>https://www.ledger.com/academy/what-is-a-sidechain#:~:text=%E2%80%94%20A%20sidechain%20is%20a%20separate,Ethereum%20and%20Rootstock%20for%20Bitcoin.</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
