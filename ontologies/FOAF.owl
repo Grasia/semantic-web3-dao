@@ -289,7 +289,7 @@ Example:
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Organization</IRI>
-        <Literal xml:lang="en">The foaf:Organization class represents a kind of foaf:Agent corresponding to social instititutions such as companies, societies, etc.</Literal>
+        <Literal xml:lang="en">The foaf:Organization class represents a kind of foaf:Agent corresponding to social institutions such as companies, societies, etc.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
@@ -301,7 +301,7 @@ Example:
         <IRI>#Person</IRI>
         <Literal xml:lang="en">The foaf:Person class represents people. Something is a foaf:Person if it is a person. 
 
-FOAF doesn&apos;t nitpic about whether they&apos;re alive, dead, real, or imaginary. 
+FOAF doesn&apos;t nitpick about whether they are alive, dead, real, or imaginary. 
 
 The foaf:Person class is a sub-class of the foaf:Agent class, since all people are considered &apos;agents&apos; in FOAF.</Literal>
     </AnnotationAssertion>
@@ -341,6 +341,18 @@ These may be formal or informal, collective or individual. It is often useful to
         <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
         <IRI>#accountName</IRI>
         <IRI>http://xmlns.com/foaf/0.1/#term_accountName</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#accountServiceHomepage</IRI>
+        <Literal xml:lang="en">This property indicates a homepage of the service provider for this online account.
+
+The accountServiceHomepage property indicates a relationship between a OnlineAccount and the homepage of the supporting service provider.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#accountServiceHomepage</IRI>
+        <IRI>http://xmlns.com/foaf/spec/#term_accountServiceHomepage</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
