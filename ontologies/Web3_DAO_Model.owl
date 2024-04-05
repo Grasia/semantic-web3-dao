@@ -2214,6 +2214,9 @@
         <ObjectProperty IRI="#builtOn"/>
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
+        <ObjectProperty IRI="#composedOfDapp"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
         <ObjectProperty IRI="#createdBy"/>
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
@@ -2292,9 +2295,6 @@
         <ObjectProperty IRI="#isChartOf"/>
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
-        <ObjectProperty IRI="#isMainContractOf"/>
-    </FunctionalObjectProperty>
-    <FunctionalObjectProperty>
         <ObjectProperty IRI="#isMemberOfCommittee"/>
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
@@ -2328,9 +2328,6 @@
         <ObjectProperty IRI="#sharesCryptoWallet"/>
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
-        <ObjectProperty IRI="#supportsDAO"/>
-    </FunctionalObjectProperty>
-    <FunctionalObjectProperty>
         <ObjectProperty IRI="#votesOfEOA"/>
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
@@ -2340,13 +2337,7 @@
         <ObjectProperty IRI="#belongsToProposal"/>
     </InverseFunctionalObjectProperty>
     <InverseFunctionalObjectProperty>
-        <ObjectProperty IRI="#builtOn"/>
-    </InverseFunctionalObjectProperty>
-    <InverseFunctionalObjectProperty>
         <ObjectProperty IRI="#committeeHasIsMember"/>
-    </InverseFunctionalObjectProperty>
-    <InverseFunctionalObjectProperty>
-        <ObjectProperty IRI="#composedOfDapp"/>
     </InverseFunctionalObjectProperty>
     <InverseFunctionalObjectProperty>
         <ObjectProperty IRI="#containsNetwork"/>
@@ -2589,7 +2580,7 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasTokenOwner"/>
-        <Class IRI="#Token"/>
+        <Class IRI="#SecurityToken"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasVoteDuration"/>
@@ -3097,7 +3088,7 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#ownsToken"/>
-        <Class IRI="#Token"/>
+        <Class IRI="#SecurityToken"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#passesSmartContractRequests"/>
@@ -3900,7 +3891,7 @@ In summary, development networks are essentially blockchain clients (implementat
         <IRI>#EOA</IRI>
         <Literal xml:lang="en">Externally Owned Account (EOA).
 
-Externally Owned Accounts are user accounts that have a private key; having the private key means control over acccess to funds or smart contracts.
+Externally Owned Accounts are user accounts that have a private key; having the private key means control over access to funds or smart contracts.
 
 EOAs can initiate transactions and they can send and receive funds.</Literal>
     </AnnotationAssertion>
