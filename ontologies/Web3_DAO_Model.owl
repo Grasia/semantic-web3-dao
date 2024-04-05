@@ -7,6 +7,7 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      ontologyIRI="http://www.fdi.ucm.es/disia/ont/web3/DAO"
      versionIRI="http://www.fdi.ucm.es/disia/ont/web3/DAO/v1.0.0">
+    <Prefix name="" IRI="http://www.w3.org/2002/07/owl#"/>
     <Prefix name="dao" IRI="http://www.fdi.ucm.es/disia/ont/web3/DAO"/>
     <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
@@ -270,9 +271,6 @@
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasCharter"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasCryptoWallet"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasCurrency"/>
@@ -2295,6 +2293,9 @@
         <ObjectProperty IRI="#isChartOf"/>
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
+        <ObjectProperty IRI="#isMainContractOf"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
         <ObjectProperty IRI="#isMemberOfCommittee"/>
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
@@ -2302,6 +2303,9 @@
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
         <ObjectProperty IRI="#isPartOfBlockchain"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#isPartOfDAO"/>
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
         <ObjectProperty IRI="#isPartOfDapp"/>
@@ -2338,6 +2342,9 @@
     </InverseFunctionalObjectProperty>
     <InverseFunctionalObjectProperty>
         <ObjectProperty IRI="#committeeHasIsMember"/>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#composedOfCommittee"/>
     </InverseFunctionalObjectProperty>
     <InverseFunctionalObjectProperty>
         <ObjectProperty IRI="#containsNetwork"/>
@@ -2529,14 +2536,6 @@
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasCharter"/>
         <Class IRI="#DAO"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasCryptoWallet"/>
-        <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Organization"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasCryptoWallet"/>
-        <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Person"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasCurrency"/>
@@ -2889,10 +2888,6 @@
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasCharter"/>
         <Class IRI="#DAOAgreement"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasCryptoWallet"/>
-        <Class IRI="#Web3Wallet"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasCurrency"/>
