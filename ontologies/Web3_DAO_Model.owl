@@ -300,6 +300,9 @@
         <ObjectProperty IRI="#hasSmartContract"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#hasStakeholder"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#hasTokenOwner"/>
     </Declaration>
     <Declaration>
@@ -396,6 +399,9 @@
         <ObjectProperty IRI="#isSidechainOf"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#isStakeholder"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#isSupportedBy"/>
     </Declaration>
     <Declaration>
@@ -436,9 +442,6 @@
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#sharesCryptoWallet"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#stakeholder"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#storesSmartContract"/>
@@ -2135,6 +2138,10 @@
         <ObjectProperty IRI="#isAssociatedWithAccount"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
+        <ObjectProperty IRI="#hasStakeholder"/>
+        <ObjectProperty IRI="#isStakeholder"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
         <ObjectProperty IRI="#hasTokenOwner"/>
         <ObjectProperty IRI="#ownsToken"/>
     </InverseObjectProperties>
@@ -2332,6 +2339,9 @@
         <ObjectProperty IRI="#sharesCryptoWallet"/>
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
+        <ObjectProperty IRI="#usedByDAO"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
         <ObjectProperty IRI="#votesOfEOA"/>
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
@@ -2432,6 +2442,9 @@
     </InverseFunctionalObjectProperty>
     <InverseFunctionalObjectProperty>
         <ObjectProperty IRI="#receivesProposal"/>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#sharesCryptoWallet"/>
     </InverseFunctionalObjectProperty>
     <InverseFunctionalObjectProperty>
         <ObjectProperty IRI="#storesSmartContract"/>
@@ -2578,6 +2591,10 @@
         <Class IRI="#ContractAccount"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasStakeholder"/>
+        <Class IRI="#DAO"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasTokenOwner"/>
         <Class IRI="#SecurityToken"/>
     </ObjectPropertyDomain>
@@ -2706,6 +2723,10 @@
         <Class IRI="#Blockchain"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isStakeholder"/>
+        <Class IRI="#EOA"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#isSupportedBy"/>
         <Class IRI="#Token"/>
     </ObjectPropertyDomain>
@@ -2759,10 +2780,6 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#sharesCryptoWallet"/>
-        <Class IRI="#DAO"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#stakeholder"/>
         <Class IRI="#DAO"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
@@ -2926,6 +2943,10 @@
         <Class IRI="#SmartContract"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasStakeholder"/>
+        <Class IRI="#EOA"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#hasTokenOwner"/>
         <Class IRI="#DAO"/>
     </ObjectPropertyRange>
@@ -3054,6 +3075,10 @@
         <Class IRI="#Blockchain"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#isStakeholder"/>
+        <Class IRI="#DAO"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#isSupportedBy"/>
         <Class IRI="#DAO"/>
     </ObjectPropertyRange>
@@ -3108,10 +3133,6 @@
     <ObjectPropertyRange>
         <ObjectProperty IRI="#sharesCryptoWallet"/>
         <Class IRI="#Web3Wallet"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#stakeholder"/>
-        <Class IRI="#EOA"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#storesSmartContract"/>
@@ -4801,6 +4822,11 @@ A limitation of smart contracts is the maximum contract size. A smart contract c
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasStakeholder</IRI>
+        <Literal xml:lang="en">A dao:EOA that has an interest in a DAO (e.g., customers, employees, shareholders), but are not members of that DAO.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#hasVotingMember</IRI>
         <Literal xml:lang="en">The committee(s) that can vote for this proposal.</Literal>
     </AnnotationAssertion>
@@ -4897,11 +4923,6 @@ Default value: 50</Literal>
         <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
         <IRI>#receivesExternalInformation</IRI>
         <IRI>#passesSmartContractRequests</IRI>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#stakeholder</IRI>
-        <Literal xml:lang="en">A dao:EOA that has an interest in a DAO (e.g., customers, employees, shareholders), but are not members of that DAO.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
