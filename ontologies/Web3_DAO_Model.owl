@@ -267,9 +267,6 @@
         <ObjectProperty IRI="#hasBaseUnit"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasBlockchainParent"/>
-    </Declaration>
-    <Declaration>
         <ObjectProperty IRI="#hasCharter"/>
     </Declaration>
     <Declaration>
@@ -283,6 +280,9 @@
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasEOAAccount"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasLayer2"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasNativeCryptocurrency"/>
@@ -348,9 +348,6 @@
         <ObjectProperty IRI="#isBaseUnitOf"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#isBlockchainParentOf"/>
-    </Declaration>
-    <Declaration>
         <ObjectProperty IRI="#isChartOf"/>
     </Declaration>
     <Declaration>
@@ -358,6 +355,9 @@
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#isGatewayToBlockchain"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isLayer2Of"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#isMainContractOf"/>
@@ -1640,7 +1640,7 @@
         <NamedIndividual IRI="#wei"/>
     </ClassAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#hasBlockchainParent"/>
+        <ObjectProperty IRI="#isLayer2Of"/>
         <NamedIndividual IRI="#Arbitrum"/>
         <NamedIndividual IRI="#Ethereum"/>
     </ObjectPropertyAssertion>
@@ -1680,19 +1680,19 @@
         <NamedIndividual IRI="#wei"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#hasNativeCryptocurrency"/>
-        <NamedIndividual IRI="#Ethereum"/>
-        <NamedIndividual IRI="#ETH"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#isBlockchainParentOf"/>
+        <ObjectProperty IRI="#hasLayer2"/>
         <NamedIndividual IRI="#Ethereum"/>
         <NamedIndividual IRI="#Optimism"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#isBlockchainParentOf"/>
+        <ObjectProperty IRI="#hasLayer2"/>
         <NamedIndividual IRI="#Ethereum"/>
         <NamedIndividual IRI="#Polygon"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasNativeCryptocurrency"/>
+        <NamedIndividual IRI="#Ethereum"/>
+        <NamedIndividual IRI="#ETH"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#hasCurrency"/>
@@ -1775,7 +1775,7 @@
         <NamedIndividual IRI="#Trezor"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#hasBlockchainParent"/>
+        <ObjectProperty IRI="#isLayer2Of"/>
         <NamedIndividual IRI="#Optimism"/>
         <NamedIndividual IRI="#Ethereum"/>
     </ObjectPropertyAssertion>
@@ -1785,7 +1785,7 @@
         <NamedIndividual IRI="#ETH"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#hasBlockchainParent"/>
+        <ObjectProperty IRI="#isLayer2Of"/>
         <NamedIndividual IRI="#Polygon"/>
         <NamedIndividual IRI="#Ethereum"/>
     </ObjectPropertyAssertion>
@@ -2111,16 +2111,16 @@
         <ObjectProperty IRI="#isBaseUnitOf"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
-        <ObjectProperty IRI="#hasBlockchainParent"/>
-        <ObjectProperty IRI="#isBlockchainParentOf"/>
-    </InverseObjectProperties>
-    <InverseObjectProperties>
         <ObjectProperty IRI="#hasCharter"/>
         <ObjectProperty IRI="#isChartOf"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="#hasCurrency"/>
         <ObjectProperty IRI="#isCurrencyOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasLayer2"/>
+        <ObjectProperty IRI="#isLayer2Of"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="#hasResponsibleMember"/>
@@ -2227,9 +2227,6 @@
         <ObjectProperty IRI="#hasBaseUnit"/>
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
-        <ObjectProperty IRI="#hasBlockchainParent"/>
-    </FunctionalObjectProperty>
-    <FunctionalObjectProperty>
         <ObjectProperty IRI="#hasCharter"/>
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
@@ -2291,6 +2288,9 @@
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
         <ObjectProperty IRI="#isChartOf"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#isLayer2Of"/>
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
         <ObjectProperty IRI="#isMainContractOf"/>
@@ -2371,6 +2371,9 @@
         <ObjectProperty IRI="#hasEOAAccount"/>
     </InverseFunctionalObjectProperty>
     <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#hasLayer2"/>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
         <ObjectProperty IRI="#hasQuestion"/>
     </InverseFunctionalObjectProperty>
     <InverseFunctionalObjectProperty>
@@ -2399,9 +2402,6 @@
     </InverseFunctionalObjectProperty>
     <InverseFunctionalObjectProperty>
         <ObjectProperty IRI="#isBaseUnitOf"/>
-    </InverseFunctionalObjectProperty>
-    <InverseFunctionalObjectProperty>
-        <ObjectProperty IRI="#isBlockchainParentOf"/>
     </InverseFunctionalObjectProperty>
     <InverseFunctionalObjectProperty>
         <ObjectProperty IRI="#isChartOf"/>
@@ -2449,16 +2449,16 @@
         <ObjectProperty IRI="#usesAuxiliaryContract"/>
     </AsymmetricObjectProperty>
     <TransitiveObjectProperty>
-        <ObjectProperty IRI="#isBlockchainParentOf"/>
+        <ObjectProperty IRI="#hasLayer2"/>
     </TransitiveObjectProperty>
     <IrreflexiveObjectProperty>
-        <ObjectProperty IRI="#hasBlockchainParent"/>
+        <ObjectProperty IRI="#hasLayer2"/>
     </IrreflexiveObjectProperty>
     <IrreflexiveObjectProperty>
         <ObjectProperty IRI="#interacts"/>
     </IrreflexiveObjectProperty>
     <IrreflexiveObjectProperty>
-        <ObjectProperty IRI="#isBlockchainParentOf"/>
+        <ObjectProperty IRI="#isLayer2Of"/>
     </IrreflexiveObjectProperty>
     <IrreflexiveObjectProperty>
         <ObjectProperty IRI="#isSidechainOf"/>
@@ -2530,10 +2530,6 @@
         <Class IRI="#Cryptocurrency"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasBlockchainParent"/>
-        <Class IRI="#Blockchain"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasCharter"/>
         <Class IRI="#DAO"/>
     </ObjectPropertyDomain>
@@ -2556,6 +2552,10 @@
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasEOAAccount"/>
         <Class IRI="http://www.fdi.ucm.es/disia/ont/FOAF#Person"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasLayer2"/>
+        <Class IRI="#Blockchain"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasNativeCryptocurrency"/>
@@ -2642,10 +2642,6 @@
         <Class IRI="#BaseUnit"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#isBlockchainParentOf"/>
-        <Class IRI="#Blockchain"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
         <ObjectProperty IRI="#isChartOf"/>
         <Class IRI="#DAOAgreement"/>
     </ObjectPropertyDomain>
@@ -2656,6 +2652,10 @@
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#isGatewayToBlockchain"/>
         <Class IRI="#Web3Wallet"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isLayer2Of"/>
+        <Class IRI="#Blockchain"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#isMainContractOf"/>
@@ -2882,10 +2882,6 @@
         <Class IRI="#BaseUnit"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasBlockchainParent"/>
-        <Class IRI="#Blockchain"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
         <ObjectProperty IRI="#hasCharter"/>
         <Class IRI="#DAOAgreement"/>
     </ObjectPropertyRange>
@@ -2904,6 +2900,10 @@
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasEOAAccount"/>
         <Class IRI="#EOA"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasLayer2"/>
+        <Class IRI="#Blockchain"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasNativeCryptocurrency"/>
@@ -2990,10 +2990,6 @@
         <Class IRI="#Cryptocurrency"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#isBlockchainParentOf"/>
-        <Class IRI="#Blockchain"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
         <ObjectProperty IRI="#isChartOf"/>
         <Class IRI="#DAO"/>
     </ObjectPropertyRange>
@@ -3003,6 +2999,10 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#isGatewayToBlockchain"/>
+        <Class IRI="#Blockchain"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isLayer2Of"/>
         <Class IRI="#Blockchain"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
@@ -3628,7 +3628,7 @@ Arbitrum is the next generation Layer2 technologies for Ethereum dApp developmen
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Blockchain</IRI>
-        <Literal xml:lang="en">Blockchain technology was initially introduced as the technology enabling Bitcoin (a new form of digital currency) and, in short, it can be seen as a public distributed database that  is updated and shared across many computers in a network. 
+        <Literal xml:lang="en">Blockchain technology was initially introduced as the technology enabling Bitcoin (a new form of digital currency) and, in short, it can be seen as a distributed database that  is updated and shared across many computers in a network. 
 
 A blockchain stores transactions grouped into blocks, which results in a decentralized public digital ledger. For example, if someone sends ETH (monetary value), to someone else, the transaction data needs to be added to a block to be successful.
 
@@ -3778,10 +3778,12 @@ Organization = Coordination &amp; collaboration around shared objectives.
 
 The term was coined by Ethereum founder Vitalik Buterin in his 2014 article: &quot;DAOs, DACs, DAs and More: An Incomplete Terminology Guide&quot; (https://blog.ethereum.org/2014/05/06/daos-dacs-das-and-more-an-incomplete-terminology-guide).
 
-A DAO is a software application (i.e., a dapp) that represents an online community that jointly controls a cryptocurrency wallet to pursue common goals, such as:
+A DAO is a software application (i.e., a dapp) that represents an online community that jointly owns a web3  wallet to pursue common goals, such as:
 
 - A charity: the DAO could accept donations from anyone in the world and vote on which causes to fund.
+
 - Collective ownership: the DAO could purchase physical or digital assets and DAO-members can vote on how to use them.
+
 - Ventures and grant: the DAO could create a venture fund that pools investment capital and votes on ventures to back. Repaid money could later be redistributed amongst DAO-members.
 
 In short, a DAO is a collectively-owned, blockchain-governed organization working towards a shared mission.
@@ -4677,7 +4679,7 @@ According to Ethereum, software wallets are dapps too.</Literal>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Web3Wallet</IRI>
-        <Literal xml:lang="en">Cryptocurrency wallet that helps users to manage blockchain accounts and store digital assets such as cryptocurrency and Non-Fungible Tokens (NFTs). 
+        <Literal xml:lang="en">Web3 wallet that helps users to manage blockchain accounts and store digital assets such as cryptocurrency and Non-Fungible Tokens (NFTs). 
 
 A wallet contains everything people need to prove their identity and handle their assets. A  wallet allows people to sign in to applications, read their balance, send transactions and verify their identity.
 
@@ -4799,14 +4801,6 @@ A limitation of smart contracts is the maximum contract size. A smart contract c
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#hasBlockchainParent</IRI>
-        <Literal xml:lang="en">In Ethereum, this kind of blockchain is named Ethereum Layer 2 (L2) which is a collective term to describe a specific set of Ethereum scaling solutions. A layer 2 is a separate blockchain that extends Ethereum and inherits the security guarantees of Ethereum. 
-
-Ethereum Mainnet is Layer 1
-Arbitrum is also Layer 2</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#hasVotingMember</IRI>
         <Literal xml:lang="en">The committee(s) that can vote for this proposal.</Literal>
     </AnnotationAssertion>
@@ -4814,6 +4808,19 @@ Arbitrum is also Layer 2</Literal>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#identifier</IRI>
         <Literal xml:lang="en">Each NFT must be associated with a unique identifier, such a serial number.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isLayer2Of</IRI>
+        <Literal xml:lang="en">In Ethereum, this kind of blockchain is named Ethereum Layer 2 (L2) which is a collective term to describe a specific set of Ethereum scaling solutions. A layer 2 is a separate blockchain that extends Ethereum and inherits the security guarantees of Ethereum. 
+
+Ethereum Mainnet is Layer 1
+Arbitrum is also Layer 2</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#isLayer2Of</IRI>
+        <IRI>https://www.web3.university/article/sidechains-vs-layer2s</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -4826,6 +4833,11 @@ Popular sidechains include Polygon for Ethereum and Rootstock for Bitcoin.</Lite
         <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
         <IRI>#isSidechainOf</IRI>
         <IRI>https://www.ledger.com/academy/what-is-a-sidechain#:~:text=%E2%80%94%20A%20sidechain%20is%20a%20separate,Ethereum%20and%20Rootstock%20for%20Bitcoin.</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#isSidechainOf</IRI>
+        <IRI>https://www.web3.university/article/sidechains-vs-layer2s</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
