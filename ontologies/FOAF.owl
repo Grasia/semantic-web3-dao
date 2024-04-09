@@ -96,10 +96,6 @@
         <Class IRI="#Person"/>
         <Class IRI="#Project"/>
     </DisjointClasses>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#homepage"/>
-        <ObjectProperty IRI="#isPrimaryTopicOf"/>
-    </SubObjectPropertyOf>
     <InverseObjectProperties>
         <ObjectProperty IRI="#isPrimaryTopicOf"/>
         <ObjectProperty IRI="#primaryTopic"/>

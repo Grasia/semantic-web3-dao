@@ -513,9 +513,6 @@
         <DataProperty IRI="#didPass"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#dollarPrice"/>
-    </Declaration>
-    <Declaration>
         <DataProperty IRI="#endDate"/>
     </Declaration>
     <Declaration>
@@ -1923,11 +1920,6 @@
         <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#double">0.105828</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
-        <DataProperty IRI="#dollarPrice"/>
-        <NamedIndividual IRI="#GNO"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#double">308.61</Literal>
-    </DataPropertyAssertion>
-    <DataPropertyAssertion>
         <DataProperty IRI="#tokenName"/>
         <NamedIndividual IRI="#GNO"/>
         <Literal>Gnosis</Literal>
@@ -1963,11 +1955,6 @@
         <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#double">3.12E-4</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
-        <DataProperty IRI="#dollarPrice"/>
-        <NamedIndividual IRI="#MATIC"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#double">1.21</Literal>
-    </DataPropertyAssertion>
-    <DataPropertyAssertion>
         <DataProperty IRI="#tokenName"/>
         <NamedIndividual IRI="#MATIC"/>
         <Literal>Matic</Literal>
@@ -1981,11 +1968,6 @@
         <DataProperty IRI="#cryptoPrice"/>
         <NamedIndividual IRI="#POL"/>
         <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#double">3.14E-4</Literal>
-    </DataPropertyAssertion>
-    <DataPropertyAssertion>
-        <DataProperty IRI="#dollarPrice"/>
-        <NamedIndividual IRI="#POL"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#double">1.22</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#tokenName"/>
@@ -2270,12 +2252,6 @@
         <ObjectProperty IRI="#hasWeb3WalletCategory"/>
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
-        <ObjectProperty IRI="#holdsOfEOA"/>
-    </FunctionalObjectProperty>
-    <FunctionalObjectProperty>
-        <ObjectProperty IRI="#holdsOfToken"/>
-    </FunctionalObjectProperty>
-    <FunctionalObjectProperty>
         <ObjectProperty IRI="#implementedBy"/>
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
@@ -2301,12 +2277,6 @@
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
         <ObjectProperty IRI="#isMainContractOf"/>
-    </FunctionalObjectProperty>
-    <FunctionalObjectProperty>
-        <ObjectProperty IRI="#isMemberOfCommittee"/>
-    </FunctionalObjectProperty>
-    <FunctionalObjectProperty>
-        <ObjectProperty IRI="#isMemberOfEOA"/>
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
         <ObjectProperty IRI="#isPartOfBlockchain"/>
@@ -2341,17 +2311,8 @@
     <FunctionalObjectProperty>
         <ObjectProperty IRI="#usedByDAO"/>
     </FunctionalObjectProperty>
-    <FunctionalObjectProperty>
-        <ObjectProperty IRI="#votesOfEOA"/>
-    </FunctionalObjectProperty>
-    <FunctionalObjectProperty>
-        <ObjectProperty IRI="#votesOfProposal"/>
-    </FunctionalObjectProperty>
     <InverseFunctionalObjectProperty>
         <ObjectProperty IRI="#belongsToProposal"/>
-    </InverseFunctionalObjectProperty>
-    <InverseFunctionalObjectProperty>
-        <ObjectProperty IRI="#committeeHasIsMember"/>
     </InverseFunctionalObjectProperty>
     <InverseFunctionalObjectProperty>
         <ObjectProperty IRI="#composedOfCommittee"/>
@@ -2361,15 +2322,6 @@
     </InverseFunctionalObjectProperty>
     <InverseFunctionalObjectProperty>
         <ObjectProperty IRI="#createsProposal"/>
-    </InverseFunctionalObjectProperty>
-    <InverseFunctionalObjectProperty>
-        <ObjectProperty IRI="#eoaHasHolds"/>
-    </InverseFunctionalObjectProperty>
-    <InverseFunctionalObjectProperty>
-        <ObjectProperty IRI="#eoaHasIsMember"/>
-    </InverseFunctionalObjectProperty>
-    <InverseFunctionalObjectProperty>
-        <ObjectProperty IRI="#eoaHasVotes"/>
     </InverseFunctionalObjectProperty>
     <InverseFunctionalObjectProperty>
         <ObjectProperty IRI="#hasBaseUnit"/>
@@ -2438,9 +2390,6 @@
         <ObjectProperty IRI="#ownsToken"/>
     </InverseFunctionalObjectProperty>
     <InverseFunctionalObjectProperty>
-        <ObjectProperty IRI="#proposalHasVotes"/>
-    </InverseFunctionalObjectProperty>
-    <InverseFunctionalObjectProperty>
         <ObjectProperty IRI="#receivesProposal"/>
     </InverseFunctionalObjectProperty>
     <InverseFunctionalObjectProperty>
@@ -2448,9 +2397,6 @@
     </InverseFunctionalObjectProperty>
     <InverseFunctionalObjectProperty>
         <ObjectProperty IRI="#storesSmartContract"/>
-    </InverseFunctionalObjectProperty>
-    <InverseFunctionalObjectProperty>
-        <ObjectProperty IRI="#tokenHasHolds"/>
     </InverseFunctionalObjectProperty>
     <InverseFunctionalObjectProperty>
         <ObjectProperty IRI="#usedByDAO"/>
@@ -3233,9 +3179,6 @@
         <DataProperty IRI="#didPass"/>
     </FunctionalDataProperty>
     <FunctionalDataProperty>
-        <DataProperty IRI="#dollarPrice"/>
-    </FunctionalDataProperty>
-    <FunctionalDataProperty>
         <DataProperty IRI="#endDate"/>
     </FunctionalDataProperty>
     <FunctionalDataProperty>
@@ -3351,10 +3294,6 @@
     <DataPropertyDomain>
         <DataProperty IRI="#didPass"/>
         <Class IRI="#Proposal"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#dollarPrice"/>
-        <Class IRI="#FungibleToken"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#endDate"/>
@@ -3499,10 +3438,6 @@
     <DataPropertyRange>
         <DataProperty IRI="#didPass"/>
         <Datatype abbreviatedIRI="xsd:boolean"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#dollarPrice"/>
-        <Datatype abbreviatedIRI="xsd:double"/>
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="#endDate"/>
@@ -4807,11 +4742,6 @@ A limitation of smart contracts is the maximum contract size. A smart contract c
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#dollarPrice</IRI>
-        <Literal xml:lang="en">The token price in US dollars (USD).</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#endDate</IRI>
         <Literal xml:lang="en">End datetime for the voting process.</Literal>
     </AnnotationAssertion>
@@ -4957,7 +4887,7 @@ Default value: 50</Literal>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#tokenUSDValue</IRI>
-        <Literal xml:lang="en">USD (United States Dollar).
+        <Literal xml:lang="en">The token price in United States Dollar (USD).
 
 The double value assigned to indicate the USD exchange rate for a dao:Token.</Literal>
     </AnnotationAssertion>
