@@ -681,6 +681,12 @@
         <NamedIndividual IRI="#HardHat"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#LanguageSupport"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Layer2"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#MATIC"/>
     </Declaration>
     <Declaration>
@@ -709,6 +715,9 @@
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#POL"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#PersonalOwnership"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Polygon"/>
@@ -1516,6 +1525,14 @@
         <NamedIndividual IRI="#HardHat"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="#WalletFeature"/>
+        <NamedIndividual IRI="#LanguageSupport"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#WalletFeature"/>
+        <NamedIndividual IRI="#Layer2"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#UtilityToken"/>
         <NamedIndividual IRI="#MATIC"/>
     </ClassAssertion>
@@ -1558,6 +1575,10 @@
     <ClassAssertion>
         <Class IRI="#UtilityToken"/>
         <NamedIndividual IRI="#POL"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#WalletFeature"/>
+        <NamedIndividual IRI="#PersonalOwnership"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#PublicBlockchain"/>
@@ -1618,10 +1639,6 @@
     <ClassAssertion>
         <Class IRI="#DAO"/>
         <NamedIndividual IRI="#UniswapDAO"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#WalletFeature"/>
-        <NamedIndividual IRI="#WalletConnect"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Cryptocurrency"/>
@@ -1768,6 +1785,11 @@
         <ObjectProperty IRI="#hasWeb3WalletCategory"/>
         <NamedIndividual IRI="#MetaMask"/>
         <NamedIndividual IRI="#NonCustodial"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isGatewayToBlockchain"/>
+        <NamedIndividual IRI="#MetaMask"/>
+        <NamedIndividual IRI="#Ethereum"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#supportsHWWallet"/>
@@ -4047,6 +4069,16 @@ Examples: KrauseHouse (https://www.krausehouse.club/), MetaCartel Ventures (http
         <Literal xml:lang="en">This class represents the association-class between dao:EOA and dao:Committee.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#LanguageSupport</IRI>
+        <IRI>https://ethereum.org/en/wallets/find-wallet/</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#Layer2</IRI>
+        <IRI>https://ethereum.org/en/wallets/find-wallet/</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#MATIC</IRI>
         <Literal xml:lang="en">The MATIC token has been migrated to POL at a new address:
@@ -4274,6 +4306,11 @@ The MATIC token has been migrated to POL.</Literal>
         <IRI>https://etherscan.io/token/0x455e53CBB86018Ac2B8092FdCd39d8444aFFC3F6</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#PersonalOwnership</IRI>
+        <IRI>https://ethereum.org/en/wallets/find-wallet/</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#PhilanthropyDAO</IRI>
         <Literal xml:lang="en">Philanthropy DAOs aim to help progress social responsibility by organizing around a shared purpose to create impact in the world of Web3.
@@ -4298,12 +4335,32 @@ Examples: Big Green DAO (https://dao.biggreen.org/), PleasrDAO. (https://pleasr.
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Portis</IRI>
-        <Literal xml:lang="en">Portis is an easy-to-use self-custody wallet that integrates seamlessly with the most notable NFT and dApps.</Literal>
+        <Literal xml:lang="en">Portis is an easy-to-use non-custodial wallet that integrates seamlessly with the most notable NFT and dApps.
+
+Multi Blockchain Support
+
+A single Portis account will allow your users to interact with multiple blockchains:
+- Ethereum
+- Bitcoin
+- EOS
+- SKALE
+- Matic
+- Ubiq
+- Thundercore
+- RSK
+- POA
+- Fuse
+- Lightstreams</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
         <IRI>#Portis</IRI>
         <IRI>https://wallet.portis.io/login</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#Portis</IRI>
+        <IRI>https://www.portis.io/</IRI>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
