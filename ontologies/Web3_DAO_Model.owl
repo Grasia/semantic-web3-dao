@@ -513,6 +513,9 @@
         <DataProperty IRI="#cryptoPrice"/>
     </Declaration>
     <Declaration>
+        <DataProperty IRI="#daoName"/>
+    </Declaration>
+    <Declaration>
         <DataProperty IRI="#dappDescription"/>
     </Declaration>
     <Declaration>
@@ -3175,6 +3178,10 @@
         <DataProperty IRI="http://www.fdi.ucm.es/disia/ont/FOAF#name"/>
     </SubDataPropertyOf>
     <SubDataPropertyOf>
+        <DataProperty IRI="#daoName"/>
+        <DataProperty IRI="http://www.fdi.ucm.es/disia/ont/FOAF#name"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
         <DataProperty IRI="#networkName"/>
         <DataProperty IRI="http://www.fdi.ucm.es/disia/ont/FOAF#name"/>
     </SubDataPropertyOf>
@@ -3219,6 +3226,9 @@
     </FunctionalDataProperty>
     <FunctionalDataProperty>
         <DataProperty IRI="#cryptoPrice"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#daoName"/>
     </FunctionalDataProperty>
     <FunctionalDataProperty>
         <DataProperty IRI="#dappDescription"/>
@@ -3332,6 +3342,10 @@
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#createdAt"/>
+        <Class IRI="#DAO"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#createdAt"/>
         <Class IRI="#IsMember"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
@@ -3345,6 +3359,10 @@
     <DataPropertyDomain>
         <DataProperty IRI="#cryptoPrice"/>
         <Class IRI="#FungibleToken"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#daoName"/>
+        <Class IRI="#DAO"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#dappDescription"/>
@@ -3505,6 +3523,10 @@
     <DataPropertyRange>
         <DataProperty IRI="#cryptoPrice"/>
         <Datatype abbreviatedIRI="xsd:double"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#daoName"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="#dappDescription"/>
