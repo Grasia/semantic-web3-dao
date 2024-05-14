@@ -486,6 +486,12 @@
         <DataProperty IRI="#abstainVotes"/>
     </Declaration>
     <Declaration>
+        <DataProperty IRI="#blockchainId"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#blockchainName"/>
+    </Declaration>
+    <Declaration>
         <DataProperty IRI="#cancelled"/>
     </Declaration>
     <Declaration>
@@ -583,6 +589,12 @@
     </Declaration>
     <Declaration>
         <DataProperty IRI="#unitValue"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#walletId"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#walletName"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#yesVotes"/>
@@ -3155,6 +3167,10 @@
         <Class IRI="#Proposal"/>
     </ObjectPropertyRange>
     <SubDataPropertyOf>
+        <DataProperty IRI="#blockchainName"/>
+        <DataProperty IRI="http://www.fdi.ucm.es/disia/ont/FOAF#name"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
         <DataProperty IRI="#chartName"/>
         <DataProperty IRI="http://www.fdi.ucm.es/disia/ont/FOAF#name"/>
     </SubDataPropertyOf>
@@ -3170,8 +3186,18 @@
         <DataProperty IRI="#unitName"/>
         <DataProperty IRI="http://www.fdi.ucm.es/disia/ont/FOAF#name"/>
     </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#walletName"/>
+        <DataProperty IRI="http://www.fdi.ucm.es/disia/ont/FOAF#name"/>
+    </SubDataPropertyOf>
     <FunctionalDataProperty>
         <DataProperty IRI="#abstainVotes"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#blockchainId"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#blockchainName"/>
     </FunctionalDataProperty>
     <FunctionalDataProperty>
         <DataProperty IRI="#cancelled"/>
@@ -3267,11 +3293,22 @@
         <DataProperty IRI="#unitValue"/>
     </FunctionalDataProperty>
     <FunctionalDataProperty>
+        <DataProperty IRI="#walletId"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
         <DataProperty IRI="#yesVotes"/>
     </FunctionalDataProperty>
     <DataPropertyDomain>
         <DataProperty IRI="#abstainVotes"/>
         <Class IRI="#Proposal"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#blockchainId"/>
+        <Class IRI="#Blockchain"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#blockchainName"/>
+        <Class IRI="#Blockchain"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#cancelled"/>
@@ -3418,12 +3455,28 @@
         <Class IRI="#BaseUnit"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
+        <DataProperty IRI="#walletId"/>
+        <Class IRI="#Web3Wallet"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#walletName"/>
+        <Class IRI="#Web3Wallet"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
         <DataProperty IRI="#yesVotes"/>
         <Class IRI="#Proposal"/>
     </DataPropertyDomain>
     <DataPropertyRange>
         <DataProperty IRI="#abstainVotes"/>
         <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#blockchainId"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#blockchainName"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="#cancelled"/>
@@ -3556,6 +3609,14 @@
     <DataPropertyRange>
         <DataProperty IRI="#unitValue"/>
         <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#walletId"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#walletName"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="#yesVotes"/>
