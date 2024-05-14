@@ -573,7 +573,7 @@
         <DataProperty IRI="#tokenBalance"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#tokenName"/>
+        <DataProperty IRI="#tokenId"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#tokenSymbol"/>
@@ -1877,7 +1877,7 @@
         <NamedIndividual IRI="#USDT"/>
     </ObjectPropertyAssertion>
     <DataPropertyAssertion>
-        <DataProperty IRI="#tokenName"/>
+        <DataProperty IRI="#tokenId"/>
         <NamedIndividual IRI="#ADA"/>
         <Literal>Ada</Literal>
     </DataPropertyAssertion>
@@ -1912,7 +1912,7 @@
         <Literal>Arbitrum Sepolia</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
-        <DataProperty IRI="#tokenName"/>
+        <DataProperty IRI="#tokenId"/>
         <NamedIndividual IRI="#BTC"/>
         <Literal>bitcoin</Literal>
     </DataPropertyAssertion>
@@ -1922,7 +1922,7 @@
         <Literal>BTC</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
-        <DataProperty IRI="#tokenName"/>
+        <DataProperty IRI="#tokenId"/>
         <NamedIndividual IRI="#Bit"/>
         <Literal>Bit</Literal>
     </DataPropertyAssertion>
@@ -1932,7 +1932,7 @@
         <Literal>MNT</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
-        <DataProperty IRI="#tokenName"/>
+        <DataProperty IRI="#tokenId"/>
         <NamedIndividual IRI="#ETH"/>
         <Literal>ether</Literal>
     </DataPropertyAssertion>
@@ -1957,7 +1957,7 @@
         <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#double">0.105828</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
-        <DataProperty IRI="#tokenName"/>
+        <DataProperty IRI="#tokenId"/>
         <NamedIndividual IRI="#GNO"/>
         <Literal>Gnosis</Literal>
     </DataPropertyAssertion>
@@ -1992,7 +1992,7 @@
         <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#double">3.12E-4</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
-        <DataProperty IRI="#tokenName"/>
+        <DataProperty IRI="#tokenId"/>
         <NamedIndividual IRI="#MATIC"/>
         <Literal>Matic</Literal>
     </DataPropertyAssertion>
@@ -2007,7 +2007,7 @@
         <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#double">3.14E-4</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
-        <DataProperty IRI="#tokenName"/>
+        <DataProperty IRI="#tokenId"/>
         <NamedIndividual IRI="#POL"/>
         <Literal>Polygon Ecosystem</Literal>
     </DataPropertyAssertion>
@@ -2027,7 +2027,7 @@
         <Literal>Polygon Mainnet</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
-        <DataProperty IRI="#tokenName"/>
+        <DataProperty IRI="#tokenId"/>
         <NamedIndividual IRI="#USDT"/>
         <Literal>Tether</Literal>
     </DataPropertyAssertion>
@@ -2037,7 +2037,7 @@
         <Literal>USDT</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
-        <DataProperty IRI="#tokenName"/>
+        <DataProperty IRI="#tokenId"/>
         <NamedIndividual IRI="#Uniswap"/>
         <Literal>Uniswap</Literal>
     </DataPropertyAssertion>
@@ -2047,7 +2047,7 @@
         <Literal>UNI</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
-        <DataProperty IRI="#tokenName"/>
+        <DataProperty IRI="#tokenId"/>
         <NamedIndividual IRI="#XDAI"/>
         <Literal>xDai</Literal>
     </DataPropertyAssertion>
@@ -3186,8 +3186,8 @@
         <DataProperty IRI="http://www.fdi.ucm.es/disia/ont/FOAF#name"/>
     </SubDataPropertyOf>
     <SubDataPropertyOf>
-        <DataProperty IRI="#tokenName"/>
-        <DataProperty IRI="http://www.fdi.ucm.es/disia/ont/FOAF#name"/>
+        <DataProperty IRI="#tokenId"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
     </SubDataPropertyOf>
     <SubDataPropertyOf>
         <DataProperty IRI="#unitName"/>
@@ -3285,7 +3285,7 @@
         <DataProperty IRI="#tokenBalance"/>
     </FunctionalDataProperty>
     <FunctionalDataProperty>
-        <DataProperty IRI="#tokenName"/>
+        <DataProperty IRI="#tokenId"/>
     </FunctionalDataProperty>
     <FunctionalDataProperty>
         <DataProperty IRI="#tokenSymbol"/>
@@ -3445,7 +3445,7 @@
         <Class IRI="#Token"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty IRI="#tokenName"/>
+        <DataProperty IRI="#tokenId"/>
         <Class IRI="#Token"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
@@ -3605,7 +3605,7 @@
         <Datatype abbreviatedIRI="xsd:double"/>
     </DataPropertyRange>
     <DataPropertyRange>
-        <DataProperty IRI="#tokenName"/>
+        <DataProperty IRI="#tokenId"/>
         <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
     <DataPropertyRange>
@@ -3801,7 +3801,9 @@ A contract account has the smart contract code and does not have a private key.
 
 A contract account cannot initiate transactions, but they can react to transactions by calling other smart contracts, building comple execution paths.
 
-For instance, when a transaction destination is the address of contract account, then the corresponding smart contract runs by using the transaction, and the transaction&apos;s data as its input. In addition to funds (e.g., ether), transactions can contain data indicating which specific function in the smart contract to run and what parameters to pass to that function. In this way, transactions can call functions within smart contracts.</Literal>
+For instance, when a transaction destination is the address of contract account, then the corresponding smart contract runs by using the transaction, and the transaction&apos;s data as its input. In addition to funds (e.g., ether), transactions can contain data indicating which specific function in the smart contract to run and what parameters to pass to that function. In this way, transactions can call functions within smart contracts.
+
+The attribute name of the OnlineAccount is the address of the ContractAccount.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -3951,7 +3953,9 @@ In summary, development networks are essentially blockchain clients (implementat
 
 Externally Owned Accounts are user accounts that have a private key; having the private key means control over access to funds or smart contracts.
 
-EOAs can initiate transactions and they can send and receive funds.</Literal>
+EOAs can initiate transactions and they can send and receive funds.
+
+The attribute name of the OnlineAccount is the address of the EOA.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -5011,7 +5015,7 @@ Default value: 50</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#tokenName</IRI>
+        <IRI>#tokenId</IRI>
         <Literal xml:lang="en">The name assigned to the token that is minted when creating a DAO.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
